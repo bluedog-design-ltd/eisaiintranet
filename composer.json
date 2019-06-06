@@ -1,0 +1,127 @@
+{
+    "name": "drupal-composer/drupal-project",
+    "description": "Project template for Drupal 8 projects with composer",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "",
+            "role": ""
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    ],
+    "require": {
+        "composer/installers": "^1.2",
+        "cweagans/composer-patches": "^1.6.5",
+        "drupal-composer/drupal-scaffold": "^2.5",
+        "drupal/access_by_ref": "^1.1",
+        "drupal/address": "~1.0",
+        "drupal/admin_toolbar": "^1.26",
+        "drupal/allowed_formats": "^1.1",
+        "drupal/backup_migrate": "^4.0",
+        "drupal/bamboo_twig": "^4.1",
+        "drupal/bootstrap": "3.16",
+        "drupal/console": "~1.6",
+        "drupal/core": "^8.6.0",
+        "drupal/default_content": "^1.0@alpha",
+        "drupal/devel": "^1.2",
+        "drupal/easy_breadcrumb": "^1.8",
+        "drupal/examples": "1.x-dev",
+        "drupal/field_formatter_class": "^1.1",
+        "drupal/field_group": "^1.0",
+        "drupal/field_permissions": "^1.0@RC",
+        "drupal/form_mode_manager": "^1.3",
+        "drupal/group": "^1.0@RC",
+        "drupal/ldap": "^3.0@beta",
+        "drupal/likeit": "^1.0",
+        "drupal/menu_block": "^1.5",
+        "drupal/menu_item_extras": "^2.4",
+        "drupal/migrate_plus": "^4.1",
+        "drupal/migrate_source_csv": "^2.2",
+        "drupal/migrate_tools": "^4.1",
+        "drupal/modal_page": "^2.3",
+        "drupal/moderation_scheduler": "^5.8",
+        "drupal/nodeaccess": "^1.0@beta",
+        "drupal/noreqnewpass": "^1.1",
+        "drupal/page_menu_reorder": "^1.6",
+        "drupal/pathauto": "^1.3",
+        "drupal/redirect_after_login": "^2.3",
+        "drupal/scheduler": "^1.0",
+        "drupal/scheduler_content_moderation_integration": "^1.0@beta",
+        "drupal/search_api": "^1.12",
+        "drupal/search_api_autocomplete": "^1.2",
+        "drupal/search_autocomplete": "^1.1",
+        "drupal/simple_gmap": "^1.4",
+        "drupal/simple_popup_blocks": "^1.2",
+        "drupal/sitemap": "^1.5",
+        "drupal/twig_tweak": "^2.1",
+        "drupal/tzfield": "^1.0",
+        "drupal/unpublished_node_permissions": "^1.0",
+        "drupal/views_bootstrap": "^3.1",
+        "drupal/views_contextual_filters_or": "^1.0",
+        "drupal/views_menu_children_filter": "^1.0@beta",
+        "drupal/views_taxonomy_term_name_depth": "6.x-dev",
+        "drupal/webform": "^5.2",
+        "drupal/workbench_access": "^1.0@beta",
+        "drush/drush": "^9.0.0",
+        "vlucas/phpdotenv": "^2.4",
+        "webflo/drupal-finder": "^1.0.0",
+        "webmozart/path-util": "^2.3"
+    },
+    "require-dev": {
+        "webflo/drupal-core-require-dev": "^8.6.0"
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "classmap": [
+            "scripts/composer/ScriptHandler.php"
+        ],
+        "files": ["load.environment.php"]
+    },
+    "scripts": {
+        "pre-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "pre-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "post-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "post-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ]
+    },
+    "extra": {
+        "patchLevel": {
+            "drupal/core": "-p2"
+        },
+        "installer-paths": {
+            "web/core": ["type:drupal-core"],
+            "web/libraries/{$name}": ["type:drupal-library"],
+            "web/modules/contrib/{$name}": ["type:drupal-module"],
+            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
+            "web/themes/contrib/{$name}": ["type:drupal-theme"],
+            "drush/Commands/{$name}": ["type:drupal-drush"]
+        },
+        
+        "drupal-scaffold": {
+            "initial": {
+                ".editorconfig": "../.editorconfig",
+                ".gitattributes": "../.gitattributes"
+            }
+        }
+    }
+}

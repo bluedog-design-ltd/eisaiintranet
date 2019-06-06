@@ -1,0 +1,33 @@
+uuid: f770857c-ecb0-42f8-8d53-a054322c959d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_relevant_to
+    - node.type.news_story
+    - taxonomy.vocabulary.eisai_companies
+    - taxonomy.vocabulary.emeateamnames
+    - taxonomy.vocabulary.everyone
+id: node.news_story.field_relevant_to
+field_name: field_relevant_to
+entity_type: node
+bundle: news_story
+label: 'Relevant to'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      emeateamnames: emeateamnames
+      eisai_companies: eisai_companies
+      everyone: everyone
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: emeateamnames
+field_type: entity_reference

@@ -1,0 +1,23 @@
+uuid: b2fe0912-de5c-4ada-bfdd-bb72706f00c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_has_meet_team
+    - node.type.team_hub_page
+id: node.team_hub_page.field_has_meet_team
+field_name: field_has_meet_team
+entity_type: node
+bundle: team_hub_page
+label: 'Has Meet Team'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

@@ -1,0 +1,23 @@
+uuid: 12785e7f-0f01-44b8-97e2-86bca47291cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.twig_block
+    - field.field.block_content.twig_block.body
+  module:
+    - text
+id: block_content.twig_block.default
+targetEntityType: block_content
+bundle: twig_block
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

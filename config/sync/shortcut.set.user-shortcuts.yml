@@ -1,0 +1,6 @@
+uuid: 50088d0c-dfa6-4fed-bb8f-7dc52902c812
+langcode: en
+status: true
+dependencies: {  }
+id: user-shortcuts
+label: 'User Shortcuts'

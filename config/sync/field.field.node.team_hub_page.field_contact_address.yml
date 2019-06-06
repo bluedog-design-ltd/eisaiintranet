@@ -1,0 +1,21 @@
+uuid: b8d6d264-c464-42c2-964c-5674abc75be6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_address
+    - node.type.team_hub_page
+id: node.team_hub_page.field_contact_address
+field_name: field_contact_address
+entity_type: node
+bundle: team_hub_page
+label: 'Contact address'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: "European Knowledge Centre\r\nMosquito Way, Hatfield\r\nHertfordshire \r\nAL10 9SN"
+default_value_callback: ''
+settings: {  }
+field_type: string_long

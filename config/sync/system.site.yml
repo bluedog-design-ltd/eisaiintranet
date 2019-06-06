@@ -1,0 +1,15 @@
+uuid: 31edddd3-d289-45cf-88eb-d43c66a7b111
+name: 'Eisai Intranet'
+mail: ekc-comms@eisai.net
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node/4
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
+mail_notification: ''

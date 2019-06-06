@@ -1,0 +1,14 @@
+uuid: 7daeb5dd-8996-446b-917e-9f2251eb5f81
+langcode: en
+status: true
+dependencies: {  }
+id: test_2
+label: 'test 2'
+server_id: eisai_actual_ldap
+base_dn: 'DC=eu,DC=eisai,DC=local'
+filter: (objectClass=user)
+attributes: sn
+size_limit: 0
+time_limit: 0
+dereference: 0
+scope: 3

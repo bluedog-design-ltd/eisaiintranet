@@ -1,0 +1,14 @@
+{
+  "name": "drupal/eisai_intranet_shortcuts",
+  "type": "drupal-module",
+  "description": "Shortcuts a user can add and delete from",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "",
+    "source": ""
+  },
+  "require": { }
+}

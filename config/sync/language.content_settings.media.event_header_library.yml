@@ -1,0 +1,11 @@
+uuid: c95825d9-8730-4bc6-b065-fc18a22154ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.event_header_library
+id: media.event_header_library
+target_entity_type_id: media
+target_bundle: event_header_library
+default_langcode: site_default
+language_alterable: false

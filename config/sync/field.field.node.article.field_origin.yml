@@ -1,0 +1,29 @@
+uuid: a0d064a1-26d7-4e97-84b9-12960c3ea4c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_origin
+    - node.type.article
+    - taxonomy.vocabulary.emeateamnames
+id: node.article.field_origin
+field_name: field_origin
+entity_type: node
+bundle: article
+label: Origin
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      emeateamnames: emeateamnames
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

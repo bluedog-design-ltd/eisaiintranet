@@ -1,0 +1,10 @@
+uuid: 77a9d1f2-8f11-4dec-9956-612b6e928d87
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.select_team_form_mode
+label: 'Select team form mode'
+targetEntityType: user
+cache: true

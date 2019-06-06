@@ -1,0 +1,24 @@
+uuid: 6ae3c2da-4f35-4f44-9c0b-2d3ba52daa23
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_news_story_date
+    - node.type.news_story
+  module:
+    - datetime
+id: node.news_story.field_news_story_date
+field_name: field_news_story_date
+entity_type: node
+bundle: news_story
+label: 'News Story date'
+description: 'The date which this story should use when listed '
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

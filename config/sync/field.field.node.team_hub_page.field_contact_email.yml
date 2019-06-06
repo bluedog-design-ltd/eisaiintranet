@@ -1,0 +1,19 @@
+uuid: 8005b220-1755-4e76-b961-8296f037f9ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_email
+    - node.type.team_hub_page
+id: node.team_hub_page.field_contact_email
+field_name: field_contact_email
+entity_type: node
+bundle: team_hub_page
+label: 'Contact email'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

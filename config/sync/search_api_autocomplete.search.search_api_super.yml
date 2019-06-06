@@ -1,0 +1,42 @@
+uuid: 5067725c-6204-4f1b-9e1b-285a80e1c294
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.super_search
+    - views.view.search_api_super
+    - core.entity_view_mode.node.search_index
+    - core.entity_view_mode.user.compact
+  module:
+    - views
+    - search_api_autocomplete
+id: search_api_super
+label: 'Search API Super'
+index_id: super_search
+suggester_settings:
+  live_results:
+    fields: {  }
+    view_modes:
+      'entity:node':
+        content_page: search_index
+        eisai_content_hub: search_index
+        eisai_tool_page: ''
+        event: search_index
+        news_story: search_index
+      'entity:user':
+        user: compact
+suggester_weights:
+  live_results: 0
+suggester_limits: {  }
+search_settings:
+  'views:search_api_super':
+    displays:
+      default: true
+      selected: {  }
+options:
+  limit: 10
+  min_length: 3
+  show_count: false
+  autosubmit: true
+  submit_button_selector: ':submit'
+  delay: null

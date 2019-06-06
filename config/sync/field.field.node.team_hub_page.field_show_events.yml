@@ -1,0 +1,23 @@
+uuid: 3486ea2f-ac5d-44b4-9e42-b40eb6769ca9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_show_events
+    - node.type.team_hub_page
+id: node.team_hub_page.field_show_events
+field_name: field_show_events
+entity_type: node
+bundle: team_hub_page
+label: 'Show events'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

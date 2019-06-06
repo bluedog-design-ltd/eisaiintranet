@@ -1,0 +1,15 @@
+uuid: aa8e894e-06a5-4714-a9ae-079cd54ab0d7
+langcode: en
+status: true
+dependencies: {  }
+name: news_
+label: 'News Box Image'
+effects:
+  0bac6b2f-a1c3-424a-9ab4-dba79c5e6254:
+    uuid: 0bac6b2f-a1c3-424a-9ab4-dba79c5e6254
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 416
+      height: 333
+      anchor: center-center

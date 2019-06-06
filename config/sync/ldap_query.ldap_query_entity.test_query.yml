@@ -1,0 +1,14 @@
+uuid: 33986e40-6b73-431e-b378-46bdc25a5730
+langcode: en
+status: true
+dependencies: {  }
+id: test_query
+label: 'test query'
+server_id: eisaiintranetldapserver
+base_dn: 'DC=eu,DC=eisai,DC=local'
+filter: (samaccountname=DrupalAdmin)
+attributes: 'CN,EmailAddress'
+size_limit: 0
+time_limit: 0
+dereference: 0
+scope: 3

@@ -1,0 +1,14 @@
+uuid: c8ccc246-3cc9-4f17-b3a5-fccb417b4a91
+langcode: en
+status: true
+dependencies: {  }
+id: eisai_images
+label: 'Eisai images'
+description: 'A repository of images that Eisai have supplied for news, events and content'
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image_7
+field_map:
+  name: name

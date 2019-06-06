@@ -1,0 +1,64 @@
+
+.navbar{
+    border:0;   
+}
+
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+.views-exposed-form .form-item, .views-exposed-form button{
+    /* margin-bottom:10px; */
+    /* margin-right:10px; */
+    padding: 10px;
+}
+
+/* hide Add Media button in Media library browse dialog */
+.media-library-view .view-header a{
+    display:none;   
+}
+
+/* to prevent overlflow on search autocomplete */
+.ui-autocomplete .ui-menu-item{
+    white-space: normal;   
+}
+
+table{
+    width:100%;   
+}
+
+.navbar-text.pic{
+    margin-right: 0;
+    border: 100px;
+}
+/* event calendar */
+
+ul.views-view-list-group{
+    padding-left:0;   
+}
+
+section.col-sm-12{
+    padding-left:0;
+    padding-right:0;
+}
+
+/* interior of modal popups hiding dropdowns */
+.modal-body.ui-dialog-content{
+    /* overflow:visible !important; */
+}
+
+
+td.checkbox.menu-enabled, th.checkbox{
+    margin-top:0;
+    margin-bottom: 0;
+}
+
+@media screen and (min-width: 768px){
+body {
+    margin-top: 0px;
+	
+}
+    
+}

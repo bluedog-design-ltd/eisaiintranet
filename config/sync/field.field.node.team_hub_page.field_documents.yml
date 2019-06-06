@@ -1,0 +1,28 @@
+uuid: 3da6c62e-fd98-45d6-81ed-54735ecf380b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_documents
+    - media.type.eisai_document
+    - node.type.team_hub_page
+id: node.team_hub_page.field_documents
+field_name: field_documents
+entity_type: node
+bundle: team_hub_page
+label: Documents
+description: 'Documents that are important to this hub'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      eisai_document: eisai_document
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

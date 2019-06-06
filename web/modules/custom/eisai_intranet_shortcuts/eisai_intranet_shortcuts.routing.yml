@@ -1,0 +1,11 @@
+# This route is for an AJAX callback. It is used by the AJAX system on
+# ajax_example.ajax_link_render. It has a {nojs} parameter, which gives us
+# a way to know whether the request is an AJAX request or is from some other
+# source.
+eisai_intranet_shortcuts.ajax_link_callback:
+  path: 'addshortcut-callback/{title}/{path}'
+  defaults:
+    _controller: '\Drupal\eisai_intranet_shortcuts\Controller\EisaiIntranetShortcutsController::ajaxLinkCallback'
+    title:  'poo'
+  requirements:
+    _permission: 'access content'

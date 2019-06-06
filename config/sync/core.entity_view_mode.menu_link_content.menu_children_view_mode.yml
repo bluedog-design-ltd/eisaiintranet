@@ -1,0 +1,10 @@
+uuid: 4736a182-efca-4f49-9517-808c6de7d8bc
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_link_content
+id: menu_link_content.menu_children_view_mode
+label: 'Menu Children View Mode'
+targetEntityType: menu_link_content
+cache: true

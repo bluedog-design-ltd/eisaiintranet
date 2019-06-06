@@ -1,0 +1,25 @@
+uuid: ff151879-64a0-4f83-a55c-82d0da7cd1e9
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:twig_block:d5a4bc3a-9492-44f6-b85f-ed22e952e414'
+  module:
+    - block_content
+  theme:
+    - eisai_intranet_theme
+id: headeruserdetails
+theme: eisai_intranet_theme
+region: navigation
+weight: -7
+provider: null
+plugin: 'block_content:d5a4bc3a-9492-44f6-b85f-ed22e952e414'
+settings:
+  id: 'block_content:d5a4bc3a-9492-44f6-b85f-ed22e952e414'
+  label: 'Header User Details'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

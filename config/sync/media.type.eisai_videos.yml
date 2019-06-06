@@ -1,0 +1,13 @@
+uuid: a3d3221e-e72a-431f-a4c0-8c89023a5e9f
+langcode: en
+status: true
+dependencies: {  }
+id: eisai_videos
+label: 'Eisai videos'
+description: ''
+source: video_file
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_video_file_1
+field_map: {  }

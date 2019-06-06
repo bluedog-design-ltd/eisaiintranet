@@ -1,0 +1,5 @@
+name: 'Eisai Intranet Shortcuts'
+type: module
+description: 'Shortcuts a user can add and delete from'
+core: 8.x
+package: 'Eisai Intranet'

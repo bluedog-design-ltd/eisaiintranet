@@ -1,0 +1,22 @@
+uuid: 7481f031-3469-4d5d-9c91-6a5513cd8cb3
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: news_story_pattern
+label: 'News story pattern'
+type: 'canonical_entities:node'
+pattern: 'news-and-events/eisai-news/[node:title]'
+selection_criteria:
+  bab88fc5-bbae-4cce-9d08-e7d41860ea0d:
+    id: node_type
+    bundles:
+      news_story: news_story
+    negate: false
+    context_mapping:
+      node: node
+    uuid: bab88fc5-bbae-4cce-9d08-e7d41860ea0d
+selection_logic: and
+weight: -5
+relationships: {  }

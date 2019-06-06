@@ -1,0 +1,14 @@
+uuid: c16175c1-5041-409f-9f65-68f361193c02
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.hub_champion
+  module:
+    - user
+id: user_remove_role_action.hub_champion
+label: 'Remove the Hub Champion role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: hub_champion

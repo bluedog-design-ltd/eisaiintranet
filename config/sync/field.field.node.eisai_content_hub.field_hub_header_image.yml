@@ -1,0 +1,32 @@
+uuid: 69c49846-52eb-4750-9469-25bedd807022
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_header_image
+    - media.type.eisai_hub_image_library
+    - node.type.eisai_content_hub
+  content:
+    - 'media:eisai_hub_image_library:e65e2be7-7fd6-4fde-9136-596733e37de3'
+id: node.eisai_content_hub.field_hub_header_image
+field_name: field_hub_header_image
+entity_type: node
+bundle: eisai_content_hub
+label: 'Hub Header image'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    target_uuid: e65e2be7-7fd6-4fde-9136-596733e37de3
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      eisai_hub_image_library: eisai_hub_image_library
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

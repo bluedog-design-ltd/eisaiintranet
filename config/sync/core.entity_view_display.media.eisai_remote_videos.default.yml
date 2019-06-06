@@ -1,0 +1,50 @@
+uuid: 0d01f485-0657-4ec2-be36-8e0cd424711e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.eisai_remote_videos.field_media_oembed_video_1
+    - field.field.media.eisai_remote_videos.field_remote_video_title
+    - field.field.media.eisai_remote_videos.field_tags
+    - media.type.eisai_remote_videos
+  module:
+    - field_formatter_class
+    - media
+id: media.eisai_remote_videos.default
+targetEntityType: media
+bundle: eisai_remote_videos
+mode: default
+content:
+  field_media_oembed_video_1:
+    type: oembed
+    weight: 2
+    region: content
+    label: visually_hidden
+    settings:
+      max_width: 0
+      max_height: 0
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+  field_remote_video_title:
+    weight: 0
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_tags:
+    weight: 1
+    label: visually_hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

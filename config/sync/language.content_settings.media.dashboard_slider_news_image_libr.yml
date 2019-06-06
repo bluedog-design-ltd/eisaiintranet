@@ -1,0 +1,11 @@
+uuid: ed6d7e96-ec69-4181-91ad-a9dede86bf9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.dashboard_slider_news_image_libr
+id: media.dashboard_slider_news_image_libr
+target_entity_type_id: media
+target_bundle: dashboard_slider_news_image_libr
+default_langcode: site_default
+language_alterable: false

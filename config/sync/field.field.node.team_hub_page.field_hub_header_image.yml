@@ -1,0 +1,28 @@
+uuid: 5c10d697-109f-47ae-8763-21d7fe52a067
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_header_image
+    - media.type.eisai_hub_image_library
+    - node.type.team_hub_page
+id: node.team_hub_page.field_hub_header_image
+field_name: field_hub_header_image
+entity_type: node
+bundle: team_hub_page
+label: 'Hub Header image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      eisai_hub_image_library: eisai_hub_image_library
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

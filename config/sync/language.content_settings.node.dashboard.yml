@@ -1,0 +1,11 @@
+uuid: ba85df76-12f2-4b26-984a-44333b610a8e
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.dashboard
+id: node.dashboard
+target_entity_type_id: node
+target_bundle: dashboard
+default_langcode: site_default
+language_alterable: false

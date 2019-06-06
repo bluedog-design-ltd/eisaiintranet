@@ -1,0 +1,17 @@
+uuid: c07142c4-3dd7-4ee1-98bb-dd3a9a345c8f
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Dummy Top Level Pages'
+type: dummy_top_level_pages
+description: 'Not editable. For every menu have a dummy page so that pages can show siblings. '
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

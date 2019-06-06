@@ -1,0 +1,17 @@
+uuid: d6262a4c-f7c8-46b5-ad90-28db8beed9bb
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Eisai Event'
+type: event
+description: 'An event for the event calendar'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

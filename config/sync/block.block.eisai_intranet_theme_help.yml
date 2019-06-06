@@ -1,0 +1,22 @@
+uuid: 1aae69b8-75b3-4cfc-a539-0f4afba48b29
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - eisai_intranet_theme
+_core:
+  default_config_hash: MhtNdV__HKRTab0ZPjkPNfYL4Ng4UPBucDLoC7Rg5Eo
+id: eisai_intranet_theme_help
+theme: eisai_intranet_theme
+region: help
+weight: -8
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

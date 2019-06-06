@@ -1,0 +1,59 @@
+uuid: 80b620e1-289a-4673-8cf2-5fedcd1c97bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.user.userteam
+    - field.field.user.user.field_company
+    - field.field.user.user.field_emea_team
+    - field.field.user.user.field_fax
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_job_title
+    - field.field.user.user.field_last_name
+    - field.field.user.user.field_ldap_company
+    - field.field.user.user.field_mobile
+    - field.field.user.user.field_office
+    - field.field.user.user.field_shortcuts
+    - field.field.user.user.field_telephone
+    - field.field.user.user.user_picture
+  module:
+    - user
+_core:
+  default_config_hash: K-1rBM8mTIkFp9RqOC2tMRUukOQ1xbRCfSKK8dEddnA
+id: user.user.userteam
+targetEntityType: user
+bundle: user
+mode: userteam
+content:
+  field_company:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_emea_team:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+hidden:
+  account: true
+  contact: true
+  field_fax: true
+  field_first_name: true
+  field_job_title: true
+  field_last_name: true
+  field_ldap_company: true
+  field_mobile: true
+  field_office: true
+  field_shortcuts: true
+  field_telephone: true
+  langcode: true
+  language: true
+  path: true
+  timezone: true
+  user_picture: true

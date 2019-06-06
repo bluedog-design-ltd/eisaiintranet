@@ -1,0 +1,8 @@
+uuid: 918e49a5-e30c-499f-b779-7c694d6c42e3
+langcode: en
+status: true
+dependencies: {  }
+id: popup_blocks
+label: 'Popup blocks'
+revision: 0
+description: 'Blocks designed for popup behaviour'

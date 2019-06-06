@@ -1,0 +1,28 @@
+uuid: c2e4f9ac-3d1d-4aeb-8008-02141056242e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tool_list
+    - node.type.eisai_content_hub
+    - node.type.eisai_tool_page
+id: node.eisai_content_hub.field_tool_list
+field_name: field_tool_list
+entity_type: node
+bundle: eisai_content_hub
+label: 'Tool list'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      eisai_tool_page: eisai_tool_page
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

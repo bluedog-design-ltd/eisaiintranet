@@ -1,0 +1,9 @@
+uuid: 96ee3d1d-1a7e-46e3-bdee-587d0ae535c4
+langcode: en
+status: true
+dependencies: {  }
+name: 'Event locations'
+vid: meeting_locations
+description: 'List of possible locations, updatable '
+hierarchy: 0
+weight: -8

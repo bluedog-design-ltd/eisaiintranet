@@ -1,0 +1,243 @@
+<?php
+
+use Drupal\Core\Session\AccountProxyInterface;
+use Drupal\Core\Url;
+use Drupal\user\Entity\User;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\Drupal\node\NodeInterface;
+use Drupal\image\Entity\ImageStyle;
+use Drupal\Core\Menu;
+use Drupal\menu_link_content\Entity\MenuLinkContent;
+
+/**
+ * Implements hook_preprocess_HOOK() for HTML document templates.
+ *
+ * Adds body classes if certain regions have content.
+ */
+function eisai_intranet_theme_preprocess_html(&$vars, $hook) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node) {
+    $vars['html_title'] = $node->getTitle();
+  }
+
+}
+
+/**
+ * Implements template_preprocess_node().
+ *
+ * @param $vars
+ * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+ * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+ * @throws \Drupal\Core\TypedData\Exception\MissingDataException
+ */
+function eisai_intranet_theme_preprocess_node(&$vars) {
+  $node = $vars['node'];
+  $nodeType = $node->getType();
+  $node_id = $node->id();
+
+  if ($nodeType == 'eisai_content_hub') {
+
+    $hero_image = $node->get('field_hub_header_image')->getValue();
+    if (!empty($hero_image)) {
+      $entity = \Drupal\media\Entity\Media::load($hero_image[0]['target_id']);
+
+      //used devel to find custom field name "field_media_image_2" in custom media type... argh!!!!
+      $vars['hero_image'] = ImageStyle::load('hub_hero_image')->buildUrl($entity->field_media_image_2->entity->getFileUri());
+    }
+  }
+
+  if ($nodeType == 'team_hub_page') {
+    //drupal_set_message("team hub page preprocess");
+    //$image_obj =  $node->get('field_hub_header_image')[0]->value;
+    //$image_obj  = $variables['content']['field_hub_header_image'][0]['#media'];
+
+    //die("image obj".$image_obj);
+    // $vars['hero_image'] = \Drupal\image\Entity\ImageStyle::load('hub_hero_image')->buildUrl($image_obj->field_media_image->entity->getFileUri());
+
+    /** @var \Drupal\node\NodeInterface $node */
+
+
+    $hero_image = $node->get('field_hub_header_image')->getValue();
+    if (!empty($hero_image)) {
+      $entity = \Drupal\media\Entity\Media::load($hero_image[0]['target_id']);
+
+      //used devel to find custom field name "field_media_image_2" in custom media type... argh!!!!
+      $vars['hero_image'] = ImageStyle::load('hub_hero_image')->buildUrl($entity->field_media_image_2->entity->getFileUri());
+    }
+
+
+    $contact_address = $node->get('field_contact_address')->value;
+    $contact_telephone = $node->get('field_contact_telephone')->value;
+    $contact_fax = $node->get('field_contact_fax')->value;
+    $contact_email = $node->get('field_contact_email')->value;
+    $contact_static_map_api_url = urlencode($node->get('field_contact_gmap_address')->value);
+    $contact_map_link = null;
+    if (!empty($node->get('field_contact_map_link')->first())) {
+      $contact_map_link = $node->get('field_contact_map_link')->first()->getUrl();
+    } else {
+
+    }
+    $vars['contact_address'] = $contact_address;
+    $vars['contact_telephone'] = $contact_telephone;
+    $vars['contact_fax'] = $contact_fax;
+    $vars['contact_email'] = $contact_email;
+    $vars['contact_static_map_api_url'] = $contact_static_map_api_url;
+    $vars['contact_map_link'] = $contact_map_link;
+
+  }
+
+  //if($nodeType=='content_page' || $nodeType=='event' || $nodeType=='news_story' ){
+  if ($nodeType == 'content_page' || $nodeType == 'eisai_tool_page') {
+    $hero_image = $node->get('field_content_header_image')->getValue();
+    if (!empty($hero_image)) {
+      $entity = \Drupal\media\Entity\Media::load($hero_image[0]['target_id']);
+
+      //used devel to find custom field name "field_media_image_1" in custom media type... argh!!!!
+      $vars['hero_image'] = ImageStyle::load('content_header_image')->buildUrl($entity->field_media_image_1->entity->getFileUri());
+    }
+
+    //get parent menu link details to build side bar menu
+    $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
+    $links = $menu_link_manager->loadLinksByRoute('entity.node.canonical', array('node' => $node_id));
+    if ($link = reset($links)) {
+      if ($parent = $link->getParent()) {
+        $parent = $menu_link_manager->createInstance($parent);
+        $parent_title = $parent->getTitle();
+        //$parent_id = $parent->id();
+        $parent_url = $parent->getUrlObject()->toString();
+        $vars['parent_menu_item'] = $parent;
+        $vars['parent_title'] = $parent_title;
+        $vars['parent_url'] = $parent_url;
+
+        //convoluted route to get node id of parent menu item
+        //this is so that we can build view list on twig of parent menu item's children
+        //(the siblings of current page)
+        $alias = \Drupal::service('path.alias_manager')->getPathByAlias($parent_url);
+        $params = Url::fromUri("internal:" . $alias)->getRouteParameters();
+        $entity_type = key($params);
+        if ($entity_type) {
+          $node = \Drupal::entityTypeManager()->getStorage($entity_type)->load($params[$entity_type]);
+          $parent_id = $node->nid->value;
+          $vars['parent_id'] = $parent_id;
+        } else {
+          $vars['parent_id'] = 1;
+        }
+      }
+    }
+  }
+
+}
+
+/**
+ * Implements template_preprocess().
+ *
+ * @param $vars
+ * @param $hook
+ */
+function eisai_intranet_theme_preprocess(&$vars, $hook) {
+
+  $user_id = \Drupal::currentUser()->id();
+  $user = \Drupal\user\Entity\User::load($user_id);
+  $vars['uid'] = $user_id;
+
+  if (isset($user->get('field_emea_team')->target_id)) {
+    $top_emea_team_id = $user->get('field_emea_team')->target_id;
+    $emea_team_ids = $user->field_emea_team->getString();
+    $term = Term::load($top_emea_team_id);
+    $emea_team_name = $term->getName();
+    $emea_team_hub_link = "/emea-teams/" . str_replace(" ", "-", $emea_team_name);
+    $vars['emea_team_hub_link'] = $emea_team_hub_link;
+    $vars['emea_team_id'] = $emea_team_ids;
+    $vars['emea_team_name'] = $emea_team_name;
+  }
+  if (isset($user->get('field_company')->target_id)) {
+    $company_id = $user->get('field_company')->target_id;
+    $vars['company_id'] = $company_id;
+    $company = Term::load($company_id);
+    $company_name = $company->getName();
+    // If the user is not EEL then $emea_team_hub_link should go to their affiliate hub page.
+    if ($company_name != 'EEL') {
+      // Load all nodes tagged with $company_id and of type team_hub_page.
+      $nodes = _get_nodes_by_term($company_id, 'team_hub_page');
+      $alias = \Drupal::service('path.alias_manager')->getAliasByPath('/node/'.$nodes['nid']);
+      $emea_team_hub_link = $alias;
+      $vars['emea_team_hub_link'] = $emea_team_hub_link;
+//      $vars['emea_team_id'] = $company_id;
+      $vars['emea_team_name'] = $company_name;
+    }
+  }
+
+  $vars['user_id'] = $user_id;
+
+}
+
+/**
+ * Custom function to get nids according to taxonomy terms and content type.
+ *
+ * @param $term_id
+ * @param $node_type
+ * @return mixed
+ */
+function _get_nodes_by_term($term_id, $node_type) {
+  $query = \Drupal::database()->select('taxonomy_index', 'ti');
+  $query->fields('ti', ['nid']);
+  $query->condition('ti.tid', $term_id);
+  $query->join('node', 'n', 'n.nid = ti.nid AND n.type = :node_type', array(':node_type' => $node_type));
+  $nodes = $query->execute()->fetchAssoc();
+  return $nodes;
+}
+
+/**
+ * Implements function template_preprocess_views_view_unformatted().
+ */
+function eisai_intranet_theme_preprocess_views_view_unformatted(&$variables) {
+
+  $view = $variables['view'];
+
+  // Start the preprocess for content_page_siblings_block.
+  if ($view->current_display == 'content_page_siblings_block') {
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if ($node instanceof \Drupal\node\NodeInterface) {
+      $nid = $node->id();
+    }
+
+    // Get this menu.
+    $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
+    $links = $menu_link_manager->loadLinksByRoute('entity.node.canonical', array('node' => $nid));
+    if ($link = reset($links)) {
+      if ($parent = $link->getParent()) {
+        // Get parent menu item and ID.
+        $parent = $menu_link_manager->createInstance($parent);
+        $parent_id = $parent->getPluginId();
+      }
+    }
+
+    // Get child menu items of this page's parent, ie all siblings.
+    $menu_tree = \Drupal::menuTree();
+    $menu_name = 'main';
+    $parameters = $menu_tree->getCurrentRouteMenuTreeParameters($menu_name);
+    $currentLinkId = $parent_id;
+    $parameters->setRoot($currentLinkId);
+    $tree = $menu_tree->load($menu_name, $parameters);
+    $thismenu = $tree[array_keys($tree)[0]];
+
+    // Set the $sibling variable to match the index of the view result rows.
+    $sibling_index = 0;
+    foreach ($thismenu->subtree as $key => $sibling) {
+      if ($sibling->hasChildren) {
+        $variables['rows'][$sibling_index]['attributes']->addClass('has-children');
+      }
+      $sibling_index++;
+    }
+
+    // Run through all rows and add 'current' to this page.
+    $rows = $variables['rows'];
+    foreach ($rows as $id => $row) {
+      $row_entity = $row['content']['#row']->_entity;
+      // If this row is the current page, add a class of "current"
+      if ($row_entity->id() == $nid) {
+        $variables['rows'][$id]['attributes']->addClass('current');
+      }
+    }
+  }
+}

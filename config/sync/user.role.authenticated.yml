@@ -1,0 +1,40 @@
+uuid: 565c0bdb-b1ef-445c-8854-64b6f392f215
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access contextual links'
+  - 'access in-place editing'
+  - 'access shortcuts'
+  - 'access site-wide contact form'
+  - 'access user profiles'
+  - likeit_like
+  - likeit_unlike
+  - likeit_view
+  - 'post comments'
+  - 'search content'
+  - 'skip comment approval'
+  - 'use search autocomplete'
+  - 'use search_api_autocomplete for search_api_super'
+  - 'use search_api_autocomplete for search_api_user'
+  - 'use search_api_autocomplete for search_content'
+  - 'use search_api_autocomplete for searchapidefault_view'
+  - 'use text format basic_html'
+  - 'view field_hero_slider_index'
+  - 'view field_is_frontpage_hero'
+  - 'view field_media_slider_image'
+  - 'view field_news_hero_headline'
+  - 'view media'
+  - 'view own field_hero_slider_index'
+  - 'view own field_is_frontpage_hero'
+  - 'view own field_media_slider_image'
+  - 'view own field_news_hero_headline'
+  - 'view own unpublished content'

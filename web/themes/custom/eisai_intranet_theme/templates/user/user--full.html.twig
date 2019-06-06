@@ -1,0 +1,67 @@
+{#
+/**
+ * @file
+ * Default theme implementation to present all user data.
+ *
+ * This template is used when viewing a registered user's page,
+ * e.g., example.com/user/123. 123 being the user's ID.
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ *   print a subset such as 'content.field_example'. Fields attached to a user
+ *   such as 'user_picture' are available as 'content.user_picture'.
+ * - attributes: HTML attributes for the container element.
+ * - user: A Drupal User entity.
+ *
+ * @see template_preprocess_user()
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="container-fluid hero-container">
+
+
+
+
+
+			
+			<div class="row content-hero-image staff-profile-hero-image">
+				<div class="container">
+					
+					{% if (content.field_first_name[0]) and (content.field_last_name[0]) %}
+      <h1>{{ content.field_first_name[0] }} {{ content.field_last_name[0]}}</h1>
+      {% endif %}
+					{{ drupal_breadcrumb()  }}
+				</div>
+
+			</div>
+
+		</div>
+
+
+<div class="container user-full-container">
+  <div class="row">
+    
+<article{{ attributes }}>
+  
+  {% if content %}
+  <div class="container">
+  
+    
+    <div class="row">
+    <div class="col-sm-2">{{ content.user_picture }}</div>
+    <div class="col-sm-10">
+      
+      
+      <h2>{{ content.field_job_title }}</h2>
+      <h3>{{ content.field_emea_team }}</h3>
+      <h4><a href="mailto:{{ user.mail.value }}">{{ user.mail.value }}</a></h4>
+      </div>
+     </div>
+    {# {{- content -}} #}
+  </div>
+  {% endif %}
+  
+</article>
+    </div>
+</div>

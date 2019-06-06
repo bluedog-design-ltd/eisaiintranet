@@ -1,0 +1,10 @@
+uuid: a5179f5c-68b8-4c78-82e0-967ac6657ef2
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.user_shortcuts
+label: 'User shortcuts'
+targetEntityType: user
+cache: true

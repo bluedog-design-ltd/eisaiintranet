@@ -1,0 +1,28 @@
+uuid: 650d1558-920e-4536-a1fa-02b55323499e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_header_image
+    - media.type.eisai_content_page_headers
+    - node.type.content_page
+id: node.content_page.field_content_header_image
+field_name: field_content_header_image
+entity_type: node
+bundle: content_page
+label: 'Content header image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      eisai_content_page_headers: eisai_content_page_headers
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

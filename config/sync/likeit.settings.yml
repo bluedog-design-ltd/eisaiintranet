@@ -1,0 +1,7 @@
+token_seed: usPQcIt4JwZFKKPtausvXo54vjxhURt2xQikwZwdK1E
+target_entities:
+  'node:content_page': 'node:content_page'
+  'node:eisai_tool_page': 'node:eisai_tool_page'
+  'node:event': 'node:event'
+  'node:news_story': 'node:news_story'
+after_owner_deletion: delete

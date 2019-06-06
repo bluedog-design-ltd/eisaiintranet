@@ -1,0 +1,9 @@
+uuid: 1c2a7643-b9d6-42a9-a921-6c6d4afd6e38
+langcode: en
+status: true
+dependencies: {  }
+name: 'EMEA Teams'
+vid: emeateamnames
+description: 'Names of all Teams in EMEA'
+hierarchy: 0
+weight: -9

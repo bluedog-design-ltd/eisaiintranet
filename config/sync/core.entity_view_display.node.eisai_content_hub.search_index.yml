@@ -1,0 +1,43 @@
+uuid: a083e58e-10d5-4d17-bb4d-ab1bb26d54ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.eisai_content_hub.body
+    - field.field.node.eisai_content_hub.field_contents_list_heading
+    - field.field.node.eisai_content_hub.field_hub_header_image
+    - field.field.node.eisai_content_hub.field_major_links
+    - field.field.node.eisai_content_hub.field_tool_list
+    - node.type.eisai_content_hub
+  module:
+    - field_formatter_class
+    - text
+    - user
+id: node.eisai_content_hub.search_index
+targetEntityType: node
+bundle: eisai_content_hub
+mode: search_index
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 1
+    settings:
+      trim_length: 50
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  content_moderation_control: true
+  field_contents_list_heading: true
+  field_hub_header_image: true
+  field_major_links: true
+  field_tool_list: true
+  langcode: true

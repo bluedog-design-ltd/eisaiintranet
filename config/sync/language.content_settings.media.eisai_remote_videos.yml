@@ -1,0 +1,11 @@
+uuid: fa41f5de-9f5d-4c76-abc9-f6b3145a2a0b
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.eisai_remote_videos
+id: media.eisai_remote_videos
+target_entity_type_id: media
+target_bundle: eisai_remote_videos
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,23 @@
+uuid: 4b98724d-5a95-4cd8-b17b-280cc285f7b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_shortcuts
+  module:
+    - link
+    - user
+id: user.user.field_shortcuts
+field_name: field_shortcuts
+entity_type: user
+bundle: user
+label: Shortcuts
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

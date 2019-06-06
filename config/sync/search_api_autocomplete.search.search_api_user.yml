@@ -1,0 +1,38 @@
+uuid: 6b60afa5-59f9-4ff5-a62a-f2de65e1c181
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.user_search
+    - views.view.search_api_user
+    - core.entity_view_mode.user.compact
+  module:
+    - views
+    - search_api_autocomplete
+id: search_api_user
+label: 'Search API User'
+index_id: user_search
+suggester_settings:
+  live_results:
+    fields:
+      - field_first_name
+      - field_last_name
+      - mail
+    view_modes:
+      'entity:user':
+        user: compact
+suggester_weights:
+  live_results: 0
+suggester_limits: {  }
+search_settings:
+  'views:search_api_user':
+    displays:
+      default: true
+      selected: {  }
+options:
+  limit: 10
+  min_length: 1
+  show_count: false
+  autosubmit: true
+  submit_button_selector: ':submit'
+  delay: null

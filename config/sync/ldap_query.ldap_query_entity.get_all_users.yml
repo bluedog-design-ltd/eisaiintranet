@@ -1,0 +1,14 @@
+uuid: 21f0ac08-1580-4581-b97e-eb4ac9d7c07e
+langcode: en
+status: true
+dependencies: {  }
+id: get_all_users
+label: 'Get All Users'
+server_id: eisai_actual_ldap
+base_dn: 'DC=eu,DC=eisai,DC=local'
+filter: '(&(objectclass=user)(givenname=*)(sn=*)(mail=*)(company=*))'
+attributes: ''
+size_limit: 0
+time_limit: 0
+dereference: 0
+scope: 3

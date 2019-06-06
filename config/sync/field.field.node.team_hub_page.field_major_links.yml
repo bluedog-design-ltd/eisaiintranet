@@ -1,0 +1,23 @@
+uuid: 8f64f105-d62e-4c4e-ac5a-b5c6687fb69b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_major_links
+    - node.type.team_hub_page
+  module:
+    - link
+id: node.team_hub_page.field_major_links
+field_name: field_major_links
+entity_type: node
+bundle: team_hub_page
+label: 'Major links'
+description: 'These are the major sections or pages in the hub''s callout that you would like to draw attention to'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 1
+  title: 1
+field_type: link

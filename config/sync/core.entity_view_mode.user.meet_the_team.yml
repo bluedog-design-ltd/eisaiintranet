@@ -1,0 +1,10 @@
+uuid: 28345381-1dcc-40c6-a161-32c9a78e0464
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.meet_the_team
+label: 'Meet the team'
+targetEntityType: user
+cache: true

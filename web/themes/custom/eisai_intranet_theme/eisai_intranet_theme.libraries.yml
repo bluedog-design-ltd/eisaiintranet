@@ -1,0 +1,30 @@
+# eisai_intranet_theme.libraries.yml
+global-styling:
+  version: 1.x
+  css:
+    theme:
+      css/global.css: {}
+      css/global_retina.css: {}
+      css/dashboard.css: {}
+      css/hubs.css: {}
+      css/content-page.css: {}
+      css/news_slider_box.css: {}
+      css/staff_directory.css: {}
+      css/calendar.css: {}
+      css/body-field.css: {}
+      css/theme_overrides.css: {}
+      
+global-scripts:
+  version: 1.x
+  js: 
+    js/eisai_intranet_theme_global.js: {}   
+  dependencies:
+    - core/jquery
+    - core/jquery.ui
+    - core/jquery.once
+    - core/drupal.ajax
+    - core/drupal.dialog
+    - core/system
+    - core/drupal
+    - core/drupalSettings
+    - core/drupal.dialog.ajax

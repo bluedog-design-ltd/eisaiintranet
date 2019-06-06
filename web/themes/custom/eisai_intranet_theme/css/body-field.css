@@ -1,0 +1,59 @@
+
+
+
+article .field--name-body table{
+	width:100%;
+}
+
+article .field--name-body thead tr{
+	background:#008AB4;
+}
+
+article .field--name-body thead th{
+	color:white;
+	padding:10px;
+	text-align: center;
+}
+
+
+article .field--name-body table td{
+	padding:10px;
+	text-align: center;
+}
+
+
+article .field--name-body h2,
+article .field--name-body h3,
+article .field--name-body h4,
+article .field--name-body h5,
+article .field--name-body h6{
+	font-weight:500;
+	font-size:28px;
+	color: #008AB4;
+}
+article .field--name-body h3{
+	font-size:22px;
+	margin-top: 20px;
+}
+article .field--name-body h4{
+	font-size:18px;
+}
+
+article .field--name-body h5{
+	font-size:16px;
+}
+article .field--name-body h6{
+	font-size:14px;
+}
+
+
+
+article .field--name-body ul{
+	
+	
+}
+
+article .field--name-body li{
+	
+	color: #008AB4;
+}

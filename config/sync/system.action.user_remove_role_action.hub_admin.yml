@@ -1,0 +1,14 @@
+uuid: b1893cc7-212e-4953-bf53-e60886d53e17
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.hub_admin
+  module:
+    - user
+id: user_remove_role_action.hub_admin
+label: 'Remove the Hub admin role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: hub_admin

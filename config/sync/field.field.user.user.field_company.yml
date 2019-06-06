@@ -1,0 +1,34 @@
+uuid: 715fbd60-ab14-449a-a793-6530e7510b1b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_company
+    - taxonomy.vocabulary.eisai_companies
+  content:
+    - 'taxonomy_term:eisai_companies:92780673-6f51-45c1-862f-99d0b78258ff'
+  module:
+    - user
+id: user.user.field_company
+field_name: field_company
+entity_type: user
+bundle: user
+label: Company
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: 92780673-6f51-45c1-862f-99d0b78258ff
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      eisai_companies: eisai_companies
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

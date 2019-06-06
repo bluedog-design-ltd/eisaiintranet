@@ -1,0 +1,14 @@
+uuid: 66969b98-8436-4812-9c17-4bb666b2896d
+langcode: en
+status: true
+dependencies: {  }
+id: dashboard_slider_news_image_libr
+label: 'Eisai Dashboard Slider News Image Library'
+description: '1920 x 500. Image library for news stories in the dashboard''s main slider'
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image_4
+field_map:
+  name: name

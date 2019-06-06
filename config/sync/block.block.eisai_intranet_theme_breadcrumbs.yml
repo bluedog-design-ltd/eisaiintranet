@@ -1,0 +1,34 @@
+uuid: 240d4ee4-2306-498f-9258-d4e29eed3338
+langcode: en
+status: false
+dependencies:
+  module:
+    - node
+    - system
+  theme:
+    - eisai_intranet_theme
+_core:
+  default_config_hash: wDR9JKEATSWldBjw8du8s3G2zjEYeQf88nlld11hMLo
+id: eisai_intranet_theme_breadcrumbs
+theme: eisai_intranet_theme
+region: content
+weight: -2
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      dashboard: dashboard
+      event: event
+      news_story: news_story
+      page: page
+      team_hub_page: team_hub_page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

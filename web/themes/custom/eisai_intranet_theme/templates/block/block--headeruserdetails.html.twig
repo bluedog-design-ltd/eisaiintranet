@@ -1,0 +1,21 @@
+{# 
+	eisai_intranet_addshortcut_block is a custom module definition 
+
+#}
+{% block content %}
+<ul class="nav navbar-nav navbar-right" {{ attributes }}>
+	
+	<li class="navbar-text addshortcutblock" id="">{{ drupal_block('eisai_intranet_addshortcut_block') }}</li>
+	<li class="navbar-text staffdirectory-block" id=""><div id="btnStaffDirectory" class="staff-directory-button"><a data-toggle="tooltip" data-placement="bottom" title="Staff directory" href="/our-company/staff-directory">&nbsp;</a></div></li>
+	<li class="navbar-text pic" data-quickedit-entity-id="user/{{ uid }}" data-toggle="tooltip" data-placement="bottom" title="View your profile">{{ drupal_field('user_picture', 'user', uid) }}</li>
+
+	<li class="dropdown" {{ attributes }}>
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" {{ attributes }}>{{ 'Welcome'|t }}{{ drupal_field('field_first_name', 'user', uid, 'header') }} <span class="caret"></span></a>
+			<ul class="dropdown-menu" {{ attributes }}>
+			  {{ drupal_menu('account') }}
+			</ul>
+	</li>
+	<li class="navbar-text" id=""><div id="btnSearch" class="header-search-button" data-toggle="tooltip" data-placement="bottom" title="Search"></div></li>
+
+</ul>   
+{% endblock %}

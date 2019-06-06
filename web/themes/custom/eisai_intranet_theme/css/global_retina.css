@@ -1,0 +1,68 @@
+@media 
+(-webkit-min-device-pixel-ratio: 2), 
+(min-resolution: 192dpi) { 
+    /* Retina-specific stuff here */
+
+    nav.navbar-default{
+        background-image:url(../images/rainbowstrip@2x.png);
+    }
+
+    .add-shortcut-button{
+        background-image:url(../images/header/addshortcutbutton-off@2x.png);
+    }
+     .add-shortcut-button:hover{
+        background-image:url(../images/header/addshortcutbutton-on@2x.png);
+    }
+
+    .add-shortcut-button.hasshortcut{
+        background-image:url(../images/header/addshortcutbutton-activated@2x.png);
+    }
+    
+      .header-search-button{
+	background-image:url(../images/header/search_off@2x.png);
+}
+    .header-search-button:hover{
+	background-image:url(../images/header/search_on@2x.png);
+}
+
+
+    .cal-event-location{
+        background-image:url(../images/calendar/location-icon@2x.png);
+    }
+    .cal-event-time{
+        background-image:url(../images/calendar/time-icon@2x.png);
+    }
+
+    .carousel-caption{
+        background-image:url(../images/news/hero_slider_rainbow@2x.png);
+    }
+
+    .shortcut-button{
+        background-image:url(../images/buttonsandting/shortcutbuttonarrow@2x.png);
+    }
+
+    footer.footer div.container{
+         background-image:url(../images/footer/hhc-logo@2x.png); 
+    }
+
+    .dashboard-box.user-hub-box{
+        background-color: #1F00A3;
+        background-image: url(../images/dashboard/hubicons/affiliate_hub_icon@2x.png);
+    }
+    .dashboard-box.hhc-box{
+        background-image: url(../images/dashboard/hhc_icon.png);
+
+    }
+    .dashboard-box.help-box{
+        background-image: url(../images/dashboard/help_icon.png);
+    }
+    .staff-directory-button{
+	background-image:url(../images/header/staff_directory_button-off@2x.png);
+
+}
+
+.staff-directory-button:hover{
+	background-image:url(../images/header/staff_directory_button-on@2x.png);
+    
+}
+}

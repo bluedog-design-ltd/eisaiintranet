@@ -1,0 +1,44 @@
+uuid: 2ae5c864-9326-449f-9373-fdf07679722f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.user_shortcuts
+    - field.field.user.user.field_company
+    - field.field.user.user.field_emea_team
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_job_title
+    - field.field.user.user.field_last_name
+    - field.field.user.user.field_shortcuts
+    - field.field.user.user.user_picture
+  module:
+    - link
+    - user
+_core:
+  default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
+id: user.user.user_shortcuts
+targetEntityType: user
+bundle: user
+mode: user_shortcuts
+content:
+  field_shortcuts:
+    weight: 0
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link_separate
+    region: content
+hidden:
+  field_company: true
+  field_emea_team: true
+  field_first_name: true
+  field_job_title: true
+  field_last_name: true
+  langcode: true
+  member_for: true
+  user_picture: true

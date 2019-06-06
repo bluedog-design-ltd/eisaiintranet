@@ -1,0 +1,11 @@
+uuid: 67398723-b05f-4d6e-8240-297ae85ab17d
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.eisai_images
+id: media.eisai_images
+target_entity_type_id: media
+target_bundle: eisai_images
+default_langcode: site_default
+language_alterable: false

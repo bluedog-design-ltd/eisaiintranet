@@ -1,0 +1,37 @@
+uuid: 9a98279b-a4b3-4b0e-bd1e-da9298030320
+langcode: en
+status: true
+dependencies: {  }
+id: another_test
+label: 'Assign Roles AP'
+provider: ldap_provider
+provider_config:
+  status:
+    server: eisai_actual_ldap
+    only_ldap_authenticated: true
+  filter_and_mappings:
+    use_first_attr_as_groupid: false
+provider_mappings:
+  -
+    query: 'CN=GG_EEL_Intranet_Super_Admin,OU=groups,OU=EEL,DC=eu,DC=eisai,DC=local'
+    is_regex: false
+  -
+    query: 'CN=GG_EEL_Intranet_Hub_Champions,OU=groups,OU=EEL,DC=eu,DC=eisai,DC=local'
+    is_regex: false
+  -
+    query: ''
+    is_regex: false
+consumer: authorization_drupal_roles
+consumer_config: {  }
+consumer_mappings:
+  -
+    role: hub_admin
+  -
+    role: hub_champion
+  -
+    role: none
+synchronization_modes:
+  user_logon: user_logon
+synchronization_actions:
+  revoke_provider_provisioned: '0'
+  create_consumers: '0'

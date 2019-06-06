@@ -1,0 +1,10 @@
+uuid: 11683eac-36cd-49b6-bb01-54915a789003
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.calendar_event_display_mode
+label: 'Calendar Event Display Mode'
+targetEntityType: node
+cache: true

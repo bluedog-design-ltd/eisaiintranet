@@ -1,0 +1,22 @@
+uuid: 5e82a6f4-13e0-45d1-ac53-4c88392c40e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.content_page
+    - node.type.eisai_content_hub
+    - node.type.eisai_tool_page
+    - node.type.team_hub_page
+    - system.menu.main
+id: hub_area_edit_permissions
+label: 'Hub Area Edit Permissions'
+plural_label: 'Hub Area Edit Permissions'
+scheme: menu
+scheme_settings:
+  menus:
+    - main
+  bundles:
+    - content_page
+    - eisai_content_hub
+    - eisai_tool_page
+    - team_hub_page

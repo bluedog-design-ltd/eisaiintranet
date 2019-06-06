@@ -1,0 +1,29 @@
+uuid: f38a188d-0540-4b78-9ab8-384e487f33d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_footnotes
+    - node.type.eisai_tool_page
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    headline_hero_html: '0'
+    restricted_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: node.eisai_tool_page.field_footnotes
+field_name: field_footnotes
+entity_type: node
+bundle: eisai_tool_page
+label: Footnotes
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

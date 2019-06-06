@@ -1,0 +1,67 @@
+uuid: a378d931-8ed1-4ffa-80f1-55f13fe7dc8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_result
+    - field.field.node.team_hub_page.body
+    - field.field.node.team_hub_page.field_contact_address
+    - field.field.node.team_hub_page.field_contact_email
+    - field.field.node.team_hub_page.field_contact_fax
+    - field.field.node.team_hub_page.field_contact_gmap_address
+    - field.field.node.team_hub_page.field_contact_map_link
+    - field.field.node.team_hub_page.field_contact_telephone
+    - field.field.node.team_hub_page.field_emea_team
+    - field.field.node.team_hub_page.field_has_meet_team
+    - field.field.node.team_hub_page.field_has_news
+    - field.field.node.team_hub_page.field_hub_header_image
+    - field.field.node.team_hub_page.field_major_links
+    - field.field.node.team_hub_page.field_meet_team_subtitle
+    - field.field.node.team_hub_page.field_meet_team_text
+    - field.field.node.team_hub_page.field_tool_list
+    - node.type.team_hub_page
+  module:
+    - field_formatter_class
+    - text
+    - user
+id: node.team_hub_page.search_result
+targetEntityType: node
+bundle: team_hub_page
+mode: search_result
+content:
+  body:
+    label: hidden
+    type: text_trimmed
+    weight: 1
+    settings:
+      trim_length: 50
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    region: content
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_contact_address: true
+  field_contact_email: true
+  field_contact_fax: true
+  field_contact_gmap_address: true
+  field_contact_map_link: true
+  field_contact_telephone: true
+  field_emea_team: true
+  field_has_meet_team: true
+  field_has_news: true
+  field_hub_header_image: true
+  field_major_links: true
+  field_meet_team_subtitle: true
+  field_meet_team_text: true
+  field_tool_list: true
+  langcode: true

@@ -1,0 +1,14 @@
+uuid: 7fb23e30-5f04-443c-afd6-85037360a987
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.hub_admin
+  module:
+    - user
+id: user_add_role_action.hub_admin
+label: 'Add the Hub admin role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: hub_admin

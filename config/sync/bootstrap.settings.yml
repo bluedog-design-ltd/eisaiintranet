@@ -1,0 +1,25 @@
+schemas:
+  bootstrap: 8000
+_core:
+  default_config_hash: 1uFogeFphl0Hg6oVCacZZ8mM_0wMZ7PS_RrmLbK5tf0
+favicon:
+  mimetype: image/vnd.microsoft.icon
+  path: ''
+  url: 'http://eisaiintranetlocal/themes/contrib/bootstrap/favicon.ico'
+  use_default: true
+table_responsive: '-1'
+table: ''
+cdn_provider: custom
+cdn_custom_css: 'http://eelintra02/sites/all/libraries/bootstrap-3.3.7-dist/css/bootstrap.css'
+cdn_custom_css_min: 'http://eelintra02/sites/all/libraries/bootstrap-3.3.7-dist/css/bootstrap.min.css'
+cdn_custom_js: 'http://eelintra02/sites/all/libraries/bootstrap-3.3.7-dist/js/bootstrap.js'
+cdn_custom_js_min: 'http://eelintra02/sites/all/libraries/bootstrap-3.3.7-dist/js/bootstrap.min.js'
+features:
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+  node_user_picture: true
+logo:
+  path: ''
+  url: ''
+  use_default: true

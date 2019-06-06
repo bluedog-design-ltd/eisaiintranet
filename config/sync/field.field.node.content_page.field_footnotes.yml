@@ -1,0 +1,21 @@
+uuid: 452155cb-971d-419f-9db8-1a6c9da0fce9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_footnotes
+    - node.type.content_page
+  module:
+    - text
+id: node.content_page.field_footnotes
+field_name: field_footnotes
+entity_type: node
+bundle: content_page
+label: Footnotes
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

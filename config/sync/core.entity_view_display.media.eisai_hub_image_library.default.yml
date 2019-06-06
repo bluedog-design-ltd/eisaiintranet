@@ -1,0 +1,29 @@
+uuid: 4bcb3d11-d00d-4371-9034-6f32dfd00d7c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.eisai_hub_image_library.field_media_image_2
+    - media.type.eisai_hub_image_library
+  module:
+    - image
+id: media.eisai_hub_image_library.default
+targetEntityType: media
+bundle: eisai_hub_image_library
+mode: default
+content:
+  field_media_image_2:
+    weight: 0
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

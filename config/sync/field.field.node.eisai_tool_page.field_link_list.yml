@@ -1,0 +1,23 @@
+uuid: ea615aa9-b6fd-4ad9-90c3-3c0dbf855180
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_link_list
+    - node.type.eisai_tool_page
+  module:
+    - link
+id: node.eisai_tool_page.field_link_list
+field_name: field_link_list
+entity_type: node
+bundle: eisai_tool_page
+label: 'Link list'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

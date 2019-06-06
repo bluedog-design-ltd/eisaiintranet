@@ -1,0 +1,8 @@
+uuid: 076c812b-4e81-4588-90fc-798941cf1603
+langcode: en
+status: true
+dependencies: {  }
+id: twig_block
+label: 'Twig block'
+revision: 0
+description: 'Empty block for theming'

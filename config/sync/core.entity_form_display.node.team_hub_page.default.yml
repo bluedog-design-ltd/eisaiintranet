@@ -1,0 +1,321 @@
+uuid: 724e8877-c854-4ab6-98dc-f45d1b0c6324
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.team_hub_page.body
+    - field.field.node.team_hub_page.field_contact_address
+    - field.field.node.team_hub_page.field_contact_email
+    - field.field.node.team_hub_page.field_contact_fax
+    - field.field.node.team_hub_page.field_contact_gmap_address
+    - field.field.node.team_hub_page.field_contact_map_link
+    - field.field.node.team_hub_page.field_contact_telephone
+    - field.field.node.team_hub_page.field_documents
+    - field.field.node.team_hub_page.field_emea_team
+    - field.field.node.team_hub_page.field_has_meet_team
+    - field.field.node.team_hub_page.field_has_news
+    - field.field.node.team_hub_page.field_hero_version_headline_2
+    - field.field.node.team_hub_page.field_hub_header_image
+    - field.field.node.team_hub_page.field_link_list
+    - field.field.node.team_hub_page.field_major_links
+    - field.field.node.team_hub_page.field_meet_team_subtitle
+    - field.field.node.team_hub_page.field_meet_team_text
+    - field.field.node.team_hub_page.field_show_events
+    - field.field.node.team_hub_page.field_tool_list
+    - node.type.team_hub_page
+  module:
+    - allowed_formats
+    - content_moderation
+    - datetime
+    - field_group
+    - link
+    - media_library
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_meet_the_:
+      children:
+        - field_has_meet_team
+        - field_meet_team_subtitle
+        - field_meet_team_text
+      parent_name: ''
+      weight: 12
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Meet the team'
+    group_contact_info:
+      children:
+        - field_contact_address
+        - field_contact_telephone
+        - field_contact_fax
+        - field_contact_email
+        - field_contact_map_link
+        - field_contact_gmap_address
+      parent_name: ''
+      weight: 11
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Contact information'
+    group_hub_news:
+      children:
+        - field_has_news
+      parent_name: ''
+      weight: 9
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: 'Does this hub have its own news stories?'
+        required_fields: true
+      label: 'Hub news'
+    group_hub_events:
+      children:
+        - field_show_events
+      parent_name: ''
+      weight: 10
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: 'Does this hub have its own events?'
+        required_fields: true
+      label: 'Hub events'
+id: node.team_hub_page.default
+targetEntityType: node
+bundle: team_hub_page
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_contact_address:
+    weight: 13
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_contact_email:
+    weight: 17
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_contact_fax:
+    weight: 15
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_contact_gmap_address:
+    weight: 19
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_contact_map_link:
+    weight: 18
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_contact_telephone:
+    weight: 14
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_documents:
+    weight: 16
+    settings: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  field_emea_team:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_has_meet_team:
+    weight: 11
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_has_news:
+    weight: 10
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_hero_version_headline_2:
+    weight: 1
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '0'
+        hide_guidelines: '0'
+    type: text_textarea
+    region: content
+  field_hub_header_image:
+    type: media_library_widget
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_link_list:
+    weight: 15
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_major_links:
+    weight: 13
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_meet_team_subtitle:
+    weight: 12
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_meet_team_text:
+    weight: 13
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_scheduled_time:
+    type: datetime_default
+    weight: 20
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+  field_show_events:
+    weight: 28
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_tool_list:
+    weight: 14
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  langcode:
+    type: language_select
+    weight: 5
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    weight: 19
+    settings: {  }
+    third_party_settings: {  }
+    type: moderation_state_default
+    region: content
+  path:
+    type: path
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  publish_on:
+    weight: 17
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_timestamp
+    region: content
+  publish_state:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 7
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  unpublish_on:
+    weight: 18
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_timestamp
+    region: content
+  unpublish_state:
+    weight: 27
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  body: true
+  promote: true
+  sticky: true

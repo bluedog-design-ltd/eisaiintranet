@@ -1,0 +1,53 @@
+name: Eisai Intranet Default Content
+description: Creates default content for the intranet on install
+core: 8.x
+package: Eisai Intranet
+dependencies:
+  - node
+  - block
+type: module
+
+# TO DO 
+
+# SUGGEST DELETING OR DISABLING THIS MODULE AS NOW CAN INSTALL DIRECTLY
+
+# REMOVE IMAGE SECTION (FILE) AT LEAST
+
+# AS SWITCHING TO MEDIA LIBRARY APPROACH
+
+default_content:
+  node:
+    - 48973461-b45d-4ced-995b-bbe1a85d44bc #dashboard
+    - e71a11f2-c3f7-4d7b-ab57-bc12d3e93711 #news
+    - 371de97a-87ea-4273-aed2-b76c8f16991a #news
+    - 2106846f-070a-47ef-83e1-450e648e9cf2 #news
+    - 1cdd73ac-4d2c-424b-9235-47b36fdc59a6 #German (EDG) news story
+    - cfcf9c4b-5f14-427d-bcd6-d29e68e925c4 #Hero News: 2018 financial results now available
+    - 23a94d7f-d7e8-46cf-a8f7-c1b53216cb57 #Hero News: Get involved with hhc.
+    - 56faa4c0-d0ac-469a-9d4a-7b5a6ca63a2f #Event: EKC Fire alarm test
+    - c652e904-4b82-4cca-9bdc-60d67ac1def9 #Event: New Global Launch
+    - 55b290be-c18a-4f2e-8df3-4fe1085de518 #Event: EEL Comms party
+    - b48942f9-183b-4123-9c0e-6962e510c874 #Event: HR Speaker Training
+  file:
+    - aec5c185-0d07-4746-b43a-93ce55dae57e #Image - default 
+    - 53677584-fc58-49bd-91c7-df99d7c57e14 #Image - human resources 1
+    - 5cdc99e4-73fe-4ac9-8d84-7e8447e5a9a7 #Image - human resources 2
+    - 9e319723-6de3-4428-b23e-a27ac27a93c8 #Image - news placeholder 1
+    - e67f31d9-9cd9-4a09-9b5d-36a843720980 #Image - news placeholder 2
+    - 0adf2815-5477-431a-98aa-d30ac2cd9f93 #Image - hhc hero image
+    - afd53a36-1a49-45d2-95a5-b7b49b8e8694 #Image - 2018 financial results hero
+  menu_link_content:
+    - 572dc565-ce51-4b38-b327-deacd37f634e #Menu - Our Company
+    - 2bb98b9f-42d2-47ee-944c-516b17e7e385 #Menu - Our company/Staff directory
+    - 8e9b4c9d-88fb-4c23-ba1d-74015a34e7d5 #Menu - EMEA teams
+    - c95d4a5d-45cb-4a1f-aad6-9bce6ea81970 #Menu - EMEA teams/EEL Communications
+    - c4b3e51f-74ba-4ca8-bf1c-e983d9fc61d5 #Menu - EMEA teams/EEL Human Resources
+    - 7a243720-c8f5-4b64-96d0-cf2fa288eae6 #Menu - Affiliates
+    - a2cc0ba0-3269-4c8b-80e0-b2c65976e4e1 #Menu - Affiliates/France
+    - 2fecb484-e54f-421d-baaa-b05b6183c997 #Menu - Affiliates/Germany
+    - c48918fe-f609-4e3d-9dd8-de93056be515 #Menu - Affiliates/Spain
+    - fd4c4f35-2b99-4474-8ee6-1b0fef2311c8 #Menu - News & Events
+    - 068da7a3-c561-4fd6-ba38-22561ede44d9 #Menu - EKC info
+    - 823b1d5f-9c71-4c9a-8c45-8e6193c54742 #Menu - Tools
+    - b59bc875-8ba4-457a-9d22-4474ab078ca3 #Menu - Help
+    

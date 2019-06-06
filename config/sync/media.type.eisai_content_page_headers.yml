@@ -1,0 +1,14 @@
+uuid: 30074b67-8f1d-4544-8d1b-5ed1bf44051e
+langcode: en
+status: true
+dependencies: {  }
+id: eisai_content_page_headers
+label: 'Eisai Content Page Header Library'
+description: '1920 x 240. A library of images that can be reused for content page headers'
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image_1
+field_map:
+  name: name

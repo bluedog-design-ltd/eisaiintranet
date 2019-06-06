@@ -1,0 +1,33 @@
+uuid: 4f637d29-d35a-49e2-a836-bbdff07dac1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_relevant_to
+    - node.type.event
+    - taxonomy.vocabulary.eisai_companies
+    - taxonomy.vocabulary.emeateamnames
+    - taxonomy.vocabulary.everyone
+id: node.event.field_relevant_to
+field_name: field_relevant_to
+entity_type: node
+bundle: event
+label: 'Relevant to'
+description: 'Which countries and/or departments is this event relevant to? '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      emeateamnames: emeateamnames
+      eisai_companies: eisai_companies
+      everyone: everyone
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: emeateamnames
+field_type: entity_reference

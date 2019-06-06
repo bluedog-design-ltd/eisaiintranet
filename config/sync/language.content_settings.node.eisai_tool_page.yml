@@ -1,0 +1,11 @@
+uuid: f02891bf-293e-4ea7-8ce9-5a04198892a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.eisai_tool_page
+id: node.eisai_tool_page
+target_entity_type_id: node
+target_bundle: eisai_tool_page
+default_langcode: site_default
+language_alterable: false

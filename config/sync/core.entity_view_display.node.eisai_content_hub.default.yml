@@ -1,0 +1,96 @@
+uuid: 59a1f0d1-e86d-4d49-b55d-17256815265e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.eisai_content_hub.body
+    - field.field.node.eisai_content_hub.field_contents_list_heading
+    - field.field.node.eisai_content_hub.field_hero_version_headline_2
+    - field.field.node.eisai_content_hub.field_hub_header_image
+    - field.field.node.eisai_content_hub.field_link_list
+    - field.field.node.eisai_content_hub.field_major_links
+    - field.field.node.eisai_content_hub.field_tool_list
+    - node.type.eisai_content_hub
+  module:
+    - link
+    - text
+    - user
+id: node.eisai_content_hub.default
+targetEntityType: node
+bundle: eisai_content_hub
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  content_moderation_control:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_contents_list_heading:
+    weight: 8
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_hero_version_headline_2:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_hub_header_image:
+    weight: 4
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_link_list:
+    weight: 6
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_major_links:
+    weight: 5
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_tool_list:
+    weight: 7
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

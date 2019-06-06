@@ -1,0 +1,28 @@
+uuid: 8de36db6-c057-4d8a-9348-665600e73b19
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_documents
+    - media.type.eisai_document
+    - node.type.news_story
+id: node.news_story.field_documents
+field_name: field_documents
+entity_type: node
+bundle: news_story
+label: Documents
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      eisai_document: eisai_document
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

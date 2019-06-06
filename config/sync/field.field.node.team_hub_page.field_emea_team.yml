@@ -1,0 +1,31 @@
+uuid: 0547f2dd-db44-4469-ab48-977e67933eb2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_emea_team
+    - node.type.team_hub_page
+    - taxonomy.vocabulary.eisai_companies
+    - taxonomy.vocabulary.emeateamnames
+id: node.team_hub_page.field_emea_team
+field_name: field_emea_team
+entity_type: node
+bundle: team_hub_page
+label: 'EMEA Team or Affiliate'
+description: 'Autocomplete. Enter the name of the team or affiliate this hub represents.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      emeateamnames: emeateamnames
+      eisai_companies: eisai_companies
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: emeateamnames
+field_type: entity_reference

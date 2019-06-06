@@ -1,0 +1,19 @@
+uuid: 8ba45f39-be81-432e-9a80-dc8081d627b3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_remote_video_title
+    - media.type.eisai_remote_videos
+id: media.eisai_remote_videos.field_remote_video_title
+field_name: field_remote_video_title
+entity_type: media
+bundle: eisai_remote_videos
+label: 'Remote video title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,20 @@
+uuid: 10cf3622-9091-40fc-b96f-7abd76d8fef1
+langcode: en
+status: false
+dependencies:
+  theme:
+    - eisai_intranet_theme
+_core:
+  default_config_hash: 1TQP4b3ZnlzvIH9bj6cpCz_SyUHdJjLQkZnHpikjjhw
+id: eisai_intranet_theme_page_title
+theme: eisai_intranet_theme
+region: navigation
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

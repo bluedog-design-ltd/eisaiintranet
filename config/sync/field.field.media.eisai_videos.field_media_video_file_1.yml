@@ -1,0 +1,27 @@
+uuid: 8aecef43-70b8-42d8-8022-62656b1a1814
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_video_file_1
+    - media.type.eisai_videos
+  module:
+    - file
+id: media.eisai_videos.field_media_video_file_1
+field_name: field_media_video_file_1
+entity_type: media
+bundle: eisai_videos
+label: 'Video file'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_extensions: mp4
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

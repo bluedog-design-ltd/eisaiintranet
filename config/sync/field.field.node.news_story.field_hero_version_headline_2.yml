@@ -1,0 +1,29 @@
+uuid: 378ebc08-dba7-49a9-8a9e-a6de8d31b6cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hero_version_headline_2
+    - node.type.news_story
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    headline_hero_html: headline_hero_html
+    basic_html: '0'
+    restricted_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: node.news_story.field_hero_version_headline_2
+field_name: field_hero_version_headline_2
+entity_type: node
+bundle: news_story
+label: 'Hero Version Headline'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

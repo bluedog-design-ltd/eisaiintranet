@@ -1,0 +1,17 @@
+interval: 3600
+_core:
+  default_config_hash: T9UgNR14EkD5nfkxL4twmsHpaC4HLX_RHyfhQgl99qA
+moderation_scheduler_content_types:
+  content_page: content_page
+  dashboard: dashboard
+  dummy_top_level_pages: dummy_top_level_pages
+  eisai_content_hub: eisai_content_hub
+  eisai_tool_page: eisai_tool_page
+  event: event
+  news_story: news_story
+  team_hub_page: team_hub_page
+  webform: webform
+  article: '0'
+  page: '0'
+moderation_scheduler_moderation_state_settings: 'Draft,Published'
+moderation_scheduler_enablemoderation: true

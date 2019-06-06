@@ -1,0 +1,19 @@
+uuid: 7f318911-7a42-43cd-b0dd-14473b315305
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.menu_link_content.menu_children_view_mode
+    - system.menu.main
+id: menu_link_content.main.menu_children_view_mode
+targetEntityType: menu_link_content
+bundle: main
+mode: menu_children_view_mode
+content:
+  children:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

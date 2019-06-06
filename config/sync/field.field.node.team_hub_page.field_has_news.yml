@@ -1,0 +1,23 @@
+uuid: a1316810-5189-443f-a2fb-6464da6a1005
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_has_news
+    - node.type.team_hub_page
+id: node.team_hub_page.field_has_news
+field_name: field_has_news
+entity_type: node
+bundle: team_hub_page
+label: 'Has News'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

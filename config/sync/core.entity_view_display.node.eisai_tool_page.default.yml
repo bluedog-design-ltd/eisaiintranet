@@ -1,0 +1,104 @@
+uuid: 0da39cd6-1205-4491-aa89-1cbc61839fde
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.eisai_tool_page.body
+    - field.field.node.eisai_tool_page.field_content_header_image
+    - field.field.node.eisai_tool_page.field_documents
+    - field.field.node.eisai_tool_page.field_footnotes
+    - field.field.node.eisai_tool_page.field_hero_version_headline_2
+    - field.field.node.eisai_tool_page.field_link_list
+    - field.field.node.eisai_tool_page.field_remote_video
+    - field.field.node.eisai_tool_page.field_tags
+    - field.field.node.eisai_tool_page.field_webform
+    - node.type.eisai_tool_page
+  module:
+    - link
+    - text
+    - user
+    - webform
+id: node.eisai_tool_page.default
+targetEntityType: node
+bundle: eisai_tool_page
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  content_moderation_control:
+    weight: -20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_documents:
+    weight: 2
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_footnotes:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_hero_version_headline_2:
+    weight: 7
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_link_list:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_remote_video:
+    weight: 8
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_tags:
+    weight: 6
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_webform:
+    weight: 3
+    label: hidden
+    settings:
+      source_entity: true
+    third_party_settings: {  }
+    type: webform_entity_reference_entity_view
+    region: content
+  likeit:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_content_header_image: true
+  langcode: true
+  links: true

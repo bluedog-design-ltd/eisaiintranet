@@ -1,0 +1,37 @@
+uuid: 8b5296dd-fb85-4d53-876e-093e8e89764e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tags
+    - node.type.news_story
+    - taxonomy.vocabulary.eisai_companies
+    - taxonomy.vocabulary.emeateamnames
+    - taxonomy.vocabulary.everyone
+    - taxonomy.vocabulary.meeting_locations
+    - taxonomy.vocabulary.tags
+id: node.news_story.field_tags
+field_name: field_tags
+entity_type: node
+bundle: news_story
+label: Tags
+description: 'Tags for search etc'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      emeateamnames: emeateamnames
+      eisai_companies: eisai_companies
+      meeting_locations: meeting_locations
+      everyone: everyone
+      tags: tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: tags
+field_type: entity_reference

@@ -1,0 +1,14 @@
+uuid: de7af1ce-9c09-4aca-83a3-1fa7d8284829
+langcode: en
+status: true
+dependencies: {  }
+id: eisai_hub_image_library
+label: 'Eisai Hub Header Image Library'
+description: '1920 x 500. Reusable images to be used for the large hub image'
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image_2
+field_map:
+  name: name

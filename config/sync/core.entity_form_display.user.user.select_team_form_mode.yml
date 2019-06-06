@@ -1,0 +1,52 @@
+uuid: 5dd79af8-f0fc-4e66-b0c1-46e3e2e576e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.user.select_team_form_mode
+    - field.field.user.user.field_company
+    - field.field.user.user.field_emea_team
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_job_title
+    - field.field.user.user.field_last_name
+    - field.field.user.user.field_shortcuts
+    - field.field.user.user.user_picture
+  module:
+    - user
+_core:
+  default_config_hash: K-1rBM8mTIkFp9RqOC2tMRUukOQ1xbRCfSKK8dEddnA
+id: user.user.select_team_form_mode
+targetEntityType: user
+bundle: user
+mode: select_team_form_mode
+content:
+  field_company:
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_emea_team:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+hidden:
+  account: true
+  contact: true
+  field_first_name: true
+  field_job_title: true
+  field_last_name: true
+  field_shortcuts: true
+  langcode: true
+  language: true
+  path: true
+  timezone: true
+  user_picture: true

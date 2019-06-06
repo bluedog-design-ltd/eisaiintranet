@@ -1,0 +1,20 @@
+uuid: 18f740ac-15fe-4d7f-93ac-2b7b5637fdb7
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.dummy_top_level_pages
+  module:
+    - user
+id: node.dummy_top_level_pages.default
+targetEntityType: node
+bundle: dummy_top_level_pages
+mode: default
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

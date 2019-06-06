@@ -1,0 +1,40 @@
+uuid: fba1f24a-90eb-4c4f-8657-39acd56e660a
+langcode: en
+status: true
+dependencies: {  }
+id: eisai_actual_ldap
+label: 'Eisai Actual LDAP'
+type: default
+address: eu.eisai.local
+port: 389
+timeout: 10
+tls: false
+followrefs: null
+weight: null
+bind_method: service_account
+binddn: 'CN=esl8152,OU=Service Accounts,OU=EU common,DC=eu,DC=eisai,DC=local'
+bindpw: 1ntra02n3t!
+basedn: 'DC=eu,DC=eisai,DC=local'
+user_attr: samaccountname
+account_name_attr: samaccountname
+mail_attr: mail
+mail_template: ''
+picture_attr: ''
+unique_persistent_attr: employeeid
+unique_persistent_attr_binary: false
+user_dn_expression: 'cn=%username,%basedn'
+testing_drupal_username: ''
+testing_drupal_user_dn: ''
+grp_unused: false
+grp_object_cat: ''
+grp_nested: false
+grp_user_memb_attr_exists: true
+grp_user_memb_attr: memberof
+grp_memb_attr: ''
+grp_memb_attr_match_user_attr: ''
+grp_derive_from_dn: '0'
+grp_derive_from_dn_attr: ''
+grp_test_grp_dn: ''
+grp_test_grp_dn_writeable: ''
+search_pagination: true
+search_page_size: 1000

@@ -1,0 +1,22 @@
+uuid: 64441efc-c898-4355-bc68-bef1fb2a4181
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.team_hub_page
+  module:
+    - text
+id: node.team_hub_page.body
+field_name: body
+entity_type: node
+bundle: team_hub_page
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

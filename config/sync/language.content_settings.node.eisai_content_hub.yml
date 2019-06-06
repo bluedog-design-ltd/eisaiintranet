@@ -1,0 +1,11 @@
+uuid: 7c6719f8-7dc4-42bd-9dde-627728a33d06
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.eisai_content_hub
+id: node.eisai_content_hub
+target_entity_type_id: node
+target_bundle: eisai_content_hub
+default_langcode: site_default
+language_alterable: false

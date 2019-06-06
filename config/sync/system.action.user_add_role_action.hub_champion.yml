@@ -1,0 +1,14 @@
+uuid: 2778b6cf-e01a-46e2-b0ee-e4abdbea45f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.hub_champion
+  module:
+    - user
+id: user_add_role_action.hub_champion
+label: 'Add the Hub Champion role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: hub_champion

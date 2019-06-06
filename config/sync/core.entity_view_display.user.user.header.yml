@@ -1,0 +1,41 @@
+uuid: b285e3e8-e8d1-4f02-81b1-1365d572a4a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.header
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_last_name
+    - field.field.user.user.user_picture
+    - image.style.thumbnail
+  module:
+    - image
+    - user
+_core:
+  default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
+id: user.user.header
+targetEntityType: user
+bundle: user
+mode: header
+content:
+  field_first_name:
+    type: string
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  user_picture:
+    type: image
+    weight: 0
+    region: content
+    settings:
+      image_style: thumbnail
+      image_link: content
+    third_party_settings: {  }
+    label: hidden
+hidden:
+  field_last_name: true
+  langcode: true
+  member_for: true

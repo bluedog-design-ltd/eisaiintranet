@@ -1,0 +1,344 @@
+{#
+/**
+* @file
+* Theme override to display a node.
+*
+* Available variables:
+* - node: The node entity with limited access to object properties and methods.
+Only "getter" methods (method names starting with "get", "has", or "is")
+and a few common methods such as "id" and "label" are available. Calling
+other methods (such as node.delete) will result in an exception.
+* - label: The title of the node.
+* - content: All node items. Use {{ content }} to print them all,
+* or print a subset such as {{ content.field_example }}. Use
+* {{ content|without('field_example') }} to temporarily suppress the printing
+* of a given child element.
+* - author_picture: The node author user entity, rendered using the "compact"
+* view mode.
+* - metadata: Metadata for this node.
+* - date: Themed creation date field.
+* - author_name: Themed author name field.
+* - url: Direct URL of the current node.
+* - display_submitted: Whether submission information should be displayed.
+* - attributes: HTML attributes for the containing element.
+* The attributes.class element may contain one or more of the following
+* classes:
+* - node: The current template type (also known as a "theming hook").
+* - node--type-[type]: The current node type. For example, if the node is an
+* "Article" it would result in "node--type-article". Note that the machine
+* name will often be in a short form of the human readable label.
+* - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+* teaser would result in: "node--view-mode-teaser", and
+* full: "node--view-mode-full".
+* The following are controlled through the node publishing options.
+* - node--promoted: Appears on nodes promoted to the front page.
+* - node--sticky: Appears on nodes ordered above other non-sticky nodes in
+* teaser listings.
+* - node--unpublished: Appears on unpublished nodes visible only to site
+* admins.
+* - title_attributes: Same as attributes, except applied to the main title
+* tag that appears in the template.
+* - content_attributes: Same as attributes, except applied to the main
+* content tag that appears in the template.
+* - author_attributes: Same as attributes, except applied to the author of
+* the node tag that appears in the template.
+* - title_prefix: Additional output populated by modules, intended to be
+* displayed in front of the main title tag that appears in the template.
+* - title_suffix: Additional output populated by modules, intended to be
+* displayed after the main title tag that appears in the template.
+* - view_mode: View mode; for example, "teaser" or "full".
+* - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
+* - page: Flag for the full page state. Will be true if view_mode is 'full'.
+* - readmore: Flag for more state. Will be true if the teaser content of the
+* node cannot hold the main body content.
+* - logged_in: Flag for authenticated user status. Will be true when the
+* current user is a logged-in member.
+* - is_admin: Flag for admin user status. Will be true when the current user
+* is an administrator.
+*
+* @ingroup templates
+*
+* @see template_preprocess_node()
+*
+* @todo Remove the id attribute (or make it a class), because if that gets
+* rendered twice on a page this is invalid CSS for example: two lists
+* in different view modes.
+*/
+#}
+{% set classes = [
+  node.bundle|clean_class,
+  node.isPromoted() ? 'is-promoted',
+  node.isSticky() ? 'is-sticky',
+  not node.isPublished() ? 'is-unpublished',
+  view_mode ? view_mode|clean_class,
+  'clearfix',
+] %}
+
+{#{% set relevance = "27" %}#}
+{% if node.field_emea_team.0.target_id %}
+  {% set relevance = node.field_emea_team.0.target_id %}
+{% endif %}
+
+
+{% if content.field_hero_version_headline_2|render|trim|striptags is not empty %}
+  {% set thisTitle = content.field_hero_version_headline_2 %}
+{% else %}
+  {% set thisTitle = drupal_title() %}
+{% endif %}
+
+<article {{ attributes.addClass(classes) }}>
+
+  {{ title_prefix }}
+  {% if not page %}
+    <h2 {{ title_attributes }}>
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h2>
+  {% endif %}
+  {{ title_suffix }}
+
+  {% if display_submitted %}
+    <footer>
+      {{ author_picture }}
+      <div {{ author_attributes.addClass('author') }}>
+        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+        {{ metadata }}
+      </div>
+    </footer>
+  {% endif %}
+
+  <div {{ content_attributes.addClass('content') }}>
+
+    <div class="container-fluid hero-container">
+
+
+      {#
+      # old: {{ file_url(node.field_hero_image.entity.fileuri) }}
+      #}
+      <div class="row hub-hero-image" style="background-image:url('{{ hero_image }}')">
+        <div class="container">
+          <h2>{{ 'Welcome to'|trans }}</h2>
+          <h1>{{ thisTitle }}</h1>
+          {{ drupal_breadcrumb() }}
+        </div>
+
+      </div>
+
+    </div>
+    <div class="container-fluid hero-container">
+      <div class="row">
+
+        <section class="hub-news-and-location">
+          <div class="container">
+
+            <div class="row">
+
+              {% if node.field_has_news.value %}
+
+              <div class="col-sm-7">
+                {{ drupal_view('news_slider_box', 'news_slider_box_block', node.field_emea_team.0.target_id) }}
+              </div>
+              <div class="col-sm-5">
+                <div class="hub-map-box"
+                     style="background-image:url(https://maps.googleapis.com/maps/api/staticmap?center={{ contact_static_map_api_url }}&style=saturation:-100&zoom=14&size=400x400&key=AIzaSyA-le6mCuMZB5abYRIR_hQxn6G8bhlNPpM
+                       )">
+                  {% else %}
+                  <div class="col-sm-12">
+                    <div class="hub-map-box"
+                         style="background-image:url(https://maps.googleapis.com/maps/api/staticmap?center={{ contact_static_map_api_url }}&style=saturation:-100&zoom=14&size=1200x400&key=AIzaSyA-le6mCuMZB5abYRIR_hQxn6G8bhlNPpM
+                           )">
+                      {% endif %}
+
+                      <div class="location-info">
+                        <div class="location-info-main">
+                          <h3>Get in touch</h3>
+                          <p>{{ contact_address }}</p>
+                          <p><strong>Tel: </strong>{{ contact_telephone }}</p>
+                          <p><strong>Fax: </strong>{{ contact_fax }}</p>
+                          <p><strong>Email: </strong>{{ contact_email }}</p>
+                        </div>
+
+                        {% if content.field_contact_map_link.value %}
+                          <div class="location-map-button bluebutton"><a href="{{ contact_map_link }}" target="_blank">SHOW
+                              MAP</a></div>
+                        {% endif %}
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+        </section>
+      </div>
+    </div>
+
+    <section class="hub-major-links">
+
+      <div class="container">
+        <h2>{{ 'What are you looking for?'|trans }}</h2>
+        <div class="row">
+
+          <div class="col-sm-12">
+
+            {# DELETE drupal_view('eisai_hub_major_links', 'hub_major_links_view_block') #}
+
+            {{ content.field_major_links }}
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <hr/>
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-sm-12">
+
+            {{ drupal_view('eisai_hub_children', 'hub_children_view_block', node.id) }}
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <hr/>
+      <div class="container">
+
+        {% if node.field_show_events.value %}
+          <div class="row">
+            <div class="col-xs-12 col-md-4">
+              <!--<h2><a href="/events">Upcoming events</a>  ({{ relevance }}) </h2>-->
+              <h2>Events</h2>
+              <!--<p><a class="small-link" href="/user/{{ user_id }}/edit">edit</a></p>-->
+            </div>
+            <div class="col-xs-12 col-md-8">
+              {# 27 is Everyone ('all') #}
+              {# {{ drupal_view('event_calendar', 'event_calendar_block', company_id, emea_team_id, 27 ) }} #}
+              {{ drupal_view('event_calendar', 'event_calendar_block', relevance ) }}
+            </div>
+          </div>
+        {% endif %}
+
+      </div>
+    </section>
+
+
+
+    <div class="container-fluid hero-container">
+      <div class="row  ">
+
+        {% if node.field_has_meet_team.value %}
+          <section class="hub-meet-the-team">
+            <div class="container">
+
+              <div class="row">
+
+                <div class="col-sm-4">
+                  <h2>{{ 'Meet our Team'|trans }}</h2>
+                  <h3>{{ node.field_meet_team_subtitle.value }}</h3>
+
+                  <p>{{ node.field_meet_team_text.value }}</p>
+
+                </div>
+
+                <div class="col-sm-8">
+
+                  {{ drupal_view('eisai_hub_meet_the_team', 'hub_meet_the_team_block', node.field_emea_team.target_id) }}
+
+                </div>
+
+              </div>
+
+            </div>
+          </section>
+        {% endif %}
+
+        {% if content.field_tool_list|render|trim is not empty %}
+          <section class="hub-tools">
+            <div class="container">
+
+              <div class="row">
+
+
+                <div class="col-sm-4">
+                  <h2>{{ 'Tools'|trans }}</h2>
+
+
+                </div>
+
+                <div class="col-sm-8">
+
+                  {# DELETE drupal_view('eisai_hub_tools', 'hub_tools_block', node.id) #}
+                  {{ content.field_tool_list }}
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </section>
+        {% endif %}
+
+        {% if content.field_link_list|render|trim is not empty %}
+          <section class="hub-links">
+            <div class="container">
+
+              <div class="row">
+
+
+                <div class="col-sm-4">
+                  <h2>{{ 'Links'|trans }}</h2>
+
+
+                </div>
+
+                <div class="col-sm-8">
+
+                  {# DELETE drupal_view('eisai_hub_tools', 'hub_tools_block', node.id) #}
+                  {{ content.field_link_list }}
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </section>
+        {% endif %}
+
+        {% if content.field_documents|render|trim is not empty %}
+          <section class="hub-documents">
+            <div class="container">
+
+              <div class="row">
+
+
+                <div class="col-sm-4">
+                  <h2>{{ 'Documents'|trans }}</h2>
+                </div>
+
+                <div class="col-sm-8">
+
+                  {{ content.field_documents }}
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </section>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+
+</article>

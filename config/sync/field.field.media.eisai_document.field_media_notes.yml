@@ -1,0 +1,30 @@
+uuid: 74571d97-2444-4f94-8231-4652a94047d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_notes
+    - media.type.eisai_document
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    headline_hero_html: '0'
+    restricted_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: media.eisai_document.field_media_notes
+field_name: field_media_notes
+entity_type: media
+bundle: eisai_document
+label: Notes
+description: 'This is an optional field where you can record any explanatory notes regarding this media item.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

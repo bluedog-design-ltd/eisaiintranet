@@ -1,0 +1,11 @@
+uuid: 4e0a80e9-fb5d-48bc-87a0-02a1beaecb70
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.eisai_videos
+id: media.eisai_videos
+target_entity_type_id: media
+target_bundle: eisai_videos
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,23 @@
+uuid: c30ae15a-0e27-41a5-bde2-f195a8ed5951
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_major_links
+    - node.type.eisai_content_hub
+  module:
+    - link
+id: node.eisai_content_hub.field_major_links
+field_name: field_major_links
+entity_type: node
+bundle: eisai_content_hub
+label: 'Major links'
+description: 'The content in this hub you want to draw attention to'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

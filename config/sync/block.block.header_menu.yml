@@ -1,0 +1,27 @@
+uuid: 9da35985-6414-4186-a42b-b7a08d389ab6
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - menu_block
+  theme:
+    - eisai_intranet_theme
+id: header_menu
+theme: eisai_intranet_theme
+region: mainmenu
+weight: 0
+provider: null
+plugin: 'menu_block:main'
+settings:
+  id: 'menu_block:main'
+  label: 'Header Menu'
+  provider: menu_block
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand: 0
+  parent: 'main:'
+  suggestion: headermenu
+visibility: {  }

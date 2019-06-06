@@ -1,0 +1,58 @@
+uuid: 685a1688-90a3-41e4-aff8-91d1ef65f14d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.news_story.body
+    - field.field.node.news_story.comment
+    - field.field.node.news_story.field_hero_slider_index
+    - field.field.node.news_story.field_is_frontpage_hero
+    - field.field.node.news_story.field_media_slider_image
+    - field.field.node.news_story.field_media_standard_image
+    - field.field.node.news_story.field_news_hero_headline
+    - field.field.node.news_story.field_news_story_date
+    - field.field.node.news_story.field_relevant_to
+    - field.field.node.news_story.field_tags
+    - node.type.news_story
+  module:
+    - datetime
+    - field_formatter_class
+    - text
+    - user
+id: node.news_story.search_index
+targetEntityType: node
+bundle: news_story
+mode: search_index
+content:
+  body:
+    type: text_trimmed
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      trim_length: 100
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+  field_news_story_date:
+    type: datetime_default
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+hidden:
+  comment: true
+  field_hero_slider_index: true
+  field_is_frontpage_hero: true
+  field_media_slider_image: true
+  field_media_standard_image: true
+  field_news_hero_headline: true
+  field_relevant_to: true
+  field_tags: true
+  langcode: true
+  likeit: true
+  links: true

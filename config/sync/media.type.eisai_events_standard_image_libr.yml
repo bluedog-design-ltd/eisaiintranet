@@ -1,0 +1,13 @@
+uuid: 9593efe0-03ae-40c7-a32e-3979baae0f3d
+langcode: en
+status: true
+dependencies: {  }
+id: eisai_events_standard_image_libr
+label: 'Eisai Events standard image library'
+description: 'Images to illustrate events'
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image_6
+field_map: {  }

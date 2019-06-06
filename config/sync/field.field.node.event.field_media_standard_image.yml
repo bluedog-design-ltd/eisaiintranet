@@ -1,0 +1,32 @@
+uuid: dc0dcab8-08f6-4c09-8c79-048c33fbe038
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_media_standard_image
+    - media.type.eisai_events_standard_image_libr
+    - node.type.event
+  content:
+    - 'media:eisai_events_standard_image_libr:863f1d7a-f170-4db0-a421-0e42403ab288'
+id: node.event.field_media_standard_image
+field_name: field_media_standard_image
+entity_type: node
+bundle: event
+label: 'Event image'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    target_uuid: 863f1d7a-f170-4db0-a421-0e42403ab288
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      eisai_events_standard_image_libr: eisai_events_standard_image_libr
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

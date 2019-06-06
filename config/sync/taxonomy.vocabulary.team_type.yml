@@ -1,0 +1,9 @@
+uuid: 4c601c08-bb67-48e6-b181-788f392c16af
+langcode: en
+status: true
+dependencies: {  }
+name: 'Team Type'
+vid: team_type
+description: 'EMEA Team or Affiliate'
+hierarchy: 0
+weight: -4

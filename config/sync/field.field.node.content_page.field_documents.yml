@@ -1,0 +1,28 @@
+uuid: dcde5889-1c8e-4637-a748-fa0a093dd7a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_documents
+    - media.type.eisai_document
+    - node.type.content_page
+id: node.content_page.field_documents
+field_name: field_documents
+entity_type: node
+bundle: content_page
+label: Documents
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      eisai_document: eisai_document
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

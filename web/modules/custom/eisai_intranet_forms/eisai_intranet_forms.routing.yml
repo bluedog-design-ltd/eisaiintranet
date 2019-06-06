@@ -1,0 +1,7 @@
+eisai_intranet_forms.modal_route:
+  path: /eisai_intranet_controllers/selectteam
+  defaults:
+    _controller: '\Drupal\eisai_intranet_forms\Controller\SelectTeamController::showSelectTeamForm'
+  requirements:
+    _format: 'html'
+    _access: 'TRUE'

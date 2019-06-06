@@ -1,0 +1,35 @@
+schemas:
+  bootstrap: 8000
+  eisai_intranet_theme: 8000
+favicon:
+  mimetype: image/vnd.microsoft.icon
+  path: ''
+  url: 'http://eisaiintranetlocal/themes/bootstrap/favicon.ico'
+  use_default: 1
+features:
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 1
+  node_user_picture: 1
+logo:
+  path: ''
+  url: ''
+  use_default: 1
+fluid_container: 1
+region_wells:
+  custom_modals: ''
+  navigation: ''
+  mainmenu: ''
+  navigation_collapsible: ''
+  header: ''
+  highlighted: ''
+  help: ''
+  content: ''
+  sidebar_first: ''
+  sidebar_second: ''
+  footer: ''
+cdn_custom_css: 'http://eelintra02/sites/all/libraries/bootstrap-3.3.7-dist/css/bootstrap.css'
+cdn_custom_css_min: 'http://eelintra02/sites/all/libraries/bootstrap-3.3.7-dist/css/bootstrap.min.css'
+cdn_custom_js: 'http://eelintra02/sites/all/libraries/bootstrap-3.3.7-dist/js/bootstrap.js'
+cdn_custom_js_min: 'http://eelintra02/sites/all/libraries/bootstrap-3.3.7-dist/js/bootstrap.min.js'
+table: ''

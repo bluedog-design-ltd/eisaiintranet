@@ -1,0 +1,15 @@
+uuid: 29b19954-6080-4584-b461-901183e5f2ae
+langcode: en
+status: true
+dependencies: {  }
+name: hub_hero_image
+label: 'Hub Hero Image'
+effects:
+  1445e5f7-97a7-4221-8373-44a8fad58da3:
+    uuid: 1445e5f7-97a7-4221-8373-44a8fad58da3
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1920
+      height: 500
+      anchor: center-center

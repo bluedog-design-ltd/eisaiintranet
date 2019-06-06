@@ -1,0 +1,119 @@
+uuid: 7ed58f1c-d06f-41db-8eb7-a274124e0300
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.content_page.body
+    - field.field.node.content_page.field_content_header_image
+    - field.field.node.content_page.field_documents
+    - field.field.node.content_page.field_footnotes
+    - field.field.node.content_page.field_hero_version_headline_2
+    - field.field.node.content_page.field_link_list
+    - field.field.node.content_page.field_remote_video
+    - field.field.node.content_page.field_tags
+    - field.field.node.content_page.field_tool_list
+    - field.field.node.content_page.field_webform
+    - node.type.content_page
+  module:
+    - field_formatter_class
+    - link
+    - text
+    - user
+    - webform
+id: node.content_page.default
+targetEntityType: node
+bundle: content_page
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  content_moderation_control:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_documents:
+    type: entity_reference_label
+    weight: 4
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  field_footnotes:
+    weight: 7
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_hero_version_headline_2:
+    weight: 10
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_link_list:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    type: link
+    region: content
+  field_remote_video:
+    type: entity_reference_entity_view
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    region: content
+  field_tags:
+    weight: 9
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_tool_list:
+    weight: 5
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_webform:
+    weight: 6
+    label: hidden
+    settings:
+      source_entity: true
+    third_party_settings: {  }
+    type: webform_entity_reference_entity_view
+    region: content
+  likeit:
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_content_header_image: true
+  langcode: true
+  links: true

@@ -1,0 +1,13 @@
+seamlessLogin: true
+ssoSplitUserRealm: false
+ssoRemoteUserStripDomainName: true
+cookieExpire: false
+ssoVariable: REMOTE_USER
+ssoExcludedPaths: {  }
+ssoExcludedHosts: {  }
+redirectOnLogout: true
+logoutRedirectPath: /user/login
+enableLoginConfirmationMessage: true
+langcode: en
+_core:
+  default_config_hash: 6x6XVtvud8bRtuslh8jnT6Vta1pyhjAOkTKjBkWcnYU

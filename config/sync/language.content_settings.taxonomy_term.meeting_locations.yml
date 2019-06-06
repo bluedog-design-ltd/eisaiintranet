@@ -1,0 +1,11 @@
+uuid: 10b000a2-12e3-4be4-9c1f-9f53e5635e01
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.meeting_locations
+id: taxonomy_term.meeting_locations
+target_entity_type_id: taxonomy_term
+target_bundle: meeting_locations
+default_langcode: site_default
+language_alterable: false

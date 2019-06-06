@@ -1,0 +1,234 @@
+uuid: f71e611e-bd58-4e23-9dbb-e36011baa5d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.news_story.body
+    - field.field.node.news_story.comment
+    - field.field.node.news_story.field_documents
+    - field.field.node.news_story.field_hero_slider_index
+    - field.field.node.news_story.field_hero_version_headline_2
+    - field.field.node.news_story.field_is_frontpage_hero
+    - field.field.node.news_story.field_link_list
+    - field.field.node.news_story.field_media_slider_image
+    - field.field.node.news_story.field_media_standard_image
+    - field.field.node.news_story.field_news_hero_headline
+    - field.field.node.news_story.field_news_story_date
+    - field.field.node.news_story.field_relevant_to
+    - field.field.node.news_story.field_remote_video
+    - field.field.node.news_story.field_tags
+    - node.type.news_story
+  module:
+    - allowed_formats
+    - content_moderation
+    - datetime
+    - field_group
+    - link
+    - media_library
+    - path
+    - scheduler
+    - text
+third_party_settings:
+  field_group:
+    group_hero_news_settings:
+      children:
+        - field_is_frontpage_hero
+        - field_hero_version_headline_2
+        - field_media_slider_image
+        - field_hero_slider_index
+      parent_name: ''
+      weight: 10
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: 'If this story is to be featured as a front page hero banner news story, here are the settings'
+        required_fields: true
+      label: 'Hero news settings'
+id: node.news_story.default
+targetEntityType: node
+bundle: news_story
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 8
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_documents:
+    weight: 12
+    settings: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  field_hero_slider_index:
+    weight: 17
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_hero_version_headline_2:
+    weight: 15
+    settings:
+      rows: 1
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
+    type: text_textarea
+    region: content
+  field_is_frontpage_hero:
+    weight: 13
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_link_list:
+    weight: 11
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_media_slider_image:
+    type: media_library_widget
+    weight: 16
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_media_standard_image:
+    type: media_library_widget
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_news_story_date:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_relevant_to:
+    weight: 13
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_remote_video:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  field_scheduled_time:
+    type: datetime_default
+    weight: 18
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+  field_tags:
+    weight: 14
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 20
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 2
+    region: content
+    third_party_settings: {  }
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 17
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  publish_state:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  scheduler_settings:
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 15
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 3
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 19
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  unpublish_state:
+    weight: 27
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  comment: true
+  field_news_hero_headline: true
+  langcode: true

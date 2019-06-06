@@ -1,0 +1,23 @@
+uuid: d99d0b09-c8be-4b0f-acbc-254e46fb3d23
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_link_list
+    - node.type.team_hub_page
+  module:
+    - link
+id: node.team_hub_page.field_link_list
+field_name: field_link_list
+entity_type: node
+bundle: team_hub_page
+label: 'Link list'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

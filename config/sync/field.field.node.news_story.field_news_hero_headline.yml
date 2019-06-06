@@ -1,0 +1,29 @@
+uuid: 69d534df-4c07-4faf-98d0-8786c260748a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_news_hero_headline
+    - node.type.news_story
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: '0'
+    headline_hero_html: '0'
+    restricted_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: node.news_story.field_news_hero_headline
+field_name: field_news_hero_headline
+entity_type: node
+bundle: news_story
+label: 'Hero Version Headline'
+description: 'Allows use of <em>, <strong> tags to format hero headline'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

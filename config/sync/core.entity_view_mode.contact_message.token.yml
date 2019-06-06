@@ -1,0 +1,10 @@
+uuid: fee88199-3f51-41c6-a222-da3628aefeb2
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+id: contact_message.token
+label: Token
+targetEntityType: contact_message
+cache: true

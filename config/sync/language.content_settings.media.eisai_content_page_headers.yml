@@ -1,0 +1,11 @@
+uuid: 476ca4b3-f38c-4ee4-8648-92ff5d68fc53
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.eisai_content_page_headers
+id: media.eisai_content_page_headers
+target_entity_type_id: media
+target_bundle: eisai_content_page_headers
+default_langcode: site_default
+language_alterable: false

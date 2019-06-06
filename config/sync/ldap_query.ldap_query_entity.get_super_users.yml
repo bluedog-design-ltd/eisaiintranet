@@ -1,0 +1,14 @@
+uuid: b940ba26-7ce4-4756-9daa-46ea84bad8f5
+langcode: en
+status: true
+dependencies: {  }
+id: get_super_users
+label: 'Get super users'
+server_id: eisai_actual_ldap
+base_dn: 'OU=users,OU=groups,DC=eu,DC=eisai,DC=local'
+filter: '(&(objectClass=user)(memberOf=CN=GG_EEL_Intranet_Super_Admin,OU=groups,OU=EEL,DC=eu,DC=eisai,DC=local))'
+attributes: ''
+size_limit: 0
+time_limit: 0
+dereference: 0
+scope: 3

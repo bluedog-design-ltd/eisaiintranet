@@ -1,0 +1,76 @@
+uuid: 593607e1-1b24-4a99-9f34-8a13d5f4cd1a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.content_page
+    - node.type.eisai_content_hub
+    - node.type.eisai_tool_page
+    - node.type.event
+    - node.type.news_story
+    - node.type.team_hub_page
+  module:
+    - content_moderation
+_core:
+  default_config_hash: T_JxNjYlfoRBi7Bj1zs5Xv9xv1btuBkKp5C1tNrjMhI
+id: editorial
+label: Editorial
+type: content_moderation
+type_settings:
+  states:
+    archived:
+      label: Archived
+      weight: 5
+      published: false
+      default_revision: true
+    draft:
+      label: Draft
+      published: false
+      default_revision: false
+      weight: -5
+    published:
+      label: Published
+      published: true
+      default_revision: true
+      weight: 0
+  transitions:
+    archive:
+      label: Archive
+      from:
+        - published
+      to: archived
+      weight: 2
+    archived_draft:
+      label: 'Restore to Draft'
+      from:
+        - archived
+      to: draft
+      weight: 3
+    archived_published:
+      label: Restore
+      from:
+        - archived
+      to: published
+      weight: 4
+    create_new_draft:
+      label: 'Create New Draft'
+      to: draft
+      weight: 0
+      from:
+        - draft
+        - published
+    publish:
+      label: Publish
+      to: published
+      weight: 1
+      from:
+        - draft
+        - published
+  entity_types:
+    node:
+      - content_page
+      - eisai_content_hub
+      - eisai_tool_page
+      - event
+      - news_story
+      - team_hub_page

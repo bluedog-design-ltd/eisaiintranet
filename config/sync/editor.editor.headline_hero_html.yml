@@ -1,0 +1,36 @@
+uuid: 070c4db8-e9b5-48c1-a47e-6caecae3a81b
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.headline_hero_html
+  module:
+    - ckeditor
+format: headline_hero_html
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatting
+          items:
+            - Bold
+            - Italic
+        -
+          name: Tools
+          items:
+            - Source
+  plugins:
+    language:
+      language_list: un
+    stylescombo:
+      styles: ''
+image_upload:
+  status: false
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

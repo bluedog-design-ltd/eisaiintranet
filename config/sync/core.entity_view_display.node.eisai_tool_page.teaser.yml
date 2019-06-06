@@ -1,0 +1,31 @@
+uuid: ca93dc06-b2b5-4536-b9b8-c4ecd4b77c5c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.eisai_tool_page.body
+    - node.type.eisai_tool_page
+  module:
+    - text
+    - user
+id: node.eisai_tool_page.teaser
+targetEntityType: node
+bundle: eisai_tool_page
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

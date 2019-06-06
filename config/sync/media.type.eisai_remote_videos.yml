@@ -1,0 +1,17 @@
+uuid: 2a443b97-2cd9-439f-af2a-f65c01855dd1
+langcode: en
+status: true
+dependencies: {  }
+id: eisai_remote_videos
+label: 'Eisai Remote Videos'
+description: 'Videos hosted on Vimeo or YouTube'
+source: 'oembed:video'
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  thumbnails_directory: 'public://oembed_thumbnails'
+  providers:
+    - YouTube
+    - Vimeo
+  source_field: field_media_oembed_video_1
+field_map: {  }

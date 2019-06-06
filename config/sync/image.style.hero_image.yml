@@ -1,0 +1,15 @@
+uuid: 5472e209-56f8-4d9f-9b60-ad848862a165
+langcode: en
+status: true
+dependencies: {  }
+name: hero_image
+label: 'Hero Slider image'
+effects:
+  47b239b5-90a1-4c43-b6a0-62a2a64ec21b:
+    uuid: 47b239b5-90a1-4c43-b6a0-62a2a64ec21b
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1920
+      height: 502
+      anchor: center-center

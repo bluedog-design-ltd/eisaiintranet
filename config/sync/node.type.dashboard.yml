@@ -1,0 +1,17 @@
+uuid: 8cdcba4c-5bef-4ba2-9839-5fa52f38b77a
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Eisai Dashboard'
+type: dashboard
+description: 'Everyone''s front page - should not need to edit this or create another!'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

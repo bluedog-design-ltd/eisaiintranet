@@ -1,0 +1,105 @@
+uuid: 052ca855-1f0d-4634-807d-6f3e89323493
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.news_story.body
+    - field.field.node.news_story.comment
+    - field.field.node.news_story.field_hero_slider_index
+    - field.field.node.news_story.field_hero_version_headline_2
+    - field.field.node.news_story.field_is_frontpage_hero
+    - field.field.node.news_story.field_link_list
+    - field.field.node.news_story.field_media_slider_image
+    - field.field.node.news_story.field_media_standard_image
+    - field.field.node.news_story.field_news_hero_headline
+    - field.field.node.news_story.field_news_story_date
+    - field.field.node.news_story.field_relevant_to
+    - field.field.node.news_story.field_tags
+    - node.type.news_story
+  module:
+    - datetime
+    - field_formatter_class
+    - link
+    - text
+    - user
+id: node.news_story.full
+targetEntityType: node
+bundle: news_story
+mode: full
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  content_moderation_control:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_hero_version_headline_2:
+    type: text_default
+    weight: 1
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_link_list:
+    type: link
+    weight: 6
+    region: content
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  field_media_standard_image:
+    type: entity_reference_entity_view
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: full
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    region: content
+  field_news_story_date:
+    weight: 2
+    label: hidden
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_tags:
+    weight: 5
+    label: hidden
+    settings:
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    type: entity_reference_label
+    region: content
+  likeit:
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  comment: true
+  field_hero_slider_index: true
+  field_is_frontpage_hero: true
+  field_media_slider_image: true
+  field_news_hero_headline: true
+  field_relevant_to: true
+  langcode: true
+  links: true

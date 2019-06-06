@@ -1,0 +1,19 @@
+uuid: 6f912361-bf0c-42e9-92d0-233d372cc5ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_oembed_video_1
+    - media.type.eisai_remote_videos
+id: media.eisai_remote_videos.field_media_oembed_video_1
+field_name: field_media_oembed_video_1
+entity_type: media
+bundle: eisai_remote_videos
+label: 'Remote video URL'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

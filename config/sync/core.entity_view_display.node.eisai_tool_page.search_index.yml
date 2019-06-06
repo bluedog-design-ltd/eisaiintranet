@@ -1,0 +1,48 @@
+uuid: f7ce70e1-f25e-4098-b60d-41ded6706d2c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.eisai_tool_page.body
+    - field.field.node.eisai_tool_page.field_content_header_image
+    - field.field.node.eisai_tool_page.field_documents
+    - field.field.node.eisai_tool_page.field_footnotes
+    - field.field.node.eisai_tool_page.field_link_list
+    - field.field.node.eisai_tool_page.field_tags
+    - field.field.node.eisai_tool_page.field_webform
+    - node.type.eisai_tool_page
+  module:
+    - field_formatter_class
+    - text
+    - user
+id: node.eisai_tool_page.search_index
+targetEntityType: node
+bundle: eisai_tool_page
+mode: search_index
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 0
+    settings:
+      trim_length: 100
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    region: content
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_content_header_image: true
+  field_documents: true
+  field_footnotes: true
+  field_link_list: true
+  field_tags: true
+  field_webform: true
+  langcode: true
+  likeit: true
+  links: true

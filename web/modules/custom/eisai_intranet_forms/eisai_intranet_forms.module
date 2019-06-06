@@ -1,0 +1,107 @@
+<?php
+
+/**
+ * @file
+ * Contains  eisai_intranet_forms.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\CloseModalDialogCommand;
+use Drupal\Core\Ajax\SettingsCommand;
+use Drupal\Core\Ajax\InvokeCommand;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\user\Entity\User;
+
+/**
+ * Implements hook_help().
+ */
+function eisai_intranet_forms_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the eisai_intranet_forms module.
+    case 'help.page.eisai_intranet_shortcuts':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Custom forms') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_entity_type_build().
+ */
+function eisai_intranet_forms_entity_type_build(array &$entity_types) {
+  $entity_types['user']->setFormClass('userteam', 'Drupal\user\ProfileForm');
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function eisai_intranet_forms_page_attachments(array &$attachments) {
+  $attachments['#attached']['library'][] = 'eisai_intranet_forms/eisai_intranet_forms';
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function eisai_intranet_forms_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  //drupal_set_message("altering form: ".$form_id);
+  if ($form_id == 'user_userteam_form') {
+    $nid = $form['#node']->nid;
+    // add the ajax properties to the submit button.
+    $form['actions']['submit']['#ajax'] = array(
+      'callback' => 'submitUserTeamFormCallback',
+    );
+
+    /*
+    $form['actions']['submit']['#submit'][] = 'Drupal\MY_MODULE\Plugin\Form\FormAlter::ajaxFormEntityFormSubmit';
+    $form['actions']['submit']['#ajax'] = array(
+      'callback' => 'Drupal\MY_MODULE\Plugin\Form\FormAlter::ajaxFormEntityCallback',
+      'wrapper' => $ajax_id,
+      'effect' => 'fade',
+    );
+    */
+  }
+
+}
+
+function submitUserTeamFormCallback($form, $form_state) {
+  // Get team ID from user object instead of $form_state.
+  $user = User::load(\Drupal::currentUser()->id());
+  $user_emea_teams = $user->get('field_emea_team')->getValue();
+  $user_emea_team_id = $user_emea_teams[0]['target_id'];
+  // First check if the `company` field is EEL.
+  $company_id = $form_state->getValue('field_company')[0]["target_id"];
+  $company = Term::load($company_id);
+  $company_name = $company->getName();
+  // If the user is not EEL then $emea_team_hub_link should go to their affiliate hub page.
+  if ($company_name != 'EEL') {
+    $emea_team_id = $company_id;
+    $emea_team_name = $company_name;
+    // Load all nodes tagged with $company_id and of type team_hub_page.
+    $nodes = _get_nodes_by_term($company_id, 'team_hub_page');
+    $alias = \Drupal::service('path.alias_manager')->getAliasByPath('/node/'.$nodes['nid']);
+    $team_link = $alias;
+  }
+  else {
+    // Get emea team id from user object.
+    $emea_team_id = $user_emea_team_id;
+    $term = Term::load($emea_team_id);
+    $emea_team_name = $term->getName();
+    $team_link = "/emea-teams/" . str_replace(' ', '-', $emea_team_name);
+  }
+  $response = new AjaxResponse();
+  $response->addCommand(new CloseModalDialogCommand());
+  $response->addCommand(new SettingsCommand ([
+    'EMEA_TEAM_ID' => $emea_team_id,
+    'EMEA_TEAM_NAME' => $emea_team_name,
+    'EMEA_TEAM_LINK' => $team_link,
+  ], TRUE));
+
+  return $response;
+
+}

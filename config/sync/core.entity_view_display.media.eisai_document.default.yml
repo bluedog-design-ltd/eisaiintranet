@@ -1,0 +1,72 @@
+uuid: b89fb8f0-c78e-4f21-9780-39ab38c98aff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.eisai_document.field_media_file_1
+    - field.field.media.eisai_document.field_media_notes
+    - field.field.media.eisai_document.field_tags
+    - image.style.thumbnail
+    - media.type.eisai_document
+  module:
+    - file
+    - image
+    - text
+    - user
+id: media.eisai_document.default
+targetEntityType: media
+bundle: eisai_document
+mode: default
+content:
+  created:
+    label: inline
+    type: timestamp
+    weight: 1
+    region: content
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+  field_media_file_1:
+    weight: 4
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_media_notes:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_tags:
+    weight: 5
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  thumbnail:
+    type: image
+    weight: 3
+    label: hidden
+    settings:
+      image_style: thumbnail
+      image_link: ''
+    region: content
+    third_party_settings: {  }
+  uid:
+    label: inline
+    type: author
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  name: true

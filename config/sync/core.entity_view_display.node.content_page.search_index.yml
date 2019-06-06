@@ -1,0 +1,46 @@
+uuid: 89791d5a-3b27-4feb-a83b-f79f26b8ca06
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.content_page.body
+    - field.field.node.content_page.field_content_header_image
+    - field.field.node.content_page.field_documents
+    - field.field.node.content_page.field_footnotes
+    - field.field.node.content_page.field_link_list
+    - field.field.node.content_page.field_tags
+    - field.field.node.content_page.field_tool_list
+    - field.field.node.content_page.field_webform
+    - node.type.content_page
+  module:
+    - field_formatter_class
+    - text
+    - user
+id: node.content_page.search_index
+targetEntityType: node
+bundle: content_page
+mode: search_index
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 0
+    settings:
+      trim_length: 100
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    region: content
+hidden:
+  content_moderation_control: true
+  field_content_header_image: true
+  field_documents: true
+  field_footnotes: true
+  field_link_list: true
+  field_tags: true
+  field_tool_list: true
+  field_webform: true
+  langcode: true
+  likeit: true
+  links: true

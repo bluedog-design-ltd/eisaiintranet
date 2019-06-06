@@ -1,0 +1,11 @@
+uuid: 982870ff-a79d-4f15-ab8c-7fbaf10a4e7f
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.news_standard_image_library
+id: media.news_standard_image_library
+target_entity_type_id: media
+target_bundle: news_standard_image_library
+default_langcode: site_default
+language_alterable: false

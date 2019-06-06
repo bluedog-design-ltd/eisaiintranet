@@ -1,0 +1,23 @@
+uuid: fedef7fa-0652-4c7a-a861-d7fe850a5d5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hero_slider_index
+    - node.type.news_story
+id: node.news_story.field_hero_slider_index
+field_name: field_hero_slider_index
+entity_type: node
+bundle: news_story
+label: 'Hero Slider index'
+description: '0 = first story'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

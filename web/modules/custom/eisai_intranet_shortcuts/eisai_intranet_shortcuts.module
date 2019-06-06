@@ -1,0 +1,87 @@
+<?php
+
+/**
+ * @file
+ * Contains eisai_intranet_shortcuts.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function eisai_intranet_shortcuts_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the eisai_intranet_shortcuts module.
+    case 'help.page.eisai_intranet_shortcuts':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Shortcuts a user can add and delete from') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function eisai_intranet_shortcuts_theme() {
+  return [
+    'block__eisai_intranet_shortcuts' => [
+      'variables' => [
+        'shortcutclass' => 'noshortcut',
+        'allshortcuts' => 'nonsene',
+      ],
+      'render element' => 'elements',
+      'template' => 'block--eisai-intranet-shortcuts',
+      'base hook' => 'block'
+    ],
+    'block__eisai_intranet_shortcutslist' => [
+      'render element' => 'elements',
+      'template' => 'block--eisai-intranet-shortcutslist',
+      'base hook' => 'block'
+    ],
+    'block__eisai_intranet_shortcuts_side' => [
+      'variables' => [
+        'shortcutclass' => 'noshortcut',
+        'allshortcuts' => 'nonsene',
+      ],
+      'render element' => 'elements',
+      'template' => 'block--eisai-intranet-sideaddshortcut-block',
+      'base hook' => 'block'
+    ],
+  ];
+}
+
+function eisai_intranet_shortcuts_preprocess_block(&$variables) {
+
+  //1. Get user object
+  //2. See if path exists in favourites
+  //3. If it does send a variable to theme so that theme can add class to add shortcuts button
+  
+
+  
+   $current_user = \Drupal::currentUser();
+   $user = \Drupal\user\Entity\User::load($current_user->id());
+   $shortcuts = $user->get('field_shortcuts');
+   $current_path = \Drupal::service('path.current')->getPath();
+  
+
+    $shortcutClass = 'noshortcut';
+    $allshortcuts = '';
+   foreach ($shortcuts as $item) {
+      $uri = $item->uri;
+      $uri = str_replace('internal:', '', $uri);
+      $allshortcuts = $allshortcuts."||".$uri;
+     if($uri == $current_path){
+       $shortcutClass = 'hasshortcut';
+     }
+   }
+   
+$variables['shortcutclass'] = $shortcutClass;
+$variables['allshortcuts'] = $current_path;
+  
+    //die($current_path.'\n'.$allshortcuts.'\n'.$shortcutClass);
+  
+}

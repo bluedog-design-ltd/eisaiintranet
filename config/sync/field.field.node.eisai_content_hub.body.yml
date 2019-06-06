@@ -1,0 +1,30 @@
+uuid: f803692a-ee8a-41ab-9a36-49a146cf75f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.eisai_content_hub
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    headline_hero_html: '0'
+    restricted_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: node.eisai_content_hub.body
+field_name: body
+entity_type: node
+bundle: eisai_content_hub
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

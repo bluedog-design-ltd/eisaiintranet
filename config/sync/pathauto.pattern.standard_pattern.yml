@@ -1,0 +1,25 @@
+uuid: 9b9d2e57-686f-4e4f-b8b7-8d68c41b46aa
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: standard_pattern
+label: 'Standard pattern'
+type: 'canonical_entities:node'
+pattern: '[node:menu-link:parents:join-path]/[node:title]'
+selection_criteria:
+  3ba999f8-51b6-49f8-b9b7-6e545c093c23:
+    id: node_type
+    bundles:
+      content_page: content_page
+      eisai_content_hub: eisai_content_hub
+      eisai_tool_page: eisai_tool_page
+      team_hub_page: team_hub_page
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 3ba999f8-51b6-49f8-b9b7-6e545c093c23
+selection_logic: and
+weight: -5
+relationships: {  }

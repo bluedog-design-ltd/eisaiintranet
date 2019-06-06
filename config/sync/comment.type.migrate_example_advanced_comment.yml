@@ -1,0 +1,10 @@
+uuid: d039843c-2ca2-4c4a-9694-3e5e74e3c390
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: UVmAi942I-2Z_YDnpwk48PlAQKlKkL3W6wEENgQuqEU
+id: migrate_example_advanced_comment
+label: 'Node comments'
+target_entity_type_id: node
+description: ''

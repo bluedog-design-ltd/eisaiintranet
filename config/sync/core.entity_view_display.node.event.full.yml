@@ -1,0 +1,91 @@
+uuid: 5deda2ae-d2fc-49ce-911c-9cb79a4d670c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.event.body
+    - field.field.node.event.field_date_range
+    - field.field.node.event.field_event_images
+    - field.field.node.event.field_event_location
+    - field.field.node.event.field_hero_version_headline_2
+    - field.field.node.event.field_media_standard_image
+    - field.field.node.event.field_relevant_to
+    - field.field.node.event.field_tags
+    - node.type.event
+  module:
+    - datetime_range
+    - field_formatter_class
+    - text
+    - user
+id: node.event.full
+targetEntityType: node
+bundle: event
+mode: full
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  content_moderation_control:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_date_range:
+    weight: 1
+    label: hidden
+    settings:
+      separator: '-'
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  field_hero_version_headline_2:
+    type: text_default
+    weight: 7
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_media_standard_image:
+    type: entity_reference_entity_view
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      view_mode: full
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+  field_relevant_to:
+    weight: 5
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_tags:
+    type: entity_reference_label
+    weight: 6
+    region: content
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+  links:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_event_images: true
+  field_event_location: true
+  langcode: true
+  likeit: true

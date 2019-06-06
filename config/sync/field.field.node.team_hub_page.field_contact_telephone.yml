@@ -1,0 +1,19 @@
+uuid: 1cce07b4-afe6-42ac-a064-b06c56087a76
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_telephone
+    - node.type.team_hub_page
+id: node.team_hub_page.field_contact_telephone
+field_name: field_contact_telephone
+entity_type: node
+bundle: team_hub_page
+label: 'Contact telephone'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

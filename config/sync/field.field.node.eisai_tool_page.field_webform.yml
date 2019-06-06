@@ -1,0 +1,25 @@
+uuid: 29a0c0cc-d2c7-47af-967d-c4fa05e71514
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_webform
+    - node.type.eisai_tool_page
+  module:
+    - webform
+id: node.eisai_tool_page.field_webform
+field_name: field_webform
+entity_type: node
+bundle: eisai_tool_page
+label: Webform
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:webform'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: webform

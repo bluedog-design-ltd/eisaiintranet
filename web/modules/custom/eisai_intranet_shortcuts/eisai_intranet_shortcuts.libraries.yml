@@ -1,0 +1,5 @@
+eisai_intranet_shortcuts-library:
+  js:
+    js/ajaxcommandscript.js: {}
+  dependencies:
+    - core/drupal.ajax

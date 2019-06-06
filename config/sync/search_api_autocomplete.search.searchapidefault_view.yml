@@ -1,0 +1,47 @@
+uuid: f393b4f7-3974-4774-8b17-db42f0ce04fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.default_index
+    - views.view.searchapidefault_view
+    - core.entity_view_mode.node.full
+    - core.entity_view_mode.user.full
+  module:
+    - views
+    - search_api_autocomplete
+id: searchapidefault_view
+label: 'Search API Default'
+index_id: default_index
+suggester_settings:
+  live_results:
+    fields: {  }
+    view_modes:
+      'entity:node':
+        article: full
+        content_page: full
+        dashboard: full
+        event: full
+        migrate_example_producer: full
+        migrate_example_wine: full
+        news_story: full
+        page: full
+        team_hub_page: full
+        webform: full
+      'entity:user':
+        user: full
+suggester_weights:
+  live_results: 0
+suggester_limits: {  }
+search_settings:
+  'views:searchapidefault_view':
+    displays:
+      default: true
+      selected: {  }
+options:
+  limit: 10
+  min_length: 1
+  show_count: false
+  autosubmit: true
+  submit_button_selector: ':submit'
+  delay: null

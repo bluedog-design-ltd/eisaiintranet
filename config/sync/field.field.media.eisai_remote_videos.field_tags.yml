@@ -1,0 +1,37 @@
+uuid: 838c3c33-05ba-456f-9a0c-9f0976b51058
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_tags
+    - media.type.eisai_remote_videos
+    - taxonomy.vocabulary.eisai_companies
+    - taxonomy.vocabulary.emeateamnames
+    - taxonomy.vocabulary.everyone
+    - taxonomy.vocabulary.meeting_locations
+    - taxonomy.vocabulary.tags
+id: media.eisai_remote_videos.field_tags
+field_name: field_tags
+entity_type: media
+bundle: eisai_remote_videos
+label: Tags
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      emeateamnames: emeateamnames
+      eisai_companies: eisai_companies
+      meeting_locations: meeting_locations
+      everyone: everyone
+      tags: tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: tags
+field_type: entity_reference

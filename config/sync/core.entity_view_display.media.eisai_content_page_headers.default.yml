@@ -1,0 +1,29 @@
+uuid: 5a015461-6ee9-4e6b-96b1-e2c568f2bfc9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.eisai_content_page_headers.field_media_image_1
+    - media.type.eisai_content_page_headers
+  module:
+    - image
+id: media.eisai_content_page_headers.default
+targetEntityType: media
+bundle: eisai_content_page_headers
+mode: default
+content:
+  field_media_image_1:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

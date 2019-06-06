@@ -1,0 +1,9 @@
+uuid: b93729df-55d5-49cb-8fd0-b55a9f203693
+langcode: en
+status: true
+dependencies: {  }
+name: 'Eisai Companies'
+vid: eisai_companies
+description: 'EEL, EDG etc. Only AD attribute that identifies country.'
+hierarchy: 0
+weight: -10

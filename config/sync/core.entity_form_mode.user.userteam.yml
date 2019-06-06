@@ -1,0 +1,10 @@
+uuid: 6806800d-1096-425b-ae76-a5ae4592276f
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.userteam
+label: userteam
+targetEntityType: user
+cache: true

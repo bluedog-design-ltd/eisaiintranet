@@ -1,0 +1,7 @@
+login_redirection:
+  anonymous: null
+  authenticated: /node/4
+  administrator: /node/4
+  hub_admin: /node/4
+  intranet_user: /node/4
+exclude_urls: ''

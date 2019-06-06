@@ -1,0 +1,23 @@
+uuid: 6a163868-4d12-480e-aec3-de4947361c58
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_link_list
+    - node.type.eisai_content_hub
+  module:
+    - link
+id: node.eisai_content_hub.field_link_list
+field_name: field_link_list
+entity_type: node
+bundle: eisai_content_hub
+label: 'Link list'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

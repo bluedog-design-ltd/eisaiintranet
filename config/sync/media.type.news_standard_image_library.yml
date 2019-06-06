@@ -1,0 +1,14 @@
+uuid: a7960b4f-5792-43a7-98a0-4b7af30dffa3
+langcode: en
+status: true
+dependencies: {  }
+id: news_standard_image_library
+label: 'Eisai News standard image library'
+description: '416 x 333. Standard-size news image library'
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image_3
+field_map:
+  name: name

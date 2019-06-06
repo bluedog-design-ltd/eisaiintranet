@@ -1,0 +1,34 @@
+uuid: 4f147831-b55f-41ab-b78c-5a29e3a729ec
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - node
+    - system
+  theme:
+    - eisai_intranet_theme
+_core:
+  default_config_hash: f3Dd5TnUiFDjFZp9yEGJInwt6cUzs7O6SvLTFTATSlU
+id: eisai_intranet_theme_tools
+theme: eisai_intranet_theme
+region: sidebar_second
+weight: -7
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Tools
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      team_hub_page: team_hub_page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

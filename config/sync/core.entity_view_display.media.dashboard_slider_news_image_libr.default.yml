@@ -1,0 +1,30 @@
+uuid: a3a7e34b-7a96-44eb-a71a-3bff98697c37
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.dashboard_slider_news_image_libr.field_media_image_4
+    - image.style.hero_image
+    - media.type.dashboard_slider_news_image_libr
+  module:
+    - image
+id: media.dashboard_slider_news_image_libr.default
+targetEntityType: media
+bundle: dashboard_slider_news_image_libr
+mode: default
+content:
+  field_media_image_4:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: hero_image
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

@@ -1,0 +1,14 @@
+uuid: e7f8f27a-e44d-4704-9eaf-e805db7ff514
+langcode: en
+status: true
+dependencies: {  }
+id: eisai_document
+label: 'Eisai Document Library'
+description: 'PDF, DOCX, TXT. Documents that can be referenced throughout the site'
+source: file
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_file_1
+field_map:
+  name: name

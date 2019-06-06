@@ -1,0 +1,18 @@
+uuid: 2d5ccb09-742c-4a9b-90f8-4e2247e230ee
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Eisai Content page'
+type: content_page
+description: 'A content page that can go anywhere.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

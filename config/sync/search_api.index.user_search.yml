@@ -1,0 +1,77 @@
+uuid: e2106536-4bac-4577-b54d-d17d2cadf6e6
+langcode: en
+status: false
+dependencies:
+  config:
+    - field.storage.user.field_first_name
+    - field.storage.user.field_last_name
+    - search_api.server.default_server
+  module:
+    - user
+    - search_api
+id: user_search
+name: 'User search'
+description: ''
+read_only: false
+field_settings:
+  field_first_name:
+    label: 'First Name'
+    datasource_id: 'entity:user'
+    property_path: field_first_name
+    type: text
+    dependencies:
+      config:
+        - field.storage.user.field_first_name
+  field_last_name:
+    label: 'Last Name'
+    datasource_id: 'entity:user'
+    property_path: field_last_name
+    type: text
+    dependencies:
+      config:
+        - field.storage.user.field_last_name
+  mail:
+    label: Email
+    datasource_id: 'entity:user'
+    property_path: mail
+    type: text
+    dependencies:
+      module:
+        - user
+datasource_settings:
+  'entity:user':
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  ignorecase:
+    all_fields: false
+    fields:
+      - field_first_name
+      - field_last_name
+      - mail
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+  rendered_item: {  }
+  stemmer:
+    all_fields: false
+    fields:
+      - field_first_name
+      - field_last_name
+      - mail
+    exceptions:
+      mexican: mexic
+      texan: texa
+    weights:
+      preprocess_index: 0
+      preprocess_query: 0
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: default_server

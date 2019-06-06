@@ -1,0 +1,60 @@
+drupalAcctProvisionServer: eisai_actual_ldap
+ldapEntryProvisionServer: null
+drupalAcctProvisionTriggers:
+  drupal_on_login: drupal_on_login
+  drupal_on_update_create: drupal_on_update_create
+ldapEntryProvisionTriggers:
+  ldap_on_update_create: '0'
+  ldap_on_login: '0'
+  ldap_on_delete: '0'
+  drupal_on_manual_creation: '0'
+userUpdateCronQuery: get_all_users
+userUpdateCronInterval: always
+orphanedDrupalAcctBehavior: ldap_user_orphan_email
+orphanedCheckQty: 100
+orphanedAccountCheckInterval: monthly
+userConflictResolve: resolve
+manualAccountConflict: conflict_associate
+acctCreation: ldap_behaviour
+ldapUserSyncMappings:
+  drupal:
+    field-field_first_name:
+      ldap_attr: '[givenName]'
+      user_attr: '[field.field_first_name]'
+      convert: false
+      direction: drupal
+      user_tokens: ''
+      config_module: ldap_user
+      prov_module: ldap_user
+      enabled: true
+      prov_events:
+        - create_drupal_user
+        - sync_to_drupal_user
+    field-field_last_name:
+      ldap_attr: '[sn]'
+      user_attr: '[field.field_last_name]'
+      convert: false
+      direction: drupal
+      user_tokens: ''
+      config_module: ldap_user
+      prov_module: ldap_user
+      enabled: true
+      prov_events:
+        - create_drupal_user
+        - sync_to_drupal_user
+    field-field_job_title:
+      ldap_attr: '[title]'
+      user_attr: '[field.field_job_title]'
+      convert: false
+      direction: drupal
+      user_tokens: ''
+      config_module: ldap_user
+      prov_module: ldap_user
+      enabled: true
+      prov_events:
+        - create_drupal_user
+        - sync_to_drupal_user
+  ldap: {  }
+_core:
+  default_config_hash: hjgcuHpcsme6SW-7MKpZm3bhnR76f1yX2Y8Xe0STesw
+disableAdminPasswordField: false

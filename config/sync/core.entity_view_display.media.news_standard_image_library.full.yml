@@ -1,0 +1,34 @@
+uuid: 143cb18b-0fa9-4f59-807a-20a5587bade3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.full
+    - field.field.media.news_standard_image_library.field_media_image_3
+    - image.style.content_
+    - media.type.news_standard_image_library
+  module:
+    - field_formatter_class
+    - image
+id: media.news_standard_image_library.full
+targetEntityType: media
+bundle: news_standard_image_library
+mode: full
+content:
+  field_media_image_3:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: content_
+      image_link: ''
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    type: image
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

@@ -1,0 +1,23 @@
+uuid: b556d83a-30e9-4222-98bd-ab7c7967e292
+langcode: en
+status: true
+dependencies: {  }
+name: 'Headline Hero HTML'
+format: headline_hero_html
+weight: 0
+filters:
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: '<strong><bold><em><i>'
+      filter_html_help: true
+      filter_html_nofollow: false
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: 10
+    settings: {  }

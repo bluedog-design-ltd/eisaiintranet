@@ -1,0 +1,28 @@
+uuid: f75dff4f-d913-4793-8518-04df55f4b13b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_remote_video
+    - media.type.eisai_remote_videos
+    - node.type.eisai_tool_page
+id: node.eisai_tool_page.field_remote_video
+field_name: field_remote_video
+entity_type: node
+bundle: eisai_tool_page
+label: 'Remote video'
+description: 'You can add videos for this page here by selecting existing videos from the library or add new ones by pasting the link from YouTube/Vimeo.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      eisai_remote_videos: eisai_remote_videos
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

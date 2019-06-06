@@ -1,0 +1,11 @@
+uuid: 690b6e20-5722-4b5d-a3ff-ae0d26249c17
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.eisai_events_standard_image_libr
+id: media.eisai_events_standard_image_libr
+target_entity_type_id: media
+target_bundle: eisai_events_standard_image_libr
+default_langcode: site_default
+language_alterable: false

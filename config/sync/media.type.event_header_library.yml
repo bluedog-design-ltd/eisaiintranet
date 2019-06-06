@@ -1,0 +1,14 @@
+uuid: 87523620-eb83-411b-b183-0b3ab4e68048
+langcode: en
+status: true
+dependencies: {  }
+id: event_header_library
+label: 'Event Header library'
+description: 'Hero images for events'
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image_5
+field_map:
+  filesize: name
