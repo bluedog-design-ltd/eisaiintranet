@@ -18,6 +18,7 @@ permissions:
   - 'administer access_by_ref settings'
   - 'administer menu'
   - 'administer menu_link_content display'
+  - 'administer nodes'
   - 'administer scheduler'
   - 'administer users'
   - 'administer webform'

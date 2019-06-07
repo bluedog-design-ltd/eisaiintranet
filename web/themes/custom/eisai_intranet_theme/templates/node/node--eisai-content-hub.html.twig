@@ -166,6 +166,32 @@ other methods (such as node.delete) will result in an exception.
 
       </div>
     </section>
+
+    {% if node.field_has_meet_team.value %}
+      <section class="hub-meet-the-team">
+        <div class="container">
+
+          <div class="row">
+
+            <div class="col-sm-4">
+              <h2>{{ node.field_meet_team_subtitle.value }}</h2>
+
+              <p>{{ node.field_meet_team_text.value }}</p>
+
+            </div>
+
+            <div class="col-sm-8">
+
+              {{ content.field_arbitrary_team_members }}
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+    {% endif %}
+
     {% if content.field_tool_list|render|trim is not empty %}
     <div class="container-fluid hero-container">
       <div class="row">

@@ -1,0 +1,23 @@
+uuid: f1ebe87a-f28c-450d-95b5-9dc9a2b18c36
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_has_meet_team
+    - node.type.eisai_content_hub
+id: node.eisai_content_hub.field_has_meet_team
+field_name: field_has_meet_team
+entity_type: node
+bundle: eisai_content_hub
+label: 'Has Meet Team'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

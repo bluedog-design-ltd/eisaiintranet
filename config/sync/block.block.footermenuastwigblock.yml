@@ -1,0 +1,25 @@
+uuid: 29e1a8d6-2453-4897-b35c-d5f200bd840f
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:twig_block:92320912-6291-42ca-94da-dc28f3087b6e'
+  module:
+    - block_content
+  theme:
+    - eisai_intranet_theme
+id: footermenuastwigblock
+theme: eisai_intranet_theme
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:92320912-6291-42ca-94da-dc28f3087b6e'
+settings:
+  id: 'block_content:92320912-6291-42ca-94da-dc28f3087b6e'
+  label: 'footer menu as twig block'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

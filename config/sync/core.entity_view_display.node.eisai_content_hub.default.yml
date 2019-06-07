@@ -4,14 +4,19 @@ status: true
 dependencies:
   config:
     - field.field.node.eisai_content_hub.body
+    - field.field.node.eisai_content_hub.field_arbitrary_team_members
     - field.field.node.eisai_content_hub.field_contents_list_heading
+    - field.field.node.eisai_content_hub.field_has_meet_team
     - field.field.node.eisai_content_hub.field_hero_version_headline_2
     - field.field.node.eisai_content_hub.field_hub_header_image
     - field.field.node.eisai_content_hub.field_link_list
     - field.field.node.eisai_content_hub.field_major_links
+    - field.field.node.eisai_content_hub.field_meet_team_subtitle
+    - field.field.node.eisai_content_hub.field_meet_team_text
     - field.field.node.eisai_content_hub.field_tool_list
     - node.type.eisai_content_hub
   module:
+    - field_formatter_class
     - link
     - text
     - user
@@ -32,6 +37,17 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_arbitrary_team_members:
+    weight: 12
+    label: hidden
+    settings:
+      view_mode: meet_the_team
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    type: entity_reference_entity_view
+    region: content
   field_contents_list_heading:
     weight: 8
     label: hidden
@@ -39,6 +55,16 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_has_meet_team:
+    weight: 11
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   field_hero_version_headline_2:
     weight: 2
@@ -78,6 +104,21 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
+    region: content
+  field_meet_team_subtitle:
+    weight: 9
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_meet_team_text:
+    weight: 10
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
     region: content
   field_tool_list:
     weight: 7

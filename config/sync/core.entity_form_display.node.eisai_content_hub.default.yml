@@ -4,21 +4,43 @@ status: true
 dependencies:
   config:
     - field.field.node.eisai_content_hub.body
+    - field.field.node.eisai_content_hub.field_arbitrary_team_members
     - field.field.node.eisai_content_hub.field_contents_list_heading
+    - field.field.node.eisai_content_hub.field_has_meet_team
     - field.field.node.eisai_content_hub.field_hero_version_headline_2
     - field.field.node.eisai_content_hub.field_hub_header_image
     - field.field.node.eisai_content_hub.field_link_list
     - field.field.node.eisai_content_hub.field_major_links
+    - field.field.node.eisai_content_hub.field_meet_team_subtitle
+    - field.field.node.eisai_content_hub.field_meet_team_text
     - field.field.node.eisai_content_hub.field_tool_list
     - node.type.eisai_content_hub
   module:
     - allowed_formats
     - content_moderation
     - datetime
+    - field_group
     - link
     - media_library
     - path
     - text
+third_party_settings:
+  field_group:
+    group_meet_the_team_contenthub:
+      children:
+        - field_has_meet_team
+        - field_meet_team_subtitle
+        - field_meet_team_text
+        - field_arbitrary_team_members
+      parent_name: ''
+      weight: 10
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Meet the team'
 id: node.eisai_content_hub.default
 targetEntityType: node
 bundle: eisai_content_hub
@@ -35,10 +57,19 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 12
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_arbitrary_team_members:
+    weight: 33
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_contents_list_heading:
     weight: 7
     settings:
@@ -46,6 +77,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_has_meet_team:
+    weight: 30
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
     region: content
   field_hero_version_headline_2:
     weight: 1
@@ -80,14 +118,30 @@ content:
     third_party_settings: {  }
     type: link_default
     region: content
+  field_meet_team_subtitle:
+    weight: 31
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_meet_team_text:
+    weight: 32
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
   field_scheduled_time:
     type: datetime_default
-    weight: 20
+    weight: 19
     settings: {  }
     region: content
     third_party_settings: {  }
   field_tool_list:
-    weight: 10
+    weight: 11
     settings:
       match_operator: CONTAINS
       size: 60
@@ -103,14 +157,14 @@ content:
       include_locked: true
     third_party_settings: {  }
   moderation_state:
-    weight: 17
+    weight: 18
     settings: {  }
     third_party_settings: {  }
     type: moderation_state_default
     region: content
   path:
     type: path
-    weight: 14
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -122,7 +176,7 @@ content:
     region: content
     third_party_settings: {  }
   publish_on:
-    weight: 15
+    weight: 16
     settings: {  }
     third_party_settings: {  }
     type: datetime_timestamp
@@ -137,7 +191,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 13
+    weight: 14
     region: content
     third_party_settings: {  }
   sticky:
@@ -157,7 +211,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 11
+    weight: 12
     settings:
       match_operator: CONTAINS
       size: 60
@@ -165,7 +219,7 @@ content:
     region: content
     third_party_settings: {  }
   unpublish_on:
-    weight: 16
+    weight: 17
     settings: {  }
     third_party_settings: {  }
     type: datetime_timestamp

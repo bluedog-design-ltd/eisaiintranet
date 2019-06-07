@@ -13,6 +13,7 @@ global-styling:
       css/calendar.css: {}
       css/body-field.css: {}
       css/theme_overrides.css: {}
+      css/block.css: {}
       
 global-scripts:
   version: 1.x

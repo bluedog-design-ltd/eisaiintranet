@@ -6,10 +6,15 @@ dependencies:
     - core.entity_view_mode.user.meet_the_team
     - field.field.user.user.field_company
     - field.field.user.user.field_emea_team
+    - field.field.user.user.field_fax
     - field.field.user.user.field_first_name
     - field.field.user.user.field_job_title
     - field.field.user.user.field_last_name
+    - field.field.user.user.field_ldap_company
+    - field.field.user.user.field_mobile
+    - field.field.user.user.field_office
     - field.field.user.user.field_shortcuts
+    - field.field.user.user.field_telephone
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -50,7 +55,7 @@ content:
     type: string
     weight: 5
     region: content
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -72,6 +77,11 @@ content:
     third_party_settings: {  }
     label: hidden
 hidden:
+  field_fax: true
+  field_ldap_company: true
+  field_mobile: true
+  field_office: true
   field_shortcuts: true
+  field_telephone: true
   langcode: true
   member_for: true

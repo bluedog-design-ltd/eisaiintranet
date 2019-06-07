@@ -1,0 +1,27 @@
+#block-footermenuastwigblock ul {
+  list-style-type: none;
+}
+
+#block-footermenuastwigblock ul li {
+  display: inline-block;
+  margin: 0;
+  border: 0px #a0b0c8 solid;
+  border-width: 0 1px 0 0;
+  line-height: 1.5em;
+}
+
+#block-footermenuastwigblock ul li:last-child {
+  border-width: 0;
+}
+
+#block-footermenuastwigblock ul li a {
+  color: #a0b0c8;
+  text-decoration: none;
+  padding: 0.2em 0.8em;
+}
+
+#block-footermenuastwigblock ul li a:hover {
+  color: #a0b0c8;
+  text-decoration: none;
+  background-color: #eeeeee;
+}
