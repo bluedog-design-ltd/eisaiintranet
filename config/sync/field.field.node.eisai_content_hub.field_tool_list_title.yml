@@ -1,0 +1,19 @@
+uuid: 40da7a5b-6e03-4d14-b3a1-2d32c7fadfbb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tool_list_title
+    - node.type.eisai_content_hub
+id: node.eisai_content_hub.field_tool_list_title
+field_name: field_tool_list_title
+entity_type: node
+bundle: eisai_content_hub
+label: 'Tool List Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -116,7 +116,13 @@ other methods (such as node.delete) will result in an exception.
       #}
       <div class="row hub-hero-image" style="background-image:url('{{ hero_image }}')">
         <div class="container">
-          <h2>{{ 'Welcome to'|trans }}</h2>
+          <h2>
+            {% if content.field_display_preheadline|render|trim is not empty %}
+              {{ content.field_display_preheadline }}
+            {% else %}
+              {{ 'Welcome to'|trans }}
+            {% endif %}
+          </h2>
           <h1>{{ thisTitle }}</h1>
           {{ drupal_breadcrumb() }}
         </div>
@@ -150,7 +156,13 @@ other methods (such as node.delete) will result in an exception.
 
                       <div class="location-info">
                         <div class="location-info-main">
-                          <h3>Get in touch</h3>
+                          <h3>
+                            {% if content.field_contact_title|render|trim is not empty %}
+                              {{ content.field_contact_title }}
+                            {% else %}
+                              {{ 'Get in touch'|trans }}
+                            {% endif %}
+                          </h3>
                           <p>{{ contact_address }}</p>
                           <p><strong>Tel: </strong>{{ contact_telephone }}</p>
                           <p><strong>Fax: </strong>{{ contact_fax }}</p>
@@ -158,8 +170,7 @@ other methods (such as node.delete) will result in an exception.
                         </div>
 
                         {% if content.field_contact_map_link.value %}
-                          <div class="location-map-button bluebutton"><a href="{{ contact_map_link }}" target="_blank">SHOW
-                              MAP</a></div>
+                          <div class="location-map-button bluebutton"><a href="{{ contact_map_link }}" target="_blank">{{ 'SHOW MAP'|trans }}</a></div>
                         {% endif %}
                       </div>
 
@@ -177,12 +188,16 @@ other methods (such as node.delete) will result in an exception.
     <section class="hub-major-links">
 
       <div class="container">
-        <h2>{{ 'What are you looking for?'|trans }}</h2>
+        <h2>
+          {% if content.field_major_links_heading|render|trim is not empty %}
+            {{ content.field_major_links_heading }}
+          {% else %}
+            {{ 'What are you looking for?'|trans }}
+          {% endif %}
+        </h2>
         <div class="row">
 
           <div class="col-sm-12">
-
-            {# DELETE drupal_view('eisai_hub_major_links', 'hub_major_links_view_block') #}
 
             {{ content.field_major_links }}
 
@@ -214,7 +229,13 @@ other methods (such as node.delete) will result in an exception.
           <div class="row">
             <div class="col-xs-12 col-md-4">
               <!--<h2><a href="/events">Upcoming events</a>  ({{ relevance }}) </h2>-->
-              <h2>Events</h2>
+              <h2>
+                {% if content.field_events_title|render|trim is not empty %}
+                  {{ content.field_events_title }}
+                {% else %}
+                  {{ 'Events'|trans }}
+                {% endif %}
+              </h2>
               <!--<p><a class="small-link" href="/user/{{ user_id }}/edit">edit</a></p>-->
             </div>
             <div class="col-xs-12 col-md-8">
@@ -229,7 +250,6 @@ other methods (such as node.delete) will result in an exception.
     </section>
 
 
-
     <div class="container-fluid hero-container">
       <div class="row  ">
 
@@ -240,7 +260,13 @@ other methods (such as node.delete) will result in an exception.
               <div class="row">
 
                 <div class="col-sm-4">
-                  <h2>{{ 'Meet our Team'|trans }}</h2>
+                  <h2>
+                    {% if content.field_meet_team_title|render|trim is not empty %}
+                      {{ content.field_meet_team_title }}
+                    {% else %}
+                      {{ 'Meet our Team'|trans }}
+                    {% endif %}
+                  </h2>
                   <h3>{{ node.field_meet_team_subtitle.value }}</h3>
 
                   <p>{{ node.field_meet_team_text.value }}</p>
@@ -267,14 +293,19 @@ other methods (such as node.delete) will result in an exception.
 
 
                 <div class="col-sm-4">
-                  <h2>{{ 'Tools'|trans }}</h2>
+                  <h2>
+                    {% if content.field_tool_list_title|render|trim is not empty %}
+                      {{ content.field_tool_list_title }}
+                    {% else %}
+                      {{ 'Tools'|trans }}
+                    {% endif %}
+                  </h2>
 
 
                 </div>
 
                 <div class="col-sm-8">
 
-                  {# DELETE drupal_view('eisai_hub_tools', 'hub_tools_block', node.id) #}
                   {{ content.field_tool_list }}
 
                 </div>
@@ -294,14 +325,19 @@ other methods (such as node.delete) will result in an exception.
 
 
                 <div class="col-sm-4">
-                  <h2>{{ 'Links'|trans }}</h2>
+                  <h2>
+                    {% if content.field_link_list_title|render|trim is not empty %}
+                      {{ content.field_link_list_title }}
+                    {% else %}
+                      {{ 'Links'|trans }}
+                    {% endif %}
+                  </h2>
 
 
                 </div>
 
                 <div class="col-sm-8">
 
-                  {# DELETE drupal_view('eisai_hub_tools', 'hub_tools_block', node.id) #}
                   {{ content.field_link_list }}
 
                 </div>
@@ -321,7 +357,13 @@ other methods (such as node.delete) will result in an exception.
 
 
                 <div class="col-sm-4">
-                  <h2>{{ 'Documents'|trans }}</h2>
+                  <h2>
+                    {% if content.field_document_title|render|trim is not empty %}
+                      {{ content.field_document_title }}
+                    {% else %}
+                      {{ 'Documents'|trans }}
+                    {% endif %}
+                  </h2>
                 </div>
 
                 <div class="col-sm-8">

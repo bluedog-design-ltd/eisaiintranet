@@ -1,7 +1,9 @@
 <?php
 
+use Drupal\Component\Utility\Html;
 use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\Core\Url;
+use Drupal\likeit\Controller\LikeItController;
 use Drupal\user\Entity\User;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\Drupal\node\NodeInterface;
@@ -240,4 +242,42 @@ function eisai_intranet_theme_preprocess_views_view_unformatted(&$variables) {
       }
     }
   }
+}
+
+/**
+ * Implements hook_preprocess_HOOK()
+ */
+function eisai_intranet_theme_preprocess_likeit(&$variables) {
+
+  $action = $variables['action'];
+
+  $user = \Drupal::currentUser();
+  $entity_arr = explode(':', 'node');
+  $entity_type = $entity_arr[0];
+  $count = '';
+
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node instanceof \Drupal\node\NodeInterface) {
+    $nid = $node->id();
+  }
+
+  $entity = \Drupal::entityTypeManager()->getStorage($entity_type)->load($nid);
+  $html_id = uniqid('likeit-id-' . $nid);
+  $html_id = Html::getId($html_id);
+
+  // Check if user can view likes count and add it to render array.
+  if (LikeItController::checkAccess('view', $user)) {
+    $like = 'like';
+    $count = likeit_get_count($entity);
+    $count != 1 ? $like = 'likes' : 'like';
+    $title = $like . ' - click to ' . $action . '.';
+
+      $variables['content']['link']['#title'] = [
+        '#type' => 'markup',
+        '#markup' => '<span class="likeit-count">' . $count . '</span> <span class="likeit-title">' .
+          $title . '</span>',
+      ];
+
+  }
+
 }

@@ -3,11 +3,14 @@
   'use strict';
 
   var initialized;
+  var likeitId = '';
 
   function init() {
     if (!initialized) {
       initialized = true;
       // Add your one-time only code here
+
+      likeitId = $('a.use-ajax.likeit-wrapper').attr('id');
 
 
       /* main header menu */
@@ -111,6 +114,40 @@
 
     }
   };
+
+  // Override the title on the 'LikeIt' button.
+  Drupal.behaviors.LikeItOverride = {
+    attach: function(context, settings) {
+      $(document).ajaxComplete(function(event, xhr, settings) {
+        if(xhr.responseJSON !== undefined && xhr.responseJSON.length > 0) {
+          if (xhr.responseJSON[0].selector === '#' + likeitId) {
+            likeitId = $('a.use-ajax.likeit-wrapper').attr('id');
+            var likeitNumber = $.trim($('#' + likeitId + ' .likeit-count').text()) * 1;
+            var likeitLike = '';
+            var likeitActions = $('#' + likeitId).attr('href').split('/');
+            var likeitAction = likeitActions[2];
+            var likeitTitle = '';
+            var $likeitTitle = $('#' + likeitId + ' .likeit-title');
+            $likeitTitle.insertAfter('#' + likeitId + ' .likeit-count');
+            if (likeitNumber === 1) {
+              likeitLike = ' like';
+            }
+            else {
+              likeitLike = ' likes';
+            }
+            if (likeitAction === 'like') {
+              likeitTitle = likeitLike + ' - click to like';
+            }
+            else {
+              likeitTitle = likeitLike + ' - click to unlike'
+            }
+            $likeitTitle.html(likeitTitle);
+          }
+        }
+
+      });
+    }
+  }
 
 
 })(jQuery, Drupal);

@@ -95,10 +95,6 @@ other methods (such as node.delete) will result in an exception.
 
     <div class="container-fluid hero-container">
 
-
-      {#
-      # old: {{ file_url(node.field_hero_image.entity.fileuri) }}
-      #}
       <div class="row hub-hero-image" style="background-image:url('{{ hero_image }}')">
         <div class="container">
 
@@ -119,7 +115,6 @@ other methods (such as node.delete) will result in an exception.
             <div class="row">
               <div class="col-sm-12">
 
-
                 {{ content.body }}
 
               </div>
@@ -138,10 +133,7 @@ other methods (such as node.delete) will result in an exception.
 
           <div class="col-sm-12">
 
-            {# DELETE drupal_view('eisai_hub_major_links', 'hub_major_links_view_block') #}
-
             {{ content.field_major_links }}
-
 
           </div>
 
@@ -154,11 +146,9 @@ other methods (such as node.delete) will result in an exception.
 
         <div class="row">
 
-
           <div class="col-sm-12">
             {# DOES NOT INCLUDE CONTENT PAGES WHICH ARE MARKED AS TOOLS #}
             {{ drupal_view('eisai_hub_children', 'hub_children_view_block', node.id) }}
-
 
           </div>
 
@@ -192,7 +182,7 @@ other methods (such as node.delete) will result in an exception.
       </section>
     {% endif %}
 
-    {% if content.field_tool_list|render|trim is not empty %}
+    {% if content.field_tool_list|render|trim|striptags is not empty %}
     <div class="container-fluid hero-container">
       <div class="row">
 
@@ -203,14 +193,19 @@ other methods (such as node.delete) will result in an exception.
 
 
               <div class="col-sm-4">
-                <h2>{{ 'Tools'|trans }}</h2>
+                <h2>
+                  {% if content.field_tool_list_title|render|trim is not empty %}
+                    {{ content.field_tool_list_title }}
+                  {% else %}
+                    {{ 'Tools'|trans }}
+                  {% endif %}
+                </h2>
 
 
               </div>
 
               <div class="col-sm-8">
 
-                {# DELETE drupal_view('eisai_hub_tools', 'hub_tools_block', node.id) #}
                 {{ content.field_tool_list }}
 
               </div>
@@ -233,14 +228,19 @@ other methods (such as node.delete) will result in an exception.
 
 
                     <div class="col-sm-4">
-                      <h2>{{ 'Links'|trans }}</h2>
+                      <h2>
+                        {% if content.field_link_list_title|render|trim is not empty %}
+                          {{ content.field_link_list_title }}
+                        {% else %}
+                          {{ 'Links'|trans }}
+                        {% endif %}
+                      </h2>
 
 
                     </div>
 
                     <div class="col-sm-8">
 
-                      {# DELETE drupal_view('eisai_hub_tools', 'hub_tools_block', node.id) #}
                       {{ content.field_link_list }}
 
                     </div>

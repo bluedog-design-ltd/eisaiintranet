@@ -9,7 +9,7 @@ id: node.eisai_content_hub.field_contents_list_heading
 field_name: field_contents_list_heading
 entity_type: node
 bundle: eisai_content_hub
-label: 'Contents list title'
+label: 'Major links list title'
 description: ''
 required: true
 translatable: false

@@ -10,18 +10,26 @@ dependencies:
     - field.field.node.team_hub_page.field_contact_gmap_address
     - field.field.node.team_hub_page.field_contact_map_link
     - field.field.node.team_hub_page.field_contact_telephone
+    - field.field.node.team_hub_page.field_contact_title
+    - field.field.node.team_hub_page.field_display_preheadline
+    - field.field.node.team_hub_page.field_document_title
     - field.field.node.team_hub_page.field_documents
     - field.field.node.team_hub_page.field_emea_team
+    - field.field.node.team_hub_page.field_events_title
     - field.field.node.team_hub_page.field_has_meet_team
     - field.field.node.team_hub_page.field_has_news
     - field.field.node.team_hub_page.field_hero_version_headline_2
     - field.field.node.team_hub_page.field_hub_header_image
     - field.field.node.team_hub_page.field_link_list
+    - field.field.node.team_hub_page.field_link_list_title
     - field.field.node.team_hub_page.field_major_links
+    - field.field.node.team_hub_page.field_major_links_heading
     - field.field.node.team_hub_page.field_meet_team_subtitle
     - field.field.node.team_hub_page.field_meet_team_text
+    - field.field.node.team_hub_page.field_meet_team_title
     - field.field.node.team_hub_page.field_show_events
     - field.field.node.team_hub_page.field_tool_list
+    - field.field.node.team_hub_page.field_tool_list_title
     - node.type.team_hub_page
   module:
     - field_formatter_class
@@ -46,21 +54,21 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_contact_address:
-    weight: 8
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: basic_string
-    region: content
-  field_contact_email:
     weight: 9
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
+  field_contact_email:
+    weight: 10
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
   field_contact_fax:
-    weight: 11
+    weight: 12
     label: above
     settings:
       link_to_entity: false
@@ -68,7 +76,7 @@ content:
     type: string
     region: content
   field_contact_gmap_address:
-    weight: 13
+    weight: 14
     label: above
     settings:
       link_to_entity: false
@@ -76,7 +84,7 @@ content:
     type: string
     region: content
   field_contact_map_link:
-    weight: 12
+    weight: 13
     label: hidden
     settings:
       trim_length: null
@@ -90,15 +98,39 @@ content:
     type: link
     region: content
   field_contact_telephone:
-    weight: 10
+    weight: 11
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
+  field_contact_title:
+    weight: 8
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_display_preheadline:
+    weight: 23
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_document_title:
+    weight: 21
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_documents:
-    weight: 18
+    weight: 22
     label: hidden
     settings:
       link: true
@@ -112,6 +144,14 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_events_title:
+    weight: 28
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   field_has_meet_team:
     weight: 3
@@ -134,7 +174,7 @@ content:
     type: boolean
     region: content
   field_hero_version_headline_2:
-    weight: 19
+    weight: 24
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -142,7 +182,7 @@ content:
     region: content
   field_hub_header_image:
     type: entity_reference_entity_view
-    weight: 15
+    weight: 16
     label: above
     settings:
       view_mode: default
@@ -150,7 +190,7 @@ content:
     third_party_settings: {  }
     region: content
   field_link_list:
-    weight: 20
+    weight: 26
     label: hidden
     settings:
       trim_length: 80
@@ -161,8 +201,16 @@ content:
     third_party_settings: {  }
     type: link
     region: content
+  field_link_list_title:
+    weight: 25
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_major_links:
-    weight: 14
+    weight: 15
     label: hidden
     settings:
       trim_length: 80
@@ -175,9 +223,17 @@ content:
         class: hub-major-links
     type: link
     region: content
+  field_major_links_heading:
+    weight: 27
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_meet_team_subtitle:
-    weight: 16
-    label: above
+    weight: 18
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -190,6 +246,14 @@ content:
     third_party_settings: {  }
     type: basic_string
     region: content
+  field_meet_team_title:
+    weight: 17
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_show_events:
     weight: 7
     label: hidden
@@ -201,12 +265,20 @@ content:
     type: boolean
     region: content
   field_tool_list:
-    weight: 17
+    weight: 20
     label: hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_tool_list_title:
+    weight: 19
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   links:
     weight: 1

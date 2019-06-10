@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.content_page.field_footnotes
     - field.field.node.content_page.field_hero_version_headline_2
     - field.field.node.content_page.field_link_list
+    - field.field.node.content_page.field_local_video
     - field.field.node.content_page.field_remote_video
     - field.field.node.content_page.field_tags
     - field.field.node.content_page.field_tool_list
@@ -95,6 +96,12 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
+    region: content
+  field_local_video:
+    type: media_library_widget
+    weight: 28
+    settings: {  }
+    third_party_settings: {  }
     region: content
   field_remote_video:
     type: media_library_widget

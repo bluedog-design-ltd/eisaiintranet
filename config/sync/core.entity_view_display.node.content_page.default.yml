@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.content_page.field_footnotes
     - field.field.node.content_page.field_hero_version_headline_2
     - field.field.node.content_page.field_link_list
+    - field.field.node.content_page.field_local_video
     - field.field.node.content_page.field_remote_video
     - field.field.node.content_page.field_tags
     - field.field.node.content_page.field_tool_list
@@ -72,6 +73,15 @@ content:
       field_formatter_class:
         class: ''
     type: link
+    region: content
+  field_local_video:
+    type: entity_reference_entity_view
+    weight: 11
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
     region: content
   field_remote_video:
     type: entity_reference_entity_view

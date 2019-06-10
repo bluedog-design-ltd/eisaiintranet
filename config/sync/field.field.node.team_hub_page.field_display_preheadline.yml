@@ -1,0 +1,19 @@
+uuid: 4919773a-0de1-4fa7-bfe1-d7a5b6dead79
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_display_preheadline
+    - node.type.team_hub_page
+id: node.team_hub_page.field_display_preheadline
+field_name: field_display_preheadline
+entity_type: node
+bundle: team_hub_page
+label: 'Display pre-Headline'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

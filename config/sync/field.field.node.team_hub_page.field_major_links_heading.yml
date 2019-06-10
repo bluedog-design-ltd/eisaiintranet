@@ -1,0 +1,19 @@
+uuid: 46865ab4-8e3d-496f-91a1-0c45ba4b3ce7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_major_links_heading
+    - node.type.team_hub_page
+id: node.team_hub_page.field_major_links_heading
+field_name: field_major_links_heading
+entity_type: node
+bundle: team_hub_page
+label: 'Major Links heading'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

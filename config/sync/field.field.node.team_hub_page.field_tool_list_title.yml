@@ -1,0 +1,19 @@
+uuid: 1086738f-4cde-4140-8803-e8dfa512aa83
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tool_list_title
+    - node.type.team_hub_page
+id: node.team_hub_page.field_tool_list_title
+field_name: field_tool_list_title
+entity_type: node
+bundle: team_hub_page
+label: 'Tool List Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
