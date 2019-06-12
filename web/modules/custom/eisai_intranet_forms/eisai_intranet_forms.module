@@ -76,10 +76,11 @@ function submitUserTeamFormCallback($form, $form_state) {
   $user_emea_team_id = $user_emea_teams[0]['target_id'];
   // First check if the `company` field is EEL.
   $company_id = $form_state->getValue('field_company')[0]["target_id"];
-  $company = Term::load($company_id);
-  $company_name = $company->getName();
+  if ($company = Term::load($company_id)) {
+    $company_name = $company->getName();
+  }
   // If the user is not EEL then $emea_team_hub_link should go to their affiliate hub page.
-  if ($company_name != 'EEL') {
+  if (isset($company_name) && $company_name != 'EEL') {
     $emea_team_id = $company_id;
     $emea_team_name = $company_name;
     // Load all nodes tagged with $company_id and of type team_hub_page.
@@ -89,10 +90,12 @@ function submitUserTeamFormCallback($form, $form_state) {
   }
   else {
     // Get emea team id from user object.
-    $emea_team_id = $user_emea_team_id;
-    $term = Term::load($emea_team_id);
-    $emea_team_name = $term->getName();
-    $team_link = "/emea-teams/" . str_replace(' ', '-', $emea_team_name);
+    if (!empty($user_emea_team_id)) {
+      $emea_team_id = $user_emea_team_id;
+      $term = Term::load($emea_team_id);
+      $emea_team_name = $term->getName();
+      $team_link = "/emea-teams/" . str_replace(' ', '-', $emea_team_name);
+    }
   }
   $response = new AjaxResponse();
   $response->addCommand(new CloseModalDialogCommand());

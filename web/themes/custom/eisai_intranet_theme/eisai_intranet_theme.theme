@@ -164,7 +164,6 @@ function eisai_intranet_theme_preprocess(&$vars, $hook) {
       $alias = \Drupal::service('path.alias_manager')->getAliasByPath('/node/'.$nodes['nid']);
       $emea_team_hub_link = $alias;
       $vars['emea_team_hub_link'] = $emea_team_hub_link;
-//      $vars['emea_team_id'] = $company_id;
       $vars['emea_team_name'] = $company_name;
     }
   }

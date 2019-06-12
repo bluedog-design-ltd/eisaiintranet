@@ -124,9 +124,13 @@
 
                 {% else %}
 
-                  {% if emea_team_name %}
-                    <h2><a href="{{ emea_team_hub_link }}">{{ emea_team_name }} Hub</a></h2>
-                  {% endif %}
+                  <h2 id="emea-team-hub">
+                    <a href="{{ emea_team_hub_link }}">
+                      {% if emea_team_name %}
+                        {{ emea_team_name }} Hub
+                      {% endif %}
+                    </a>
+                  </h2>
 
 
                   <a class="use-ajax" data-accepts="application/vnd.drupal-modal"
