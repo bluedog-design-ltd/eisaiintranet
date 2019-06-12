@@ -5,7 +5,6 @@ event full page
 */
 
 article.event .field--name-field-date-range {
-
   margin-bottom: 20px;
 }
 
@@ -14,7 +13,6 @@ article.news-story time,
 article.event time {
   font-weight: bold;
   color: #008ab4;
-
 }
 
 article.content-page .field--type-image,
@@ -44,18 +42,25 @@ article.news-story .field--name-body {
 }
 
 .field--name-field-tags .field--item:last-child::after {
-  content: ''
+  content: '';
 }
 
 article.event .field--name-field-event-images {
   margin-bottom: 20px;
 }
 
-body.page-node-type-content-page, body.page-node-type-news-story, body.page-node-type-event {
+body.page-node-type-content-page,
+body.page-node-type-news-story,
+body.page-node-type-event {
   background: #ecf0f4;
 }
 
-body.page-node-type-content-page h1, body.page-node-type-event h1, body.page-node-type-news-story h1, body.page-node-type-eisai-tool-page h1, body.path-user h1, body.path-media h1 {
+body.page-node-type-content-page h1,
+body.page-node-type-event h1,
+body.page-node-type-news-story h1,
+body.page-node-type-eisai-tool-page h1,
+body.path-user h1,
+body.path-media h1 {
   font-size: 60px;
   font-weight: 200;
   padding-top: 80px;
@@ -85,7 +90,9 @@ body.page-node-type-content-page h1, body.page-node-type-event h1, body.page-nod
   background-size: cover;
 }
 
-article.content-page, article.news-story, article.event {
+article.content-page,
+article.news-story,
+article.event {
   background-color: white;
   padding: 30px;
   padding-right: 50;
@@ -121,14 +128,14 @@ article.content-page, article.news-story, article.event {
 }
 
 
-article.content-page .content .field--name-field-link-list, .field--name-field-documents, .field--name-field-tool-list {
+article.content-page .content .field--name-field-link-list,
+.field--name-field-documents,
+.field--name-field-tool-list {
   position: relative;
-  /* margin-top: 30px; */
   margin-bottom: 30px;
 }
 
 article .content .field--name-field-link-list .field--item {
-
   display: table;
   vertical-align: middle;
   overflow: hidden;
@@ -139,8 +146,6 @@ article .content .field--name-field-link-list .field--item {
   background-size: 11px 19px;
   background-position: center right 20px;
   transition: background-position 0.3s ease, background-color 0.2s ease;
-
-
 }
 
 article .content .field--name-field-documents .field--item {
@@ -154,7 +159,6 @@ article .content .field--name-field-documents .field--item {
   background-size: 11px 19px;
   background-position: center right 20px;
   transition: background-position 0.3s ease, background-color 0.2s ease;
-
 }
 
 article .content .field--name-field-tool-list .field--item {
@@ -171,22 +175,18 @@ article .content .field--name-field-tool-list .field--item {
   transition: background-position 0.3s ease, background-color 0.2s ease;
 }
 
-
 article .content .field--name-field-documents .field--item::before {
   content: ' ';
   line-height: 70px;
   padding: 50px 70px;
   background-color: #a0b0c8;
   background-image: url(../images/icons/document.png);
-
   background-size: 27px 37px;
   background-position: center;
   background-repeat: no-repeat;
   width: 40px;
   height: 40px;
-
 }
-
 
 article .content .field--name-field-tool-list .field--item::before {
   content: ' ';
@@ -194,27 +194,21 @@ article .content .field--name-field-tool-list .field--item::before {
   padding: 50px 70px;
   background-color: #ffffff;
   background-image: url(../images/icons/tool.png);
-
-
   background-size: 46px;
   background-position: center;
   background-repeat: no-repeat;
   width: 40px;
   height: 40px;
-
 }
 
 article .content .field--name-field-link-list .field--item:hover,
 article .content .field--name-field-documents .field--item:hover {
   background-position: center right 10px;
-
   color: white;
 }
 
 article .content .field--name-field-tool-list .field--item:hover {
   background-position: center right 10px;
-
-
 }
 
 
@@ -222,7 +216,6 @@ article .content .field--name-field-link-list .field--item a,
 article .content .field--name-field-documents .field--item a {
   color: black;
   display: block;
-
   line-height: normal;
   width: 100%;
   padding: 20px;
@@ -251,18 +244,16 @@ article .content .field--name-field-tool-list .field--item a {
   color: white;
 }
 
-
-article.content-page .content .field--name-field-link-list .field--item:hover a,
+/*article.content-page .content .field--name-field-link-list .field--item:hover a,
 article.content-page .content .field--name-field-documents .field--item:hover a {
 
 }
 
 .content .field--name-field-tool-list .field--item:hover a {
 
-}
+}*/
 
 article.content-page .content .field--item a:hover {
-
   text-decoration: none;
 }
 
@@ -287,10 +278,11 @@ article.content-page .content .field--item a:hover {
 }
 
 .side-navigation .form-group {
-  margin-bottom: 0
+  margin-bottom: 0;
 }
 
-.side-shortcuts .link-button, .side-shortcuts .add-shortcut {
+.side-shortcuts .link-button,
+.side-shortcuts .add-shortcut {
   background-color: white;
   display: block;
   margin: 0 0 20px;
@@ -313,9 +305,9 @@ article.content-page .content .field--item a:hover {
   color: white;
 }
 
-.side-shortcuts .add-shortcut a {
+/*.side-shortcuts .add-shortcut a {
 
-}
+}*/
 
 .side-shortcuts .link-button a:hover {
   color: #008ab4;
@@ -327,41 +319,45 @@ body.page-node-type-eisai-content-hub .hub-meet-the-team .field--name-field-arbi
   background-color: #ffffff;
   display: table;
   width: 100%;
-  border:0;
-  -webkit-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.2);
-  -moz-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.2);
-  box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.2);
+  border: 0;
+  -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
   margin-bottom: 20px;
 }
 
-body.page-node-type-eisai-content-hub .hub-meet-the-team .field--name-field-arbitrary-team-members .field--item:nth-of-type(1n) .staff-col.viewuser a{
-  background-color:#008AB4;
-
-}
-body.page-node-type-eisai-content-hub .hub-meet-the-team .field--name-field-arbitrary-team-members .field--item:nth-of-type(2n) .staff-col.viewuser a{
-  background-color:#B5007C;
-
-}
-body.page-node-type-eisai-content-hub .hub-meet-the-team .field--name-field-arbitrary-team-members .field--item:nth-of-type(3n) .staff-col.viewuser a{
-  background-color:#1F00A3;
+body.page-node-type-eisai-content-hub .hub-meet-the-team .field--name-field-arbitrary-team-members .field--item:nth-of-type(1n) .staff-col.viewuser a {
+  background-color: #008ab4;
 }
 
-body.page-node-type-eisai-content-hub .hub-meet-the-team .field--name-field-arbitrary-team-members .field--item:nth-of-type(1n) .staff-job-title{
-  background-image:url(../images/meet-the-team/job-title-icon-blue.png);
-}
-body.page-node-type-eisai-content-hub .hub-meet-the-team .field--name-field-arbitrary-team-members .field--item:nth-of-type(2n) .staff-job-title{
-  background-image:url(../images/meet-the-team/job-title-icon-pink.png);
-}
-body.page-node-type-eisai-content-hub .hub-meet-the-team .field--name-field-arbitrary-team-members .field--item:nth-of-type(3n) .staff-job-title{
-  background-image:url(../images/meet-the-team/job-title-icon-purple.png);
+body.page-node-type-eisai-content-hub .hub-meet-the-team .field--name-field-arbitrary-team-members .field--item:nth-of-type(2n) .staff-col.viewuser a {
+  background-color: #b5007c;
 }
 
-body.page-node-type-eisai-content-hub .hub-meet-the-team .field--name-field-arbitrary-team-members .field--item:nth-of-type(1n) .staff-company{
-  background-image:url(../images/meet-the-team/job-title-icon-blue.png);
+body.page-node-type-eisai-content-hub .hub-meet-the-team .field--name-field-arbitrary-team-members .field--item:nth-of-type(3n) .staff-col.viewuser a {
+  background-color: #1f00a3;
 }
-body.page-node-type-eisai-content-hub .hub-meet-the-team .field--name-field-arbitrary-team-members .field--item:nth-of-type(2n) .staff-company{
-  background-image:url(../images/meet-the-team/job-title-icon-pink.png);
+
+body.page-node-type-eisai-content-hub .hub-meet-the-team .field--name-field-arbitrary-team-members .field--item:nth-of-type(1n) .staff-job-title {
+  background-image: url(../images/meet-the-team/job-title-icon-blue.png);
 }
-body.page-node-type-eisai-content-hub .hub-meet-the-team .field--name-field-arbitrary-team-members .field--item:nth-of-type(3n) .staff-company{
-  background-image:url(../images/meet-the-team/job-title-icon-purple.png);
+
+body.page-node-type-eisai-content-hub .hub-meet-the-team .field--name-field-arbitrary-team-members .field--item:nth-of-type(2n) .staff-job-title {
+  background-image: url(../images/meet-the-team/job-title-icon-pink.png);
+}
+
+body.page-node-type-eisai-content-hub .hub-meet-the-team .field--name-field-arbitrary-team-members .field--item:nth-of-type(3n) .staff-job-title {
+  background-image: url(../images/meet-the-team/job-title-icon-purple.png);
+}
+
+body.page-node-type-eisai-content-hub .hub-meet-the-team .field--name-field-arbitrary-team-members .field--item:nth-of-type(1n) .staff-company {
+  background-image: url(../images/meet-the-team/job-title-icon-blue.png);
+}
+
+body.page-node-type-eisai-content-hub .hub-meet-the-team .field--name-field-arbitrary-team-members .field--item:nth-of-type(2n) .staff-company {
+  background-image: url(../images/meet-the-team/job-title-icon-pink.png);
+}
+
+body.page-node-type-eisai-content-hub .hub-meet-the-team .field--name-field-arbitrary-team-members .field--item:nth-of-type(3n) .staff-company {
+  background-image: url(../images/meet-the-team/job-title-icon-purple.png);
 }

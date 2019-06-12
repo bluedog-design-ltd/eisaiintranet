@@ -19,7 +19,6 @@ body {
 
 article .form-container {
   width: 100%;
-
 }
 
 .teaser-col.pic {
@@ -40,7 +39,7 @@ article .form-container {
 }
 
 .news-story.views-row h3 {
-  display: none
+  display: none;
 }
 
 ul.menu--account li {
@@ -55,28 +54,37 @@ ul.menu--account li {
   padding: 20px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 0;
 }
 
 h1 {
   font-weight: 200;
-
 }
 
-div, li, a, span {
+div,
+li,
+a,
+span {
   background-repeat: no-repeat;
 }
 
-article a, article a:hover, article a:visited {
-  /* color:inherit; */
-  /* word-break: break-word !important; */
-  /* display: inline; */
-}
+/*article a,
+article a:hover,
+article a:visited {
+   color:inherit;
+   word-break: break-word !important;
+   display: inline;
+}*/
 
-.views-exposed-form {
-  /* margin-bottom: 30px; */
-}
+/*.views-exposed-form {
+   margin-bottom: 30px;
+}*/
 
 
 .super-search .views-row {
@@ -85,14 +93,12 @@ article a, article a:hover, article a:visited {
   padding-bottom: 20px;
 }
 
-.super-search .views-row h1, .super-search .views-row h2, .super-search .views-row h3 {
+/*.super-search .views-row h1, .super-search .views-row h2, .super-search .views-row h3 {
 
-
-}
+}*/
 
 ul.tabs--primary {
   margin-top: 30px;
-
 }
 
 /* user */
@@ -106,10 +112,12 @@ body section {
 }
 
 body section:last-child {
-  margin-bottom: 0
+  margin-bottom: 0;
 }
 
-h2, h3, h4 {
+h2,
+h3,
+h4 {
   font-weight: 200;
   /* font-size: 44px; */
   /* word-break: break-word; */
@@ -120,19 +128,19 @@ h2, h3, h4 {
   padding-top: 10px;
 }
 
-.hero-container {
-  /* padding:0; */
-  /* margin-bottom:30px; */
-}
+/*.hero-container {
+   padding:0;
+   margin-bottom:30px;
+}*/
 
 div.bluebutton {
   background: #008ab4;
   padding: 10px;
   text-align: center;
-
 }
 
-.container.form-container, .container.node-container {
+.container.form-container,
+.container.node-container {
   margin-top: 30px;
   margin-bottom: 30px;
   /* background: white; */
@@ -248,7 +256,6 @@ div.navbar {
 
 .region-navigation .user .pic {
   display: inline-block;
-
 }
 
 nav {
@@ -297,10 +304,10 @@ nav {
   position: relative;
 }
 
-.search-api-autocomplete-search .ui-menu-item {
-  /* max-width:500px; */
-  /* overflow: hidden; */
-}
+/*.search-api-autocomplete-search .ui-menu-item {
+   max-width:500px;
+   overflow: hidden;
+}*/
 
 .image-float-left {
   margin: 10px;
@@ -308,13 +315,13 @@ nav {
   clear: both;
 }
 
-.search-overlay .form-container {
-  /* text-align:center; */
-}
+/*.search-overlay .form-container {
+   text-align:center;
+}*/
 
-.ui-autocomplete-input {
-  /*width:700px;*/
-}
+/*.ui-autocomplete-input {
+  width:700px;
+}*/
 
 .header-search-button {
   background-image: url(../images/header/search_off.png);
@@ -372,9 +379,9 @@ nav {
 }
 
 /* main header menu */
-ul.menu--main {
+/*ul.menu--main {
 
-}
+}*/
 
 .mainmenuchildrenarea .row {
   margin: 0 auto;
@@ -431,13 +438,14 @@ ul.menu--main {
 
 ul.menu--main.nav-pills > li > a {
   border-radius: 0;
-  color: #008ab4
-
+  color: #008ab4;
 }
 
-.menu--main.nav-pills > li.active > a, .menu--main.nav-pills > li.active > a:hover, .menu--main.nav-pills > li.active > a:focus {
+.menu--main.nav-pills > li.active > a,
+.menu--main.nav-pills > li.active > a:hover,
+.menu--main.nav-pills > li.active > a:focus {
   background-color: #008ab4;
-  color: white
+  color: white;
 }
 
 .region-mainmenu .tab-pane {
@@ -447,7 +455,6 @@ ul.menu--main.nav-pills > li > a {
 
 .region-mainmenu .tab-content {
   background-color: #008ab4;
-
 }
 
 .region-mainmenu .tab-content a {
@@ -465,9 +472,10 @@ ol.breadcrumb {
   bottom: 0;
 }
 
-ol.breadcrumb li, ol.breadcrumb li a {
+ol.breadcrumb li,
+ol.breadcrumb li a {
   color: white;
-  font-weight: 200
+  font-weight: 200;
 }
 
 ol.breadcrumb li.active {
@@ -488,7 +496,6 @@ div.region-footer {
 }
 
 footer.footer {
-
   background-color: white;
 }
 
@@ -519,8 +526,6 @@ nav#block-eisai-intranet-theme-footer {
 .menu--footer.nav li {
   display: inline-block;
   font-size: 14px;
-
-
 }
 
 .menu--footer.nav li.first a {
@@ -530,48 +535,39 @@ nav#block-eisai-intranet-theme-footer {
 .menu--footer.nav li a {
   color: #a0b0c8;
   border-left: 1px solid #a0b0c8;
-  padding: 0 10px
-
+  padding: 0 10px;
 }
 
 
 /* should go in node css or article or something */
 
 .container-fluid.node-container {
-  background: #ecf0f4
+  background: #ecf0f4;
 }
 
-article.event {
-  /* padding:20px; */
-  /* background-color:white; */
-  /* margin-top:20px; */
-  /* margin-bottom:20px; */
-}
+/*article.event {
+   padding:20px;
+   background-color:white;
+   margin-top:20px;
+   margin-bottom:20px;
+}*/
 
 
 /* add content page */
 
 
-.container.add-content-node {
+/*.container.add-content-node {
 
-}
+}*/
 
 .container.add-content-node h1 {
   margin-top: 30px;
   margin-bottom: 30px;
 }
 
-dl {
-
-
-}
-
 dl dd {
-
-
   padding: 20px;
   border-bottom: 1px solid #efefef;
-
 }
 
 dl dt {
@@ -579,7 +575,6 @@ dl dt {
 }
 
 dl dt a {
-
   color: #008ab4;
 }
 
@@ -626,9 +621,7 @@ dl dt a {
   background-color: #008ab4;
   color: #ffffff;
   border: none;
-
   padding: 10px;
-
   -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
@@ -640,7 +633,6 @@ dl dt a {
 
 .tooltip > .tooltip-inner span {
   font-size: 14px;
-
 }
 
 /* Tooltip on top */

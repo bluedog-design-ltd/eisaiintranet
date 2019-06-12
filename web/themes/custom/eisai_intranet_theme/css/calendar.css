@@ -1,142 +1,145 @@
-
 /* CALENDAR */
 
-.cal-col{
-	display: TABLE-CELL;
-	vertical-align: middle;
+.cal-col {
+  display: TABLE-CELL;
+  vertical-align: middle;
 }
 
-.cal-event-date{
-	background-color:#B5007C;
-	width: 100px;
-	height: 100px;
+.cal-event-date {
+  background-color: #b5007c;
+  width: 100px;
+  height: 100px;
 }
 
-li.list-group-item, div.list-group-item{
-	padding:0;
-	margin-bottom:20px;
-	DISPLAY: TABLE;
-	WIDTH: 100%;
+li.list-group-item,
+div.list-group-item {
+  padding: 0;
+  margin-bottom: 20px;
+  DISPLAY: TABLE;
+  WIDTH: 100%;
 }
 
-li.list-group-item:nth-of-type(odd) .cal-event-date, 
-div.list-group-item:nth-of-type(odd) .cal-event-date
-{
-	background-color:#008AB4;
+li.list-group-item:nth-of-type(odd) .cal-event-date,
+div.list-group-item:nth-of-type(odd) .cal-event-date {
+  background-color: #008ab4;
 }
 
-.cal-event-date h3, .cal-event-date h4{
-	padding:0;
-	margin:0;
-	text-align: center;
+.cal-event-date h3,
+.cal-event-date h4 {
+  padding: 0;
+  margin: 0;
+  text-align: center;
 }
 
-.cal-event-date h3{
-	font-size: 50px;
-	font-family:"Helvetica", Arial, sans-serif;
-	font-weight:bold;
-	color:white;
-	/* margin: 10px; */
-	/* margin-bottom: 0; */
-}
-.cal-event-date h4{
-	font-size: 20px;
-	font-family:"Helvetica", Arial, sans-serif;
-	font-weight:bold;
-	color:white;
+.cal-event-date h3 {
+  font-size: 50px;
+  font-family: "Helvetica", Arial, sans-serif;
+  font-weight: bold;
+  color: white;
+  /* margin: 10px; */
+  /* margin-bottom: 0; */
 }
 
-.cal-event-main{
-	/* margin-left: 10px; */
-	PADDING-LEFT: 20PX;
-}
-.cal-event-main h2{
-	font-family: "Helvetica", Arial, sans-serif;
-	font-weight: 100;
-	font-size: 24px;
-	padding:0;
-	margin:0;
-	margin-top: 10px;
-	margin-bottom: 5px;
+.cal-event-date h4 {
+  font-size: 20px;
+  font-family: "Helvetica", Arial, sans-serif;
+  font-weight: bold;
+  color: white;
 }
 
-.cal-event-main h2 a{
-	color:black;
+.cal-event-main {
+  /* margin-left: 10px; */
+  PADDING-LEFT: 20PX;
 }
 
-.cal-event-info{
-	font-size:18px;
-	color:#A0B0C8;
+.cal-event-main h2 {
+  font-family: "Helvetica", Arial, sans-serif;
+  font-weight: 100;
+  font-size: 24px;
+  padding: 0;
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
-.cal-event-body{
-	margin-bottom: 10px;
+.cal-event-main h2 a {
+  color: black;
 }
 
-.cal-event-location{
-	padding-left: 24px;
-	background-image:url(../images/calendar/location-icon.png);
-	background-size: 16px;
-	background-position: left center;
-	margin-right:20px;
-}
-.cal-event-time{
-	padding-left: 23px;
-	background-image:url(../images/calendar/time-icon.png);
-	background-size: 16px;
-	background-position: left center;
+.cal-event-info {
+  font-size: 18px;
+  color: #a0b0c8;
 }
 
-.cal-event-viewdetails{
-	/* float:right; */
-	/* margin: 30px 20px; */
-	text-align: right;
-	padding-right: 20px;
+.cal-event-body {
+  margin-bottom: 10px;
 }
 
-.cal-event-viewdetails a{
-	padding:10px;
-	background-color:#B5007C;
-	color:white;
-	text-transform: uppercase;
-	white-space: nowrap;
+.cal-event-location {
+  padding-left: 24px;
+  background-image: url(../images/calendar/location-icon.png);
+  background-size: 16px;
+  background-position: left center;
+  margin-right: 20px;
 }
 
-li.list-group-item:nth-of-type(odd) .cal-event-viewdetails a
-div.list-group-item:nth-of-type(odd) .cal-event-viewdetails a{
-	background-color:#008AB4;
+.cal-event-time {
+  padding-left: 23px;
+  background-image: url(../images/calendar/time-icon.png);
+  background-size: 16px;
+  background-position: left center;
 }
 
-li.list-group-item, div.list-group-item{
-	border:0;
--webkit-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.2);
--moz-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.2);
-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.2);	
-	
+.cal-event-viewdetails {
+  /* float:right; */
+  /* margin: 30px 20px; */
+  text-align: right;
+  padding-right: 20px;
 }
 
-body.page-node-type-event .cal-event-date{
-	width: 50px;
-	height: 50px;
+.cal-event-viewdetails a {
+  padding: 10px;
+  background-color: #b5007c;
+  color: white;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
-body.page-node-type-event .cal-event-date h3{
-	font-size:20px;
+li.list-group-item:nth-of-type(odd) .cal-event-viewdetails a,
+div.list-group-item:nth-of-type(odd) .cal-event-viewdetails a {
+  background-color: #008ab4;
 }
 
-body.page-node-type-event .cal-event-date h4{
-	font-size:16px;
+li.list-group-item,
+div.list-group-item {
+  border: 0;
+  -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
 }
 
-body.page-node-type-event .cal-event-info{
-	display: none;
+body.page-node-type-event .cal-event-date {
+  width: 50px;
+  height: 50px;
 }
 
-body.page-node-type-event .cal-event-viewdetails{
-	display: none;
+body.page-node-type-event .cal-event-date h3 {
+  font-size: 20px;
 }
 
-body.page-node-type-event  .cal-event-main h2{
-	font-size: 20px;
-	margin:0;
+body.page-node-type-event .cal-event-date h4 {
+  font-size: 16px;
+}
+
+body.page-node-type-event .cal-event-info {
+  display: none;
+}
+
+body.page-node-type-event .cal-event-viewdetails {
+  display: none;
+}
+
+body.page-node-type-event .cal-event-main h2 {
+  font-size: 20px;
+  margin: 0;
 }

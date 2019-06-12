@@ -1,213 +1,218 @@
-body.page-node-type-team-hub-page .hero-container{
-	margin-bottom: 0;
+body.page-node-type-team-hub-page .hero-container {
+  margin-bottom: 0;
 }
 
 
-
-.hub-hero-image{
-	padding-top: 150px;
-	/* padding-bottom:40px; */
-	background-size: cover;
-	min-height: 500px;
-	background-position: right;
-	position: relative;
-	/* margin-left: 0; */
-	/* margin-right: 0; */
+.hub-hero-image {
+  padding-top: 150px;
+  /* padding-bottom:40px; */
+  background-size: cover;
+  min-height: 500px;
+  background-position: right;
+  position: relative;
+  /* margin-left: 0; */
+  /* margin-right: 0; */
 }
 
 
-.hub-hero-image h1{
-	color:white;
-	font-weight:bold;
-	margin-bottom: 160px;
-	font-size:60px;
-	/* min-height: 120px; */
+.hub-hero-image h1 {
+  color: white;
+  font-weight: bold;
+  margin-bottom: 160px;
+  font-size: 60px;
+  /* min-height: 120px; */
 }
 
-.hub-hero-image h2{
-	color:white;
-	font-weight:200;
-	font-size: 50px;
+.hub-hero-image h2 {
+  color: white;
+  font-weight: 200;
+  font-size: 50px;
 }
 
-.content-hub-intro-container{
-	/* padding:0 */
-}
+/*.content-hub-intro-container {
+   padding:0
+}*/
 
-.row.content-hub-intro{
-	background:#ECF0F4;
-}
-
-
-
-
-section.hub-intro{
-	margin-bottom:30px;
-	/* margin-top:-30px; */
-	padding-bottom:30px;
-}
-
-section.hub-intro .field--name-body{
-	padding-top: 30px;
-	margin-bottom: 30px;
-}
-
-body.page-node-type-team-hub-page section.hub-news-and-location{margin-bottom: 70px;background:#ECF0F4;/* margin-top: 30px; */padding-top: 30px;padding-bottom: 30px;}
-
-body.page-node-type-team-hub-page .hub-map-box{
-	background-size: cover;
-	overflow:hidden;
-	min-height:333px;
-}
-
-body.page-node-type-team-hub-page .hub-map-box h2{
-	color: #008AB4;
-	font-weight:200;
+.row.content-hub-intro {
+  background: #ecf0f4;
 }
 
 
-body.page-node-type-team-hub-page .hub-map-box .location-info{
-	background:white;
-	margin:20px;
-	width:60%;
-	max-width: 450px;
+section.hub-intro {
+  margin-bottom: 30px;
+  /* margin-top:-30px; */
+  padding-bottom: 30px;
 }
 
-body.page-node-type-team-hub-page .hub-map-box .location-info .location-info-main{
-	padding:20px;
+section.hub-intro .field--name-body {
+  padding-top: 30px;
+  margin-bottom: 30px;
 }
 
-
-
-body.page-node-type-team-hub-page .hub-map-box .location-map-button{
-	
-	/* margin:-20px */
+body.page-node-type-team-hub-page section.hub-news-and-location {
+  margin-bottom: 70px;
+  background: #ecf0f4; /* margin-top: 30px; */
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
-
-
-.meet-team-tools-documents{
-	/* background:grey; */
+body.page-node-type-team-hub-page .hub-map-box {
+  background-size: cover;
+  overflow: hidden;
+  min-height: 333px;
 }
 
-body.page-node-type-team-hub-page .meet-the-team-row  .views-field-view-user{
-	
-	width:150px;
-}
-/* major links */
-
-section.hub-major-links{
-	
-}
-
-section.hub-major-links h2{
-	margin-bottom:40px;
+body.page-node-type-team-hub-page .hub-map-box h2 {
+  color: #008ab4;
+  font-weight: 200;
 }
 
 
-section.hub-meet-the-team{background:#ECF0F4;margin-bottom: 0;padding-bottom: 30px;padding-top: 30px;}
-section.hub-tools{
-background:#ECF0F4;
-	padding-bottom: 30px;padding-top: 30px;
+body.page-node-type-team-hub-page .hub-map-box .location-info {
+  background: white;
+  margin: 20px;
+  width: 60%;
+  max-width: 450px;
+}
+
+body.page-node-type-team-hub-page .hub-map-box .location-info .location-info-main {
+  padding: 20px;
+}
+
+
+/*body.page-node-type-team-hub-page .hub-map-box .location-map-button {
+   margin:-20px
+}*/
+
+
+/*.meet-team-tools-documents {
+   background:grey;
+}*/
+
+body.page-node-type-team-hub-page .meet-the-team-row .views-field-view-user {
+  width: 150px;
 }
 
 /* major links */
+/*
+section.hub-major-links {
 
+}*/
 
-.hub-major-links .field--name-field-major-links .field--item{
-	display: inline-block;
-	vertical-align: middle;
-	overflow: hidden;
-	margin:10px;
-	background-image:url(../images/buttonsandting/hub-link-arrow.png);
-	background-size: 11px 19px;
-	background-color: #008AB4;
-	background-position: bottom 20px right 20px;
-	margin-left:0;
-	margin-top:0;
-	transition: background-position 0.3s ease, background-color 0.2s ease;
+section.hub-major-links h2 {
+  margin-bottom: 40px;
 }
 
-.hub-major-links .field--name-field-major-links .field--item:nth-child(3n+1){
-	
-	background-color: #008AB4;
-}
-.hub-major-links .field--name-field-major-links .field--item:nth-child(3n+1):hover{
-	background-color: #01546E;
-}
-.hub-major-links .field--name-field-major-links .field--item:nth-child(3n+2){
-	
-	background-color: #B5007C;
-}
-.hub-major-links .field--name-field-major-links .field--item:nth-child(3n+2):hover{
-	background-color: #810159;
-}
-.hub-major-links .field--name-field-major-links .field--item:nth-child(3n+3){
-	
-	background-color: #1F00A3;
-}
-.hub-major-links .field--name-field-major-links .field--item:nth-child(3n+3):hover{
-	background-color: #16026A;
+section.hub-meet-the-team {
+  background: #ecf0f4;
+  margin-bottom: 0;
+  padding-bottom: 30px;
+  padding-top: 30px;
 }
 
-.hub-major-links .field--name-field-major-links .field--item:hover{
-	background-position: bottom 20px right 10px;
-	
+section.hub-tools {
+  background: #ecf0f4;
+  padding-bottom: 30px;
+  padding-top: 30px;
 }
 
-.hub-major-links .field--name-field-major-links .field--item a{
-	color:white;
-	display: block;
-	width: 213px;
-	height: 235px;
-	line-height: normal;
-	padding-left: 20px;
-	padding-right: 40px;
-	padding-top:30px;
-	text-decoration: none;
-	display: table-cell;
-	vertical-align: top;
-	font-weight: 200;
-	font-size:24px;
+/* major links */
+
+
+.hub-major-links .field--name-field-major-links .field--item {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  margin: 10px;
+  background-image: url(../images/buttonsandting/hub-link-arrow.png);
+  background-size: 11px 19px;
+  background-color: #008ab4;
+  background-position: bottom 20px right 20px;
+  margin-left: 0;
+  margin-top: 0;
+  transition: background-position 0.3s ease, background-color 0.2s ease;
+}
+
+.hub-major-links .field--name-field-major-links .field--item:nth-child(3n+1) {
+  background-color: #008ab4;
+}
+
+.hub-major-links .field--name-field-major-links .field--item:nth-child(3n+1):hover {
+  background-color: #01546e;
+}
+
+.hub-major-links .field--name-field-major-links .field--item:nth-child(3n+2) {
+  background-color: #b5007c;
+}
+
+.hub-major-links .field--name-field-major-links .field--item:nth-child(3n+2):hover {
+  background-color: #810159;
+}
+
+.hub-major-links .field--name-field-major-links .field--item:nth-child(3n+3) {
+  background-color: #1f00a3;
+}
+
+.hub-major-links .field--name-field-major-links .field--item:nth-child(3n+3):hover {
+  background-color: #16026a;
+}
+
+.hub-major-links .field--name-field-major-links .field--item:hover {
+  background-position: bottom 20px right 10px;
+}
+
+.hub-major-links .field--name-field-major-links .field--item a {
+  color: white;
+  display: block;
+  width: 213px;
+  height: 235px;
+  line-height: normal;
+  padding-left: 20px;
+  padding-right: 40px;
+  padding-top: 30px;
+  text-decoration: none;
+  display: table-cell;
+  vertical-align: top;
+  font-weight: 200;
+  font-size: 24px;
 }
 
 
-.hub-major-links .field--name-field-major-links .field--item:hover a{
-	
-}
+/*.hub-major-links .field--name-field-major-links .field--item:hover a {
+
+}*/
 
 /* minor links */
 
-.link-button.hub-minor-link{
-	background-image:url(../images/buttonsandting/hub-link-arrow.png);
-	background-size: 11px 19px;
-	background-color: #008AB4;
-	margin-left:0;
-	margin-top:0;
+.link-button.hub-minor-link {
+  background-image: url(../images/buttonsandting/hub-link-arrow.png);
+  background-size: 11px 19px;
+  background-color: #008ab4;
+  margin-left: 0;
+  margin-top: 0;
 }
 
-.link-button.hub-minor-link:hover{
-	background-color: #01546E;
+.link-button.hub-minor-link:hover {
+  background-color: #01546e;
 }
 
-.link-button.hub-minor-link a{
-	width: 270px;
+.link-button.hub-minor-link a {
+  width: 270px;
 }
-
 
 
 /* news slider buttons */
 
-body.page-node-type-team-hub-page a.carousel-control{
-	bottom: 44px;
-	top: auto;
+body.page-node-type-team-hub-page a.carousel-control {
+  bottom: 44px;
+  top: auto;
 }
 
-body.page-node-type-team-hub-page  a.carousel-control.right{
-	right: -22px;
+body.page-node-type-team-hub-page a.carousel-control.right {
+  right: -22px;
 }
 
-body.page-node-type-team-hub-page  a.carousel-control.left{
-	right: 60px;
-	left: auto;
+body.page-node-type-team-hub-page a.carousel-control.left {
+  right: 60px;
+  left: auto;
 }

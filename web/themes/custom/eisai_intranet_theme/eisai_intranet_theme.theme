@@ -1,15 +1,24 @@
 <?php
 
+/**
+ * @file
+ * The *.theme file for this theme.
+ */
+
 use Drupal\Component\Utility\Html;
-use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\Core\Url;
 use Drupal\likeit\Controller\LikeItController;
-use Drupal\user\Entity\User;
 use Drupal\taxonomy\Entity\Term;
-use Drupal\Drupal\node\NodeInterface;
 use Drupal\image\Entity\ImageStyle;
+use Drupal\media\Entity\Media;
+use Drupal\user\Entity\User;
+use Drupal\node\NodeInterface;
+
+/*
+use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\Core\Menu;
 use Drupal\menu_link_content\Entity\MenuLinkContent;
+*/
 
 /**
  * Implements hook_preprocess_HOOK() for HTML document templates.
@@ -21,18 +30,19 @@ function eisai_intranet_theme_preprocess_html(&$vars, $hook) {
   if ($node) {
     $vars['html_title'] = $node->getTitle();
   }
-
 }
 
 /**
  * Implements template_preprocess_node().
  *
- * @param $vars
+ * @param array $vars
+ *   The variables to work with.
+ *
  * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
  * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
  * @throws \Drupal\Core\TypedData\Exception\MissingDataException
  */
-function eisai_intranet_theme_preprocess_node(&$vars) {
+function eisai_intranet_theme_preprocess_node(array &$vars) {
   $node = $vars['node'];
   $nodeType = $node->getType();
   $node_id = $node->id();
@@ -41,43 +51,36 @@ function eisai_intranet_theme_preprocess_node(&$vars) {
 
     $hero_image = $node->get('field_hub_header_image')->getValue();
     if (!empty($hero_image)) {
-      $entity = \Drupal\media\Entity\Media::load($hero_image[0]['target_id']);
+      $entity = Media::load($hero_image[0]['target_id']);
 
-      //used devel to find custom field name "field_media_image_2" in custom media type... argh!!!!
-      $vars['hero_image'] = ImageStyle::load('hub_hero_image')->buildUrl($entity->field_media_image_2->entity->getFileUri());
+      $vars['hero_image'] = ImageStyle::load('hub_hero_image')
+        ->buildUrl($entity->field_media_image_2->entity->getFileUri());
     }
   }
 
   if ($nodeType == 'team_hub_page') {
-    //drupal_set_message("team hub page preprocess");
-    //$image_obj =  $node->get('field_hub_header_image')[0]->value;
-    //$image_obj  = $variables['content']['field_hub_header_image'][0]['#media'];
-
-    //die("image obj".$image_obj);
-    // $vars['hero_image'] = \Drupal\image\Entity\ImageStyle::load('hub_hero_image')->buildUrl($image_obj->field_media_image->entity->getFileUri());
 
     /** @var \Drupal\node\NodeInterface $node */
 
-
     $hero_image = $node->get('field_hub_header_image')->getValue();
     if (!empty($hero_image)) {
-      $entity = \Drupal\media\Entity\Media::load($hero_image[0]['target_id']);
+      $entity = Media::load($hero_image[0]['target_id']);
 
-      //used devel to find custom field name "field_media_image_2" in custom media type... argh!!!!
-      $vars['hero_image'] = ImageStyle::load('hub_hero_image')->buildUrl($entity->field_media_image_2->entity->getFileUri());
+      $vars['hero_image'] = ImageStyle::load('hub_hero_image')
+        ->buildUrl($entity->field_media_image_2->entity->getFileUri());
     }
-
 
     $contact_address = $node->get('field_contact_address')->value;
     $contact_telephone = $node->get('field_contact_telephone')->value;
     $contact_fax = $node->get('field_contact_fax')->value;
     $contact_email = $node->get('field_contact_email')->value;
     $contact_static_map_api_url = urlencode($node->get('field_contact_gmap_address')->value);
-    $contact_map_link = null;
+    $contact_map_link = NULL;
     if (!empty($node->get('field_contact_map_link')->first())) {
       $contact_map_link = $node->get('field_contact_map_link')->first()->getUrl();
-    } else {
-
+    }
+    else {
+      $contact_map_link;
     }
     $vars['contact_address'] = $contact_address;
     $vars['contact_telephone'] = $contact_telephone;
@@ -85,35 +88,32 @@ function eisai_intranet_theme_preprocess_node(&$vars) {
     $vars['contact_email'] = $contact_email;
     $vars['contact_static_map_api_url'] = $contact_static_map_api_url;
     $vars['contact_map_link'] = $contact_map_link;
-
   }
 
-  //if($nodeType=='content_page' || $nodeType=='event' || $nodeType=='news_story' ){
   if ($nodeType == 'content_page' || $nodeType == 'eisai_tool_page') {
     $hero_image = $node->get('field_content_header_image')->getValue();
     if (!empty($hero_image)) {
-      $entity = \Drupal\media\Entity\Media::load($hero_image[0]['target_id']);
+      $entity = Media::load($hero_image[0]['target_id']);
 
-      //used devel to find custom field name "field_media_image_1" in custom media type... argh!!!!
-      $vars['hero_image'] = ImageStyle::load('content_header_image')->buildUrl($entity->field_media_image_1->entity->getFileUri());
+      $vars['hero_image'] = ImageStyle::load('content_header_image')
+        ->buildUrl($entity->field_media_image_1->entity->getFileUri());
     }
 
-    //get parent menu link details to build side bar menu
+    // Get parent menu link details to build side bar menu.
     $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
     $links = $menu_link_manager->loadLinksByRoute('entity.node.canonical', array('node' => $node_id));
     if ($link = reset($links)) {
       if ($parent = $link->getParent()) {
         $parent = $menu_link_manager->createInstance($parent);
         $parent_title = $parent->getTitle();
-        //$parent_id = $parent->id();
         $parent_url = $parent->getUrlObject()->toString();
         $vars['parent_menu_item'] = $parent;
         $vars['parent_title'] = $parent_title;
         $vars['parent_url'] = $parent_url;
 
-        //convoluted route to get node id of parent menu item
-        //this is so that we can build view list on twig of parent menu item's children
-        //(the siblings of current page)
+        // Convoluted route to get node id of parent menu item.
+        // This is so that we can build view list on twig of parent
+        // menu item's children (the siblings of current page).
         $alias = \Drupal::service('path.alias_manager')->getPathByAlias($parent_url);
         $params = Url::fromUri("internal:" . $alias)->getRouteParameters();
         $entity_type = key($params);
@@ -121,7 +121,8 @@ function eisai_intranet_theme_preprocess_node(&$vars) {
           $node = \Drupal::entityTypeManager()->getStorage($entity_type)->load($params[$entity_type]);
           $parent_id = $node->nid->value;
           $vars['parent_id'] = $parent_id;
-        } else {
+        }
+        else {
           $vars['parent_id'] = 1;
         }
       }
@@ -133,13 +134,15 @@ function eisai_intranet_theme_preprocess_node(&$vars) {
 /**
  * Implements template_preprocess().
  *
- * @param $vars
- * @param $hook
+ * @param array $vars
+ *   The variables to work with.
+ * @param string $hook
+ *   The hook in question.
  */
-function eisai_intranet_theme_preprocess(&$vars, $hook) {
+function eisai_intranet_theme_preprocess(array &$vars, $hook) {
 
   $user_id = \Drupal::currentUser()->id();
-  $user = \Drupal\user\Entity\User::load($user_id);
+  $user = User::load($user_id);
   $vars['uid'] = $user_id;
 
   if (isset($user->get('field_emea_team')->target_id)) {
@@ -157,11 +160,12 @@ function eisai_intranet_theme_preprocess(&$vars, $hook) {
     $vars['company_id'] = $company_id;
     $company = Term::load($company_id);
     $company_name = $company->getName();
-    // If the user is not EEL then $emea_team_hub_link should go to their affiliate hub page.
+    // If the user is not EEL then $emea_team_hub_link should
+    // go to their affiliate hub page.
     if ($company_name != 'EEL') {
       // Load all nodes tagged with $company_id and of type team_hub_page.
       $nodes = _get_nodes_by_term($company_id, 'team_hub_page');
-      $alias = \Drupal::service('path.alias_manager')->getAliasByPath('/node/'.$nodes['nid']);
+      $alias = \Drupal::service('path.alias_manager')->getAliasByPath('/node/' . $nodes['nid']);
       $emea_team_hub_link = $alias;
       $vars['emea_team_hub_link'] = $emea_team_hub_link;
       $vars['emea_team_name'] = $company_name;
@@ -175,9 +179,13 @@ function eisai_intranet_theme_preprocess(&$vars, $hook) {
 /**
  * Custom function to get nids according to taxonomy terms and content type.
  *
- * @param $term_id
- * @param $node_type
+ * @param int $term_id
+ *   The term ID.
+ * @param string $node_type
+ *   The node type.
+ *
  * @return mixed
+ *   An array of node IDs.
  */
 function _get_nodes_by_term($term_id, $node_type) {
   $query = \Drupal::database()->select('taxonomy_index', 'ti');
@@ -198,7 +206,7 @@ function eisai_intranet_theme_preprocess_views_view_unformatted(&$variables) {
   // Start the preprocess for content_page_siblings_block.
   if ($view->current_display == 'content_page_siblings_block') {
     $node = \Drupal::routeMatch()->getParameter('node');
-    if ($node instanceof \Drupal\node\NodeInterface) {
+    if ($node instanceof NodeInterface) {
       $nid = $node->id();
     }
 
@@ -235,7 +243,7 @@ function eisai_intranet_theme_preprocess_views_view_unformatted(&$variables) {
     $rows = $variables['rows'];
     foreach ($rows as $id => $row) {
       $row_entity = $row['content']['#row']->_entity;
-      // If this row is the current page, add a class of "current"
+      // If this row is the current page, add a class of "current".
       if ($row_entity->id() == $nid) {
         $variables['rows'][$id]['attributes']->addClass('current');
       }
@@ -244,7 +252,7 @@ function eisai_intranet_theme_preprocess_views_view_unformatted(&$variables) {
 }
 
 /**
- * Implements hook_preprocess_HOOK()
+ * Implements hook_preprocess_HOOK().
  */
 function eisai_intranet_theme_preprocess_likeit(&$variables) {
 
@@ -256,7 +264,7 @@ function eisai_intranet_theme_preprocess_likeit(&$variables) {
   $count = '';
 
   $node = \Drupal::routeMatch()->getParameter('node');
-  if ($node instanceof \Drupal\node\NodeInterface) {
+  if ($node instanceof NodeInterface) {
     $nid = $node->id();
   }
 
@@ -271,11 +279,10 @@ function eisai_intranet_theme_preprocess_likeit(&$variables) {
     $count != 1 ? $like = 'likes' : 'like';
     $title = $like . ' - click to ' . $action . '.';
 
-      $variables['content']['link']['#title'] = [
-        '#type' => 'markup',
-        '#markup' => '<span class="likeit-count">' . $count . '</span> <span class="likeit-title">' .
-          $title . '</span>',
-      ];
+    $variables['content']['link']['#title'] = [
+      '#type' => 'markup',
+      '#markup' => '<span class="likeit-count">' . $count . '</span> <span class="likeit-title">' . $title . '</span>',
+    ];
 
   }
 
